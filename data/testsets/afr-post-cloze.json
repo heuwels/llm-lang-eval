@@ -1,0 +1,746 @@
+{
+  "meta": {
+    "lang": "afr",
+    "language_name": "Afrikaans",
+    "task": "cloze",
+    "from": "afr-post",
+    "n": 147
+  },
+  "items": [
+    {
+      "id": "13912069",
+      "source": "“___ is jy so koud?” — “Omdat ek dood is.”",
+      "answer": "Hoekom"
+    },
+    {
+      "id": "13157769",
+      "source": "Yster is ___ as goud.",
+      "answer": "harder"
+    },
+    {
+      "id": "13458392",
+      "source": "Yidir is iemand wat ___ is daaraan om te lieg.",
+      "answer": "gewoond"
+    },
+    {
+      "id": "13585284",
+      "source": "Hy het my vir meer geld ___ as wat hy nodig het.",
+      "answer": "gevra"
+    },
+    {
+      "id": "13699236",
+      "source": "Dit ___ goed te wees.",
+      "answer": "behoort"
+    },
+    {
+      "id": "13368834",
+      "source": "Die swart boks is nie ___ swart nie.",
+      "answer": "regtig"
+    },
+    {
+      "id": "13458327",
+      "source": "Tom is nie ___ vir jou nie.",
+      "answer": "bang"
+    },
+    {
+      "id": "13585278",
+      "source": "Hy het ___ gedoen vir 'n werk.",
+      "answer": "aansoek"
+    },
+    {
+      "id": "13585302",
+      "source": "Dit reën baie tydens die ___.",
+      "answer": "reënseisoen"
+    },
+    {
+      "id": "13458300",
+      "source": "Sy het net haar bene ___.",
+      "answer": "gerêk"
+    },
+    {
+      "id": "13370651",
+      "source": "Niks goed kan ___ kom nie.",
+      "answer": "daarvan"
+    },
+    {
+      "id": "13585239",
+      "source": "Ek ___ selde bier.",
+      "answer": "drink"
+    },
+    {
+      "id": "13636249",
+      "source": "Wie se ___ is dit?",
+      "answer": "kind"
+    },
+    {
+      "id": "13585334",
+      "source": "Ek dink nie ons gaan ___ tyd hê nie.",
+      "answer": "genoeg"
+    },
+    {
+      "id": "13903853",
+      "source": "Dit is 'n ___.",
+      "answer": "olyf"
+    },
+    {
+      "id": "13904733",
+      "source": "Dit is nie die ___ van God nie.",
+      "answer": "woord"
+    },
+    {
+      "id": "13203066",
+      "source": "Medusa het my ___!",
+      "answer": "versteen"
+    },
+    {
+      "id": "13651483",
+      "source": "Die hoofstad van ___ is Vaduz.",
+      "answer": "Liechtenstein"
+    },
+    {
+      "id": "13490267",
+      "source": "Hier is jou ___.",
+      "answer": "boeke"
+    },
+    {
+      "id": "13490276",
+      "source": "Lees ___ hierdie boek.",
+      "answer": "asseblief"
+    },
+    {
+      "id": "13375391",
+      "source": "Hulle het vir 'n ___ jare in Spanje gewoon.",
+      "answer": "aantal"
+    },
+    {
+      "id": "13375437",
+      "source": "Sy het ___ haar ouers is dood.",
+      "answer": "gedink"
+    },
+    {
+      "id": "13491741",
+      "source": "Ek sal net vir 'n ___ dae hier wees.",
+      "answer": "paar"
+    },
+    {
+      "id": "13835130",
+      "source": "Hy doen iets in die ___.",
+      "answer": "geesteswetenskappe"
+    },
+    {
+      "id": "13368833",
+      "source": "Tom is 'n klein ___.",
+      "answer": "seuntjie"
+    },
+    {
+      "id": "13458369",
+      "source": "___. Hoe gaan dit?",
+      "answer": "Hallo"
+    },
+    {
+      "id": "13375406",
+      "source": "Hy het ons ___ om stil te bly.",
+      "answer": "gevra"
+    },
+    {
+      "id": "13368825",
+      "source": "___ huis is te huur.",
+      "answer": "Daardie"
+    },
+    {
+      "id": "13903131",
+      "source": "Ek is 'n ___.",
+      "answer": "hoer"
+    },
+    {
+      "id": "13641926",
+      "source": "Ek ___ nie Eve nie.",
+      "answer": "heet"
+    },
+    {
+      "id": "13375429",
+      "source": "Ek het dit vir ___ gekoop, nie vir jou nie.",
+      "answer": "myself"
+    },
+    {
+      "id": "13910114",
+      "source": "Hy het ___ sodat ons kon lewe.",
+      "answer": "gesterf"
+    },
+    {
+      "id": "13585274",
+      "source": "Het Tom vir haar ___ gegee?",
+      "answer": "toestemming"
+    },
+    {
+      "id": "13375417",
+      "source": "Ek kon nie sy ___ in fokus kry nie.",
+      "answer": "gesig"
+    },
+    {
+      "id": "13458400",
+      "source": "Hulle is baie ___.",
+      "answer": "welaf"
+    },
+    {
+      "id": "13585287",
+      "source": "Hierdie is 'n baie ___ woonbuurt.",
+      "answer": "gevaarlike"
+    },
+    {
+      "id": "13375426",
+      "source": "Hoe kan hulle ___ wees?",
+      "answer": "seker"
+    },
+    {
+      "id": "13368798",
+      "source": "Jy praat ___ baie goed.",
+      "answer": "Japanees"
+    },
+    {
+      "id": "13916644",
+      "source": "Die meermin het in ___ verander.",
+      "answer": "seeskuim"
+    },
+    {
+      "id": "13458304",
+      "source": "Bêl my ___ jy kom.",
+      "answer": "voor"
+    },
+    {
+      "id": "13458344",
+      "source": "Die vervolging van dïegene wat 'n ___ probeer uitvoer is nie 'n heksejag nie.",
+      "answer": "staatsgreep"
+    },
+    {
+      "id": "13651486",
+      "source": "Hoekom dra jy altyd ___ hoed?",
+      "answer": "daardie"
+    },
+    {
+      "id": "13578021",
+      "source": "Tom gee ___ op nie.",
+      "answer": "nooit"
+    },
+    {
+      "id": "13370570",
+      "source": "Hy moet daardie vertrek ___.",
+      "answer": "skoonmaak"
+    },
+    {
+      "id": "13375396",
+      "source": "Ek sal nooit geld aan ___ leen nie.",
+      "answer": "enigiemand"
+    },
+    {
+      "id": "13017827",
+      "source": "Met wie het jy ___?",
+      "answer": "gepraat"
+    },
+    {
+      "id": "13577989",
+      "source": "Ek wil nie hê jy moet dink dat ek nie ___ is met jou besluit nie.",
+      "answer": "gelukkig"
+    },
+    {
+      "id": "13370632",
+      "source": "Die ___ gaan reeds skool toe.",
+      "answer": "kinders"
+    },
+    {
+      "id": "13458357",
+      "source": "Die goeie student leer nou die ___.",
+      "answer": "leermeester"
+    },
+    {
+      "id": "13107973",
+      "source": "___ pruime is ryp.",
+      "answer": "Hierdie"
+    },
+    {
+      "id": "13368827",
+      "source": "Ziri se palm bome dra baie ___ dadels.",
+      "answer": "minder"
+    },
+    {
+      "id": "13368841",
+      "source": "Algeria is ryk aan ___ gasse.",
+      "answer": "natuurlike"
+    },
+    {
+      "id": "13585223",
+      "source": "___ en leer iets.",
+      "answer": "Luister"
+    },
+    {
+      "id": "13904447",
+      "source": "Ek is die ___ van die aarde.",
+      "answer": "keiser"
+    },
+    {
+      "id": "13368838",
+      "source": "Ons het ___ 'n lekker lang gesprek gehad.",
+      "answer": "vanmiddag"
+    },
+    {
+      "id": "13585294",
+      "source": "Ek dink Latyn is nie so ___ soos Grieks nie.",
+      "answer": "moeilik"
+    },
+    {
+      "id": "13368836",
+      "source": "Beplan jy om na daardie ___ te gaan?",
+      "answer": "restaurant"
+    },
+    {
+      "id": "13458413",
+      "source": "Jy moes ___ gehoor het.",
+      "answer": "verkeerd"
+    },
+    {
+      "id": "13018167",
+      "source": "Daar is nie genoeg ___ nie.",
+      "answer": "lemoene"
+    },
+    {
+      "id": "13368843",
+      "source": "Ek ___ hoe dit nou lyk.",
+      "answer": "wonder"
+    },
+    {
+      "id": "13584970",
+      "source": "Hy het 'n meisie van Juneau ___.",
+      "answer": "ontmoet"
+    },
+    {
+      "id": "13903004",
+      "source": "Tom is in die ___ gebore.",
+      "answer": "ruimte"
+    },
+    {
+      "id": "13458283",
+      "source": "___ is die slegste plek om te probeer omdraai.",
+      "answer": "Hierdie"
+    },
+    {
+      "id": "13368788",
+      "source": "Sy het ___ oor waar sy was.",
+      "answer": "gelieg"
+    },
+    {
+      "id": "13585247",
+      "source": "Om te kan ___, moet jy lees.",
+      "answer": "weet"
+    },
+    {
+      "id": "13490256",
+      "source": "Tom is ___ moeg.",
+      "answer": "baie"
+    },
+    {
+      "id": "13458328",
+      "source": "Hy het 'n groot ___ naby die see.",
+      "answer": "restaurant"
+    },
+    {
+      "id": "13908264",
+      "source": "Dit is goed vir ons om ander kulture te ___.",
+      "answer": "verstaan"
+    },
+    {
+      "id": "13458397",
+      "source": "Jy is ___ ryk.",
+      "answer": "baie"
+    },
+    {
+      "id": "13585291",
+      "source": "James was dubbeld Amanda se kêrel se ___.",
+      "answer": "ouderdom"
+    },
+    {
+      "id": "13636294",
+      "source": "Dit is 'n ___ spel om te speel.",
+      "answer": "moeilike"
+    },
+    {
+      "id": "13650687",
+      "source": "Wat dink jy van ___ se huis?",
+      "answer": "Maria"
+    },
+    {
+      "id": "13699271",
+      "source": "Kan ek op julle albei ___ om daar te wees?",
+      "answer": "staatmaak"
+    },
+    {
+      "id": "13368789",
+      "source": "Tom en Mary sê hulle dink nie John sal Alice ___ om dit te doen nie.",
+      "answer": "toelaat"
+    },
+    {
+      "id": "13458414",
+      "source": "Dit is ___ gratis vir Tom.",
+      "answer": "heeltemaal"
+    },
+    {
+      "id": "13578013",
+      "source": "Hy hou 'n ___.",
+      "answer": "dagboek"
+    },
+    {
+      "id": "13585314",
+      "source": "Wat het Elias vir jou ___?",
+      "answer": "gedoen"
+    },
+    {
+      "id": "13458333",
+      "source": "Wie se idee was dit om so 'n ___ asdrom vir die voortuin te koop?",
+      "answer": "kleurvolle"
+    },
+    {
+      "id": "13458435",
+      "source": "Gee my 'n paar ___.",
+      "answer": "voorbeelde"
+    },
+    {
+      "id": "13375432",
+      "source": "Hy is 'n baie ___ seun.",
+      "answer": "oulike"
+    },
+    {
+      "id": "13909943",
+      "source": "Daar bestaan nie so iets soos kunsmatige ___ nie.",
+      "answer": "intelligensie"
+    },
+    {
+      "id": "13017831",
+      "source": "My kat is ___.",
+      "answer": "siek"
+    },
+    {
+      "id": "13585266",
+      "source": "Sy ___ het vir hom gelag.",
+      "answer": "vriende"
+    },
+    {
+      "id": "13917939",
+      "source": "Nietemin is ek steeds ___.",
+      "answer": "paranoïes"
+    },
+    {
+      "id": "13491773",
+      "source": "Hoekom is ___ so kort?",
+      "answer": "Februarie"
+    },
+    {
+      "id": "13458420",
+      "source": "Daar was geen warm ___ nie.",
+      "answer": "water"
+    },
+    {
+      "id": "13370633",
+      "source": "Ek hou ___ baie van die reën.",
+      "answer": "regtig"
+    },
+    {
+      "id": "13578016",
+      "source": "Ek het die ___ brood gestoor.",
+      "answer": "oorskiet"
+    },
+    {
+      "id": "13903767",
+      "source": "Die ___ is dood.",
+      "answer": "demokrasie"
+    },
+    {
+      "id": "13585262",
+      "source": "Mary sal ___ beter voel sodra sy iets te ete gekry het.",
+      "answer": "moontlik"
+    },
+    {
+      "id": "13458416",
+      "source": "Die dier sal nie binne die volgende twee jaar seksuele ___ bereik nie.",
+      "answer": "volwassenheid"
+    },
+    {
+      "id": "13458419",
+      "source": "My ___ is baie tale magtig.",
+      "answer": "vriend"
+    },
+    {
+      "id": "13370617",
+      "source": "Sy is nog in die ___, of nie?",
+      "answer": "kombuis"
+    },
+    {
+      "id": "13699269",
+      "source": "Hy het gesê hy sal ___ vir haar koop.",
+      "answer": "blomme"
+    },
+    {
+      "id": "13458354",
+      "source": "Hierdie yskas moet ___ word.",
+      "answer": "ontvries"
+    },
+    {
+      "id": "13578000",
+      "source": "Ek het ___ om dit te doen.",
+      "answer": "gesukkel"
+    },
+    {
+      "id": "13490341",
+      "source": "België is nie so groot soos ___ nie.",
+      "answer": "Frankryk"
+    },
+    {
+      "id": "13641924",
+      "source": "___ naam is Eve.",
+      "answer": "Haar"
+    },
+    {
+      "id": "13490291",
+      "source": "Tom is nie ___ oud nie.",
+      "answer": "baie"
+    },
+    {
+      "id": "13577991",
+      "source": "Ek sal later ___ tyd hê om jou te help.",
+      "answer": "vanmiddag"
+    },
+    {
+      "id": "13585250",
+      "source": "___ is iets wat ek op jou stoep gevind het.",
+      "answer": "Hierdie"
+    },
+    {
+      "id": "13706672",
+      "source": "Dit is ___ om baie boeke te lees.",
+      "answer": "belangrik"
+    },
+    {
+      "id": "13148293",
+      "source": "___ het nie ore nie.",
+      "answer": "Spinnekoppe"
+    },
+    {
+      "id": "13585216",
+      "source": "Wil jy tee maak? Jy moet eers die ___ vol water maak.",
+      "answer": "ketel"
+    },
+    {
+      "id": "13699229",
+      "source": "Ek sal jou nou ___ vertel.",
+      "answer": "daarvan"
+    },
+    {
+      "id": "13458361",
+      "source": "Ek het my ___ verloor.",
+      "answer": "wettenskap"
+    },
+    {
+      "id": "13585252",
+      "source": "Die grassnyer is petrol ___.",
+      "answer": "aangedrewe"
+    },
+    {
+      "id": "13585273",
+      "source": "Ek is 'n slegte ___.",
+      "answer": "verloorder"
+    },
+    {
+      "id": "13585297",
+      "source": "Tom het my ___ hy dink Mary is oulik.",
+      "answer": "vertel"
+    },
+    {
+      "id": "13375394",
+      "source": "Ek dink ek kan dit ___.",
+      "answer": "probeer"
+    },
+    {
+      "id": "13458408",
+      "source": "Tom berei homself vir die ___ Engelse toets voor.",
+      "answer": "Duolingo"
+    },
+    {
+      "id": "13017824",
+      "source": "Ek wil ___ wat Tom dink.",
+      "answer": "weet"
+    },
+    {
+      "id": "13370591",
+      "source": "Dit was na ___, Fadil en Layla het geslaap.",
+      "answer": "middernag"
+    },
+    {
+      "id": "13458355",
+      "source": "Hierdie boek se ___ is nogal kort.",
+      "answer": "voorwoord"
+    },
+    {
+      "id": "13585353",
+      "source": "Tom sal dit ___ keer doen.",
+      "answer": "volgende"
+    },
+    {
+      "id": "13699222",
+      "source": "Sal jy die ___?",
+      "answer": "vashou"
+    },
+    {
+      "id": "13458411",
+      "source": "Jy is 'n ___ gawe man!",
+      "answer": "baie"
+    },
+    {
+      "id": "13699259",
+      "source": "Isabel se vaardige hantering van die ___ het nie ongemerk by haar bestuurders verbygegaan nie.",
+      "answer": "skeduleringsfout"
+    },
+    {
+      "id": "13368831",
+      "source": "Tom probeer om van sy ou ___ ontslae te raak.",
+      "answer": "gewoontes"
+    },
+    {
+      "id": "13585329",
+      "source": "Dit is 'n groot ___.",
+      "answer": "gemors"
+    },
+    {
+      "id": "13491548",
+      "source": "Wat is jou ___ bordspel?",
+      "answer": "gunsteling"
+    },
+    {
+      "id": "13368844",
+      "source": "Daar is 'n appel onder die ___.",
+      "answer": "lessenaar"
+    },
+    {
+      "id": "13930528",
+      "source": "Tom is 'n ___.",
+      "answer": "naam"
+    },
+    {
+      "id": "13584570",
+      "source": "Die ___ is wit.",
+      "answer": "boek"
+    },
+    {
+      "id": "13458307",
+      "source": "___ koffie wat jy vir my toe gebring het, het my lewe gerêd.",
+      "answer": "Daardie"
+    },
+    {
+      "id": "13585232",
+      "source": "Het jy Tom se ___ musiek video gesien?",
+      "answer": "nuutste"
+    },
+    {
+      "id": "13916648",
+      "source": "Die meermin het in skuim ___.",
+      "answer": "verander"
+    },
+    {
+      "id": "13585283",
+      "source": "Dit het baie ___ gelyk.",
+      "answer": "duidelik"
+    },
+    {
+      "id": "13458426",
+      "source": "Ek woon net 'n ___ verder af in die pad.",
+      "answer": "entjie"
+    },
+    {
+      "id": "13585344",
+      "source": "Ek en Tom het vir die eerste keer in Boston ___.",
+      "answer": "ontmoet"
+    },
+    {
+      "id": "13578011",
+      "source": "Sy ___ het haar verras.",
+      "answer": "antwoord"
+    },
+    {
+      "id": "13699217",
+      "source": "Tom wil nie ___ toe gaan nie.",
+      "answer": "kollege"
+    },
+    {
+      "id": "13585311",
+      "source": "Hy het sy ___ genader vir hulp.",
+      "answer": "vriende"
+    },
+    {
+      "id": "13458410",
+      "source": "___ uit jou T-hemp.",
+      "answer": "Trek"
+    },
+    {
+      "id": "13585326",
+      "source": "___ was in my klas.",
+      "answer": "Sami"
+    },
+    {
+      "id": "13616987",
+      "source": "In ___ taal droom jy?",
+      "answer": "watter"
+    },
+    {
+      "id": "13458365",
+      "source": "___ naand, hoe gaan dit?",
+      "answer": "Goeie"
+    },
+    {
+      "id": "13458386",
+      "source": "Hulle het mekaar ___ om nuwe avonture aan te pak.",
+      "answer": "uitgedaag"
+    },
+    {
+      "id": "13458360",
+      "source": "Die projek se tydlyn was ___ verkort.",
+      "answer": "drasties"
+    },
+    {
+      "id": "13458353",
+      "source": "___ verval kom een of ander tyd voor.",
+      "answer": "Kulturele"
+    },
+    {
+      "id": "12981342",
+      "source": "Ek hou van ham en ___.",
+      "answer": "eiers"
+    },
+    {
+      "id": "13491729",
+      "source": "Tom is ook 'n Franse ___.",
+      "answer": "onderwyser"
+    },
+    {
+      "id": "13585269",
+      "source": "Jou ___ het regtig baie gehelp.",
+      "answer": "advies"
+    },
+    {
+      "id": "13614056",
+      "source": "Dit het geen ___ nie.",
+      "answer": "betekenis"
+    },
+    {
+      "id": "13699230",
+      "source": "Ek is ___ dat iets tussen hulle aan die gang is.",
+      "answer": "oortuig"
+    },
+    {
+      "id": "13370577",
+      "source": "Lukas het die deur ___ gesluit.",
+      "answer": "onmiddelik"
+    },
+    {
+      "id": "13831473",
+      "source": "Hy is ons ___ seun.",
+      "answer": "derde"
+    }
+  ]
+}

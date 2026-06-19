@@ -209,6 +209,62 @@ def cmd_report(a):
     print(f"\nwrote {out}")
 
 
+def _cloze_table(scores: list):
+    by = {(x["model"], x["set"]): x for x in scores}
+    models = sorted({m for (m, s) in by})
+    print("\nParroting probe — exact word recovery (%)  [pre=seen, post=unseen, gap=memorisation]\n")
+    print(f"{'model':<22}{'pre':>7}{'post':>7}{'gap':>7}")
+    print("-" * 43)
+    rows = []
+    for m in models:
+        pre = by.get((m, "afr-pre"), {}).get("recovery")
+        post = by.get((m, "afr-post"), {}).get("recovery")
+        gap = (pre - post) if (pre is not None and post is not None) else None
+        rows.append((m, pre, post, gap))
+    for m, pre, post, gap in sorted(rows, key=lambda x: -(x[3] if x[3] is not None else -999)):
+        f = lambda v: f"{v:.1f}" if v is not None else "-"
+        g = f"{gap:+.1f}" if gap is not None else "-"
+        print(f"{m:<22}{f(pre):>7}{f(post):>7}{g:>7}")
+
+
+def cmd_cloze(a):
+    """Parroting probe: mask a word, have each model fill it, compare exact
+    recovery on seen (afr-pre) vs unseen (afr-post) sentences."""
+    from . import cloze
+    cfg = _config()
+    sets = a.sets or ["afr-pre", "afr-post"]
+    for s in sets:
+        if (ROOT / "data" / "testsets" / f"{s}.json").exists():
+            cloze.build_masked(s)
+    if a.models:
+        models = [m for m in _all_models(cfg) if m["id"] in set(a.models)]
+    else:
+        models = [m for m in cfg.get("local", []) if m.get("have")]
+    scores = json.loads(cloze.CLOZE_SCORES.read_text()) if cloze.CLOZE_SCORES.exists() else []
+    for m in models:
+        r = _resolve(cfg, m)
+        for s in sets:
+            stem = f"{s}-cloze"
+            ts = ROOT / "data" / "testsets" / f"{stem}.json"
+            if not ts.exists():
+                continue
+            name = LANG_NAMES.get(base_lang(s), s)
+            print(f"\n=== {m['id']} / {stem} ===")
+            try:
+                run(m["id"], r["endpoint"], r["api_model"], ts, name, cloze.cloze_prompt,
+                    limit=a.limit, extra_body=r["extra_body"], no_schema=r["no_schema"],
+                    api_key=r["api_key"], concurrency=r["concurrency"])
+            except Exception as e:
+                print(f"DROP {m['id']}/{stem}: {str(e)[:120]}")
+                continue
+            rec = cloze.recovery(m["id"], s)
+            if rec:
+                scores = [x for x in scores if not (x["model"] == m["id"] and x["set"] == s)]
+                scores.append({"model": m["id"], "set": s, **rec})
+                cloze.CLOZE_SCORES.write_text(json.dumps(scores, indent=2), encoding="utf-8")
+    _cloze_table(scores)
+
+
 def main():
     _load_env()
     p = argparse.ArgumentParser(prog="langeval")
@@ -242,6 +298,12 @@ def main():
     rp.add_argument("--date", help="date string for the report (default: today)")
     rp.add_argument("--title")
     rp.set_defaults(func=cmd_report)
+
+    cz = sub.add_parser("cloze", help="parroting probe: mask a word, measure recovery seen vs unseen")
+    cz.add_argument("--models", nargs="*", help="model ids (default: on-host local models)")
+    cz.add_argument("--sets", nargs="*", help="base test-set stems (default: afr-pre afr-post)")
+    cz.add_argument("--limit", type=int)
+    cz.set_defaults(func=cmd_cloze)
 
     cm = sub.add_parser("comet", help="add COMET semantic scores to scores.json (no re-runs)")
     cm.add_argument("--models", nargs="*", help="restrict to these model ids")

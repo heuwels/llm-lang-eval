@@ -21,6 +21,17 @@ RAW_OUT = ROOT / "results" / "raw_outputs"
 TESTSETS = ROOT / "data" / "testsets"
 
 
+_QUOTES = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "—": "-", "–": "-"})
+
+
+def normalize(s: str) -> str:
+    """Fold smart quotes/dashes and collapse whitespace so trivial typographic
+    differences (e.g. a curly apostrophe in "We'll") don't cost chrF/BLEU points
+    or split otherwise-identical translations in the side-by-side grouping."""
+    import re
+    return re.sub(r"\s+", " ", (s or "").translate(_QUOTES)).strip()
+
+
 def _refs_by_id(lang: str) -> dict:
     data = json.loads((TESTSETS / f"{lang}.json").read_text(encoding="utf-8"))
     return {it["id"]: it["refs"] for it in data["items"]}
@@ -39,8 +50,8 @@ def score(model_id: str, lang: str) -> dict:
             continue
         rid = rec["id"]
         if rid in refs_map and refs_map[rid]:
-            hyps.append(rec["hypothesis"])
-            ref_lists.append(refs_map[rid])
+            hyps.append(normalize(rec["hypothesis"]))
+            ref_lists.append([normalize(r) for r in refs_map[rid]])
 
     if not hyps:
         return {"model": model_id, "lang": lang, "n": 0, "errors": n_err,

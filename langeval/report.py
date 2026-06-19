@@ -14,6 +14,7 @@ that can be published as-is or dropped into the Lector site's /blog.
 import html
 import json
 import os
+import re
 from pathlib import Path
 
 import yaml
@@ -25,6 +26,7 @@ SCORES = Path(os.environ["LANGEVAL_SCORES"]) if os.environ.get("LANGEVAL_SCORES"
 RAW = ROOT / "results" / "raw_outputs"
 TESTSETS = ROOT / "data" / "testsets"
 CONFIG = ROOT / "config" / "models.yaml"
+CLOZE = ROOT / "results" / "cloze.json"
 OUT = ROOT / "results" / "report.html"
 
 LANG_NAMES = {"afr": "Afrikaans", "deu": "German", "spa": "Spanish"}
@@ -80,14 +82,26 @@ def _load_testset(lang: str) -> dict:
 
 
 def _sent_chrf(hyp: str, refs: list) -> float:
-    return _CHRF.sentence_score(hyp, refs).score
+    from .score import normalize
+    return _CHRF.sentence_score(normalize(hyp), [normalize(r) for r in refs]).score
+
+
+def _ok_translation(h: str) -> bool:
+    """Reject non-translation output (preamble/refusal/meta leakage) so the
+    side-by-side compares actual translations, not instruction-following misses."""
+    h = (h or "").strip()
+    if len(h) < 2 or h.endswith(":"):
+        return False
+    return not re.match(
+        r"(?i)^(in english|translation|english|here (is|are)|the (afrikaans|german|spanish)\b|"
+        r"i (can|cannot|can't|'m sorry|am unable)|sorry|note:|sure[,!])", h)
 
 
 # ---- HTML building blocks --------------------------------------------------
 
 def _bar_chart(rows: list, value_key: str = "chrf2", max_val: float = 100.0) -> str:
     """rows: [{'label','chrf2','tier'}]. Horizontal SVG bars, coloured by tier."""
-    bar_h, gap, label_w, track_w, pad = 26, 12, 150, 360, 8
+    bar_h, gap, label_w, track_w, pad = 14, 4, 140, 340, 5
     w = label_w + track_w + 60
     h = pad * 2 + len(rows) * (bar_h + gap)
     parts = [f'<svg viewBox="0 0 {w} {h}" role="img" class="chart">']
@@ -154,45 +168,53 @@ def _generations(lang: str, models: list, k: int = 6) -> str:
     if not present or not ts:
         return ""
     tiers = _tiers()
-    rows = []
+    from .score import normalize
+    cands = []
     for sid, it in ts.items():
-        cells = {m: hyps[m].get(sid) for m in present}
-        if not any(cells.values()):
+        groups: dict = {}
+        for m in present:
+            h = hyps[m].get(sid)
+            if not h or not _ok_translation(h):  # skip non-translation output
+                continue
+            key = re.sub(r"[\s\W]+$", "", normalize(h).lower())  # fold quotes/punct/case
+            g = groups.setdefault(key, {"text": h, "chrf": _sent_chrf(h, it["refs"]), "models": []})
+            g["models"].append(m)
+        glist = sorted(groups.values(), key=lambda g: -g["chrf"])
+        if len(glist) < 2:  # need genuine divergence among real translations
             continue
-        chrf = {m: (_sent_chrf(h, it["refs"]) if h else None) for m, h in cells.items()}
-        vals = [v for v in chrf.values() if v is not None]
-        rng = (max(vals) - min(vals)) if len(vals) > 1 else 0.0
-        rows.append({"sid": sid, "source": it["source"], "refs": it["refs"],
-                     "hyps": cells, "chrf": chrf, "range": rng})
-    # most inter-model disagreement first — the interesting comparisons
-    rows.sort(key=lambda r: -r["range"])
-    rows = rows[:k]
+        cands.append({"source": it["source"], "refs": it["refs"], "glist": glist})
+    # rank by genuine divergence: most distinct real translations, then chrF spread
+    cands.sort(key=lambda c: (-len(c["glist"]), -(c["glist"][0]["chrf"] - c["glist"][-1]["chrf"])))
+    cands = cands[:k]
 
     out = [f"<h3>{_esc(LANG_NAMES.get(lang, lang))} — where the models diverge</h3>",
-           "<p class='muted'>Sentences chosen for the widest spread in per-sentence chrF++ "
-           "across models. Reference(s) are held-out Tatoeba translations.</p>"]
-    for r in rows:
-        gens = []
-        best_m = max((m for m in present if r["chrf"][m] is not None),
-                     key=lambda m: r["chrf"][m], default=None)
-        for m in present:
-            h = r["hyps"][m]
-            sc = r["chrf"][m]
-            cls = "gen gen--best" if m == best_m else "gen"
-            score_tag = f"<span class='gen-score'>{sc:.0f}</span>" if sc is not None else ""
-            out.append(
-                f"<div class='{cls}'><div class='gen-model'>"
-                f"<span class='tier tier-{tiers.get(m, '')}'></span>{_esc(m)} {score_tag}</div>"
-                f"<div class='gen-text'>{_esc(h) or '<em>(empty)</em>'}</div></div>"
+           "<p class='muted'>Sentences with the most distinct <em>translations</em> across models "
+           "(non-translation output — preambles, refusals — is filtered out). Identical wordings are "
+           "grouped (count × tier-dots). Green = within ~6 chrF of the closest-to-reference group; the "
+           "reference is one crowd-sourced translation, so a different consensus is often just as valid.</p>"]
+    for c in cands:
+        glist = c["glist"]
+        best = glist[0]["chrf"]
+        cards = []
+        for g in glist:
+            sc = g["chrf"]
+            cls = "gen gen--best" if sc >= best - 6 else "gen"  # band, not a lone winner
+            dots = "".join(f"<span class='tier tier-{tiers.get(m, '')}' title='{_esc(m)}'></span>"
+                           for m in g["models"])
+            names = ", ".join(_esc(m) for m in g["models"])
+            cards.append(
+                f"<div class='{cls}'><div class='gen-models'><span class='gen-count'>"
+                f"{len(g['models'])}×</span>{dots}<span class='gen-score'>{sc:.0f}</span>"
+                f"<div class='gen-names'>{names}</div></div>"
+                f"<div class='gen-text'>{_esc(g['text'])}</div></div>"
             )
-            gens.append(h)
-        refs = " &nbsp;·&nbsp; ".join(_esc(x) for x in r["refs"])
-        out.insert(len(out) - len(present),
-                   f"<div class='ex'><div class='ex-src'><span class='tag'>{_esc(lang)}</span>"
-                   f"{_esc(r['source'])}</div>"
-                   f"<div class='ex-ref'><span class='tag tag--ref'>ref</span>{refs}</div>"
-                   f"<div class='gens'>")
-        out.append("</div></div>")
+        refs = " &nbsp;·&nbsp; ".join(_esc(x) for x in c["refs"])
+        out.append(
+            f"<div class='ex'><div class='ex-src'><span class='tag'>{_esc(lang)}</span>"
+            f"{_esc(c['source'])}</div>"
+            f"<div class='ex-ref'><span class='tag tag--ref'>ref</span>{refs}</div>"
+            f"<div class='gens'>{''.join(cards)}</div></div>"
+        )
     return "".join(out)
 
 
@@ -220,6 +242,34 @@ def _contamination(scores: list) -> str:
             f"<th>pre-2023<br><span class='unit'>{mname}</span></th>"
             f"<th>2025–26<br><span class='unit'>{mname}</span></th>"
             f"<th>Δ</th></tr></thead><tbody>{''.join(rows)}</tbody></table>")
+
+
+def _cloze_panel() -> str:
+    """Per-model exact word-recovery on seen (afr-pre) vs unseen (afr-post)."""
+    if not CLOZE.exists():
+        return ""
+    by = {(x["model"], x["set"]): x for x in json.loads(CLOZE.read_text(encoding="utf-8"))}
+    models = [m for (m, s) in by if s == "afr-post" and (m, "afr-pre") in by]
+    tiers = _tiers()
+    rows = []
+    for m in sorted(set(models)):
+        pre, post = by[(m, "afr-pre")].get("recovery"), by[(m, "afr-post")].get("recovery")
+        if pre is None or post is None:
+            continue
+        rows.append((m, pre, post, pre - post))
+    if not rows:
+        return ""
+    rows.sort(key=lambda r: -r[3])
+    trs = []
+    for m, pre, post, gap in rows:
+        dot = (f"<span class='tier tier-{tiers.get(m, '')}'></span>" if tiers.get(m) else "")
+        cls = "delta-bad" if gap >= 10 else ("delta-warn" if gap >= 5 else "delta-ok")
+        trs.append(f"<tr><td class='model'>{dot}{_esc(m)}</td><td class='num'>{pre:.0f}</td>"
+                   f"<td class='num'>{post:.0f}</td><td class='num {cls}'>{gap:+.0f}</td></tr>")
+    return ("<table class='board'><thead><tr><th>Model</th>"
+            "<th>seen<br><span class='unit'>recovery %</span></th>"
+            "<th>unseen<br><span class='unit'>recovery %</span></th>"
+            f"<th>gap</th></tr></thead><tbody>{''.join(trs)}</tbody></table>")
 
 
 CSS = """
@@ -256,11 +306,13 @@ table.board{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
 text-transform:uppercase;letter-spacing:.05em;padding:.1rem .4rem;border-radius:4px;margin-right:.5rem;vertical-align:middle}
 .tag--ref{background:transparent;color:var(--muted);border:1px solid var(--border)}
 .gens{display:grid;gap:.5rem;margin-top:.75rem}
-.gen{border:1px solid var(--border);border-radius:6px;padding:.5rem .7rem;display:flex;gap:.75rem;align-items:baseline}
+.gen{border:1px solid var(--border);border-radius:6px;padding:.5rem .7rem}
 .gen--best{border-color:var(--best);background:var(--best-soft)}
-.gen-model{font-family:var(--mono),monospace;font-size:.78rem;color:var(--muted);min-width:150px;font-weight:600}
-.gen-score{display:inline-block;background:var(--border);border-radius:999px;padding:0 .4rem;font-size:.7rem;margin-left:.3rem}
-.gen-text{flex:1}
+.gen-models{display:flex;align-items:center;flex-wrap:wrap;gap:.25rem;margin-bottom:.3rem}
+.gen-count{font-weight:700;font-size:.8rem;margin-right:.2rem}
+.gen-names{flex-basis:100%;font-family:var(--mono),monospace;font-size:.72rem;color:var(--muted);margin-top:.15rem}
+.gen-score{margin-left:auto;background:var(--border);border-radius:999px;padding:0 .45rem;font-size:.72rem;font-weight:700}
+.gen-text{font-size:.96rem}
 .callout{background:var(--accent-soft);border-left:3px solid var(--accent);padding:.85rem 1.1rem;border-radius:0 6px 6px 0;margin:1rem 0;font-size:.95rem}
 .footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
 code{background:var(--border);padding:.1rem .35rem;border-radius:4px;font-size:.85em}
@@ -307,6 +359,19 @@ score is evidence of genuine translation ability.</div>
 recently-added sentences may differ subtly in style or difficulty — so read a small Δ as "holds up", not as a
 precise measurement of contamination.</p>
 """ if contam_table else ""
+
+    cloze_table = _cloze_panel()
+    cloze_section = f"""
+<h2>Parroting probe: memorisation, measured directly</h2>
+<div class="warn"><strong>The sharpest contamination test.</strong> We blank one informative word per
+sentence and ask each model to fill it. On <strong>unseen</strong> (2025–26) sentences it can only predict
+from context; if it recovers the exact original word much more often on <strong>seen</strong> (pre-2023)
+sentences, that gap is the model parroting memorised text rather than reasoning about the language. (It
+doubles as a cloze-ability score — Lector's own practice task.)</div>
+{cloze_table}
+<p class="muted">Recovery = exact match of the blanked word. A large positive gap = memorisation; near-zero
+= genuine context prediction. n≈150 per cell, so gaps within ~±10 are noise.</p>
+""" if cloze_table else ""
 
     # charts per language — bars coloured by deployment tier
     tier_map = _tiers()
@@ -371,6 +436,8 @@ within ~{NOISE} COMET of the top, which at n={n_focus} is a statistical tie, not
 <span class="tier tier-cloud"></span>cloud (OpenRouter)</p>
 
 {contam_section}
+
+{cloze_section}
 
 <h2>Scores by language</h2>
 {''.join(charts)}
