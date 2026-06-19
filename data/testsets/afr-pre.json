@@ -1,0 +1,1236 @@
+{
+  "meta": {
+    "lang": "afr",
+    "language_name": "Afrikaans",
+    "stem": "afr-pre",
+    "requested": 150,
+    "available": 2444,
+    "selected": 150,
+    "seed": 13,
+    "filters": {
+      "min_words": 4,
+      "max_words": 25,
+      "after": null,
+      "before": "2023-01-01"
+    },
+    "date_range": [
+      "2010-05-01",
+      "2022-12-12"
+    ],
+    "multi_ref": true,
+    "source_corpus": "Tatoeba",
+    "license": "CC-BY 2.0 FR"
+  },
+  "items": [
+    {
+      "id": "2783843",
+      "source": "Wat is die ware rede waarom jy dit nie wil doen nie?",
+      "date": "2013-10-11",
+      "refs": [
+        "What's the real reason you don't want to do this?"
+      ]
+    },
+    {
+      "id": "6456265",
+      "source": "Ek het skoon van haar vergeet.",
+      "date": "2017-11-10",
+      "refs": [
+        "I forgot all about her."
+      ]
+    },
+    {
+      "id": "674067",
+      "source": "My oom is gediagnoseer met bloedkanker.",
+      "date": "2010-12-19",
+      "refs": [
+        "My uncle has been diagnosed with leukemia."
+      ]
+    },
+    {
+      "id": "385195",
+      "source": "Sy het haar seun alleen in die kar gelos.",
+      "date": "2010-05-02",
+      "refs": [
+        "She left her son alone in the car."
+      ]
+    },
+    {
+      "id": "4869642",
+      "source": "Carol het 'n hoofpyn.",
+      "date": "2016-01-29",
+      "refs": [
+        "Carol has a headache."
+      ]
+    },
+    {
+      "id": "2364250",
+      "source": "Dis nie hoe ek wil hê dinge moet wees nie.",
+      "date": "2013-04-07",
+      "refs": [
+        "That isn't how I want things to be.",
+        "That's not how I want things to be."
+      ]
+    },
+    {
+      "id": "7986856",
+      "source": "Sy het 'n kêrel.",
+      "date": "2019-06-18",
+      "refs": [
+        "She has a boyfriend."
+      ]
+    },
+    {
+      "id": "10471391",
+      "source": "Tom identifiseer homself als 'n heiden.",
+      "date": "2021-10-30",
+      "refs": [
+        "Tom self-identifies as a heathen."
+      ]
+    },
+    {
+      "id": "5367703",
+      "source": "Ich bin 1968 in Tokio geboren.",
+      "date": "2016-08-24",
+      "refs": [
+        "I was born in Tokyo in 1968."
+      ]
+    },
+    {
+      "id": "2783379",
+      "source": "Tom hou van die mense wat andere manipuleer nie.",
+      "date": "2013-10-11",
+      "refs": [
+        "Tom doesn't like people who manipulate others."
+      ]
+    },
+    {
+      "id": "2458891",
+      "source": "Sy't vandag sy middagete gebring.",
+      "date": "2013-05-27",
+      "refs": [
+        "She brought his lunch today."
+      ]
+    },
+    {
+      "id": "1832664",
+      "source": "Kan jy n Engelse brief skryf?",
+      "date": "2012-09-11",
+      "refs": [
+        "Can you write a letter in English?"
+      ]
+    },
+    {
+      "id": "1857631",
+      "source": "Jy sal daarvoor betaal.",
+      "date": "2012-09-22",
+      "refs": [
+        "You will pay for it."
+      ]
+    },
+    {
+      "id": "2535563",
+      "source": "Ek het nog altyd 'n sagte plekkie vir Mary gehad.",
+      "date": "2013-06-30",
+      "refs": [
+        "I have always had a soft spot in my heart for Mary."
+      ]
+    },
+    {
+      "id": "1598514",
+      "source": "Ek het 'n droeë vel.",
+      "date": "2012-05-29",
+      "refs": [
+        "I have dry skin."
+      ]
+    },
+    {
+      "id": "9140072",
+      "source": "Ek's nog steeds lief vir jou.",
+      "date": "2020-10-13",
+      "refs": [
+        "I still love you."
+      ]
+    },
+    {
+      "id": "1752687",
+      "source": "Ons is net betyds vir die laaste trein.",
+      "date": "2012-08-05",
+      "refs": [
+        "We are just in time for the last train.",
+        "We're just in time for the last train."
+      ]
+    },
+    {
+      "id": "2783352",
+      "source": "Ons plan is om 'n loop deur die park te neem na middagete.",
+      "date": "2013-10-11",
+      "refs": [
+        "After lunch today, our plan is to take a walk in the park."
+      ]
+    },
+    {
+      "id": "7986782",
+      "source": "Is hierdie 'n kat?",
+      "date": "2019-06-18",
+      "refs": [
+        "Is this a cat?"
+      ]
+    },
+    {
+      "id": "5542339",
+      "source": "Tom het niks vir homself gevat nie.",
+      "date": "2016-10-23",
+      "refs": [
+        "Tom didn't take anything for himself."
+      ]
+    },
+    {
+      "id": "10471658",
+      "source": "Ek dink nie dit is die moeite werd om te doen nie.",
+      "date": "2021-10-30",
+      "refs": [
+        "I don't think that's worth doing."
+      ]
+    },
+    {
+      "id": "2784218",
+      "source": "Ek het net 'n bietjie stoom afgeblaas.",
+      "date": "2013-10-11",
+      "refs": [
+        "I was just blowing off steam."
+      ]
+    },
+    {
+      "id": "5535813",
+      "source": "Pragtige dag, is dit nie?",
+      "date": "2016-10-21",
+      "refs": [
+        "Beautiful day, isn't it?"
+      ]
+    },
+    {
+      "id": "1957589",
+      "source": "Tom soek 'n maklike manier om gewig te verloor.",
+      "date": "2012-10-27",
+      "refs": [
+        "Tom is looking for an easy way to lose weight."
+      ]
+    },
+    {
+      "id": "4874570",
+      "source": "Ek is meer as dankbaar vir jou hulp.",
+      "date": "2016-01-31",
+      "refs": [
+        "I am more than grateful to you for your help."
+      ]
+    },
+    {
+      "id": "2535506",
+      "source": "Welkom in ons huis!",
+      "date": "2013-06-30",
+      "refs": [
+        "Welcome to our home!"
+      ]
+    },
+    {
+      "id": "5907197",
+      "source": "Ek wil hom leer ken.",
+      "date": "2017-03-01",
+      "refs": [
+        "I want to get to know him."
+      ]
+    },
+    {
+      "id": "6459229",
+      "source": "Tom sal jou wen.",
+      "date": "2017-11-11",
+      "refs": [
+        "Tom will beat you."
+      ]
+    },
+    {
+      "id": "2783281",
+      "source": "Die lug is blou, die see is ook blou. Die lug en die see is blou.",
+      "date": "2013-10-11",
+      "refs": [
+        "The sky is blue, the sea is also blue. The sky and the sea are blue."
+      ]
+    },
+    {
+      "id": "2535554",
+      "source": "Hy het gesterf gedurende sy terugkeer na Engeland.",
+      "date": "2013-06-30",
+      "refs": [
+        "He died as he was returning to England."
+      ]
+    },
+    {
+      "id": "6456363",
+      "source": "Ek het gedog jy gee om vir haar.",
+      "date": "2017-11-10",
+      "refs": [
+        "I thought you cared about her."
+      ]
+    },
+    {
+      "id": "7986885",
+      "source": "Tom het twee meisies.",
+      "date": "2019-06-18",
+      "refs": [
+        "Tom has two girlfriends."
+      ]
+    },
+    {
+      "id": "1849107",
+      "source": "Die ou man het op die grond geval.",
+      "date": "2012-09-18",
+      "refs": [
+        "The old man fell down on the ground."
+      ]
+    },
+    {
+      "id": "2060242",
+      "source": "Ek sal dit nie weer doen nie.",
+      "date": "2012-12-06",
+      "refs": [
+        "I will not do it again."
+      ]
+    },
+    {
+      "id": "5540639",
+      "source": "Ons ken mekaar nogal goed.",
+      "date": "2016-10-22",
+      "refs": [
+        "We know each other pretty well."
+      ]
+    },
+    {
+      "id": "384921",
+      "source": "Dis wat ek gekoop het in Spanje.",
+      "date": "2010-05-01",
+      "refs": [
+        "This is what I bought in Spain."
+      ]
+    },
+    {
+      "id": "5536689",
+      "source": "Tom wil tyd met my spandeer.",
+      "date": "2016-10-21",
+      "refs": [
+        "Tom wants to spend time with me."
+      ]
+    },
+    {
+      "id": "4869675",
+      "source": "Die klip is swaar.",
+      "date": "2016-01-29",
+      "refs": [
+        "The stone is heavy."
+      ]
+    },
+    {
+      "id": "7988433",
+      "source": "Ek sal nie die deur sluit nie.",
+      "date": "2019-06-19",
+      "refs": [
+        "I'm not going to lock the door."
+      ]
+    },
+    {
+      "id": "387074",
+      "source": "Jou das is skeef.",
+      "date": "2010-05-08",
+      "refs": [
+        "Your tie is crooked."
+      ]
+    },
+    {
+      "id": "2788246",
+      "source": "Moet niks glo van Tom vir jou vertel nie.",
+      "date": "2013-10-13",
+      "refs": [
+        "Don't believe anything Tom tells you."
+      ]
+    },
+    {
+      "id": "5541935",
+      "source": "Dis nie 'n grappie nie.",
+      "date": "2016-10-23",
+      "refs": [
+        "This isn't a joke."
+      ]
+    },
+    {
+      "id": "2795274",
+      "source": "Tom gaan nie volgende naweek by ons bly nie.",
+      "date": "2013-10-17",
+      "refs": [
+        "Tom won't be staying with us next weekend."
+      ]
+    },
+    {
+      "id": "1813590",
+      "source": "Moenie die hond met 'n klip gooi nie.",
+      "date": "2012-09-03",
+      "refs": [
+        "Don't throw a stone at the dog."
+      ]
+    },
+    {
+      "id": "6456443",
+      "source": "Ek wil nie van hom hoor nie.",
+      "date": "2017-11-10",
+      "refs": [
+        "I don't want to hear about him."
+      ]
+    },
+    {
+      "id": "3328107",
+      "source": "Kan ek vir jou 'n drankie maak?",
+      "date": "2014-06-20",
+      "refs": [
+        "Can I fix you a drink?"
+      ]
+    },
+    {
+      "id": "2783490",
+      "source": "Appels is gewoonlik groen, geel of rooi.",
+      "date": "2013-10-11",
+      "refs": [
+        "Apples are usually green, yellow, or red."
+      ]
+    },
+    {
+      "id": "3331626",
+      "source": "Tom het nie sokkies gedra nie.",
+      "date": "2014-06-21",
+      "refs": [
+        "Tom did not wear socks.",
+        "Tom was not wearing socks.",
+        "Tom wasn't wearing socks."
+      ]
+    },
+    {
+      "id": "4871262",
+      "source": "Ek wil nie laat wees nie.",
+      "date": "2016-01-30",
+      "refs": [
+        "I don't want to be late."
+      ]
+    },
+    {
+      "id": "5681252",
+      "source": "Wie se kar is dit?",
+      "date": "2016-12-13",
+      "refs": [
+        "Whose car is that?",
+        "Whose car is this?"
+      ]
+    },
+    {
+      "id": "2779406",
+      "source": "Ek wonder of mens kan leef met slegs twee uur slaap per nag.",
+      "date": "2013-10-08",
+      "refs": [
+        "I wonder whether man could live with only two hours' sleep a night."
+      ]
+    },
+    {
+      "id": "2783428",
+      "source": "Ek is om verlief te val op jou.",
+      "date": "2013-10-11",
+      "refs": [
+        "I'm falling in love with you."
+      ]
+    },
+    {
+      "id": "5524847",
+      "source": "Dit is egter nie moontlik nie.",
+      "date": "2016-10-17",
+      "refs": [
+        "This, however, is not possible."
+      ]
+    },
+    {
+      "id": "2060240",
+      "source": "Dit is 'n mooi huis.",
+      "date": "2012-12-06",
+      "refs": [
+        "It's a pretty house."
+      ]
+    },
+    {
+      "id": "3436064",
+      "source": "Ek het gedink iets was vreemd.",
+      "date": "2014-08-18",
+      "refs": [
+        "I thought something was strange.",
+        "I thought that something was strange."
+      ]
+    },
+    {
+      "id": "5554700",
+      "source": "Grawe 'n diep gat.",
+      "date": "2016-10-27",
+      "refs": [
+        "Dig a deep hole."
+      ]
+    },
+    {
+      "id": "2364311",
+      "source": "Ek gaan slaap om tien.",
+      "date": "2013-04-07",
+      "refs": [
+        "I go to bed about ten."
+      ]
+    },
+    {
+      "id": "6456370",
+      "source": "Hulle is bekommerd oor haar.",
+      "date": "2017-11-10",
+      "refs": [
+        "They're concerned about her."
+      ]
+    },
+    {
+      "id": "7987689",
+      "source": "Sami sal die reëls verduidelik.",
+      "date": "2019-06-19",
+      "refs": [
+        "Sami will explain the rules."
+      ]
+    },
+    {
+      "id": "6456418",
+      "source": "Hoe voel jy oor hulle?",
+      "date": "2017-11-10",
+      "refs": [
+        "How do you feel about them?"
+      ]
+    },
+    {
+      "id": "8166866",
+      "source": "Tom het nie alles gedoen wat hy gesê hy gedoen het nie.",
+      "date": "2019-09-05",
+      "refs": [
+        "Tom didn't do everything he said he did."
+      ]
+    },
+    {
+      "id": "2783435",
+      "source": "Ek sal terug wees in 'n uur.",
+      "date": "2013-10-11",
+      "refs": [
+        "I'll be back in an hour."
+      ]
+    },
+    {
+      "id": "3936975",
+      "source": "Ek het 'n plek om te bly gesoek.",
+      "date": "2015-03-07",
+      "refs": [
+        "I looked for a place to stay."
+      ]
+    },
+    {
+      "id": "5690959",
+      "source": "Is jy kwaad vir my?",
+      "date": "2016-12-17",
+      "refs": [
+        "Are you mad at me?"
+      ]
+    },
+    {
+      "id": "2786759",
+      "source": "Tom kon nie glo wat aan die gang is nie.",
+      "date": "2013-10-12",
+      "refs": [
+        "Tom couldn't believe what was happening."
+      ]
+    },
+    {
+      "id": "5478629",
+      "source": "Wees rustig tydens die les.",
+      "date": "2016-09-29",
+      "refs": [
+        "Be quiet during the lesson."
+      ]
+    },
+    {
+      "id": "2783932",
+      "source": "Ek is al gewoond daaraan teen nou.",
+      "date": "2013-10-11",
+      "refs": [
+        "I'm used to it by now."
+      ]
+    },
+    {
+      "id": "2535503",
+      "source": "Ek wil nie weer daarvan hoor nie.",
+      "date": "2013-06-30",
+      "refs": [
+        "I don't want to hear about it again."
+      ]
+    },
+    {
+      "id": "2786741",
+      "source": "Ek sal moet terugkom na jou.",
+      "date": "2013-10-12",
+      "refs": [
+        "I'm going to have to get back to you."
+      ]
+    },
+    {
+      "id": "1948715",
+      "source": "Waar kan ek 'n vuvuzela kry?",
+      "date": "2012-10-24",
+      "refs": [
+        "Where can I get a vuvuzela?"
+      ]
+    },
+    {
+      "id": "5540552",
+      "source": "My naam is Tom. Wat's joune?",
+      "date": "2016-10-22",
+      "refs": [
+        "My name is Tom. What's yours?"
+      ]
+    },
+    {
+      "id": "11297404",
+      "source": "Volgens alle bekende reëls van die lugvaart is daar nie 'n manier nie dat 'n by vlieg mag.",
+      "date": "2022-12-05",
+      "refs": [
+        "According to all known laws of aviation, there is no way that a bee should be able to fly."
+      ]
+    },
+    {
+      "id": "7968577",
+      "source": "Ons het dit gekoop.",
+      "date": "2019-06-09",
+      "refs": [
+        "We bought it.",
+        "We bought this."
+      ]
+    },
+    {
+      "id": "2364370",
+      "source": "Dankie vir jou pragtige poskaart.",
+      "date": "2013-04-07",
+      "refs": [
+        "Thank you for your beautiful postcard."
+      ]
+    },
+    {
+      "id": "7988400",
+      "source": "Sami haat dit om oor geld te praat.",
+      "date": "2019-06-19",
+      "refs": [
+        "Sami hates talking about money."
+      ]
+    },
+    {
+      "id": "2783260",
+      "source": "My baas was tevrede met wat ek gedoen het.",
+      "date": "2013-10-11",
+      "refs": [
+        "My boss was satisfied with what I did."
+      ]
+    },
+    {
+      "id": "742913",
+      "source": "Hoe oud is jy?",
+      "date": "2011-02-05",
+      "refs": [
+        "How old are you?"
+      ]
+    },
+    {
+      "id": "1784073",
+      "source": "Gister het ons slegte weer gehad.",
+      "date": "2012-08-18",
+      "refs": [
+        "We had bad weather yesterday."
+      ]
+    },
+    {
+      "id": "2786723",
+      "source": "Die kos het glad nie so sleg geproe nie.",
+      "date": "2013-10-12",
+      "refs": [
+        "The food didn't taste all that bad."
+      ]
+    },
+    {
+      "id": "6456108",
+      "source": "\"Kan ek assebleif met Tom praat?\" \"Ek is jammer, hy het sopas gegaan.\"",
+      "date": "2017-11-10",
+      "refs": [
+        "\"Can I speak to Tom, please?\" \"I'm sorry, he just left.\""
+      ]
+    },
+    {
+      "id": "2786756",
+      "source": "Ek sal nie langer as twee of drie ure neem nie.",
+      "date": "2013-10-12",
+      "refs": [
+        "I won't be more than two or three hours."
+      ]
+    },
+    {
+      "id": "2783877",
+      "source": "Dit maak nie soveel saak nie.",
+      "date": "2013-10-11",
+      "refs": [
+        "It doesn't matter so much."
+      ]
+    },
+    {
+      "id": "1857685",
+      "source": "Die baba het vir my geglimlag.",
+      "date": "2012-09-22",
+      "refs": [
+        "The baby smiled at me."
+      ]
+    },
+    {
+      "id": "4639937",
+      "source": "Tom was baie bang gewees.",
+      "date": "2015-10-24",
+      "refs": [
+        "Tom was very scared."
+      ]
+    },
+    {
+      "id": "7986811",
+      "source": "Is jy 'n elektrisiën in 'n teater?",
+      "date": "2019-06-18",
+      "refs": [
+        "Are you an electrician in a theater?"
+      ]
+    },
+    {
+      "id": "8791972",
+      "source": "Die dame is bewusteloos.",
+      "date": "2020-05-26",
+      "refs": [
+        "The lady is unconscious."
+      ]
+    },
+    {
+      "id": "1730368",
+      "source": "Wanneer en waar kan ons ontmoet?",
+      "date": "2012-07-27",
+      "refs": [
+        "What time and where could we meet?"
+      ]
+    },
+    {
+      "id": "1769357",
+      "source": "Ek wil iets sê.",
+      "date": "2012-08-12",
+      "refs": [
+        "I want to say something."
+      ]
+    },
+    {
+      "id": "2364438",
+      "source": "Ek het nog altyd harde werk met sukses in die lewe assosieer.",
+      "date": "2013-04-07",
+      "refs": [
+        "I have always identified hard work with success in life."
+      ]
+    },
+    {
+      "id": "3514945",
+      "source": "Jy moet dit probeer.",
+      "date": "2014-09-23",
+      "refs": [
+        "You should try it."
+      ]
+    },
+    {
+      "id": "5532359",
+      "source": "My skoonma glimlag nooit.",
+      "date": "2016-10-20",
+      "refs": [
+        "My mother-in-law never smiles."
+      ]
+    },
+    {
+      "id": "387061",
+      "source": "Het jy besluit om Japan toe te gaan?",
+      "date": "2010-05-08",
+      "refs": [
+        "Have you decided to go to Japan?"
+      ]
+    },
+    {
+      "id": "1838947",
+      "source": "Ek wil deelneem aan die protes.",
+      "date": "2012-09-14",
+      "refs": [
+        "I want to participate in the protest."
+      ]
+    },
+    {
+      "id": "1857677",
+      "source": "Ek het slegs 'n nuwe paar skoene gekoop.",
+      "date": "2012-09-22",
+      "refs": [
+        "I just bought a new pair of shoes."
+      ]
+    },
+    {
+      "id": "5540663",
+      "source": "Tom het 'n storie daaroor geskryf.",
+      "date": "2016-10-22",
+      "refs": [
+        "Tom wrote a story about that."
+      ]
+    },
+    {
+      "id": "8166900",
+      "source": "Hulle het gesê dat hulle bly was om jou te sien.",
+      "date": "2019-09-05",
+      "refs": [
+        "They said they were glad to see you."
+      ]
+    },
+    {
+      "id": "2786750",
+      "source": "Ek sal so gou as moontlik terugkom na jou.",
+      "date": "2013-10-12",
+      "refs": [
+        "I'll get back to you as soon as I can."
+      ]
+    },
+    {
+      "id": "7986776",
+      "source": "Ek is net 'n beginner.",
+      "date": "2019-06-18",
+      "refs": [
+        "I'm just a beginner."
+      ]
+    },
+    {
+      "id": "3081354",
+      "source": "Ek het twee katte.",
+      "date": "2014-03-07",
+      "refs": [
+        "I have two cats."
+      ]
+    },
+    {
+      "id": "7986867",
+      "source": "Jy het nie 'n kêrel nodig nie.",
+      "date": "2019-06-18",
+      "refs": [
+        "You don't need a boyfriend."
+      ]
+    },
+    {
+      "id": "2364368",
+      "source": "Tom wil nie die res van sy lewe in die tronk spandeer nie.",
+      "date": "2013-04-07",
+      "refs": [
+        "Tom doesn't want to spend the rest of his life in jail."
+      ]
+    },
+    {
+      "id": "2786678",
+      "source": "Ek sal nou terugkom by jou.",
+      "date": "2013-10-12",
+      "refs": [
+        "I'll get right back to you."
+      ]
+    },
+    {
+      "id": "7987045",
+      "source": "Ek het vir haar 'n nuwe motor gekoop.",
+      "date": "2019-06-18",
+      "refs": [
+        "I bought her a new car."
+      ]
+    },
+    {
+      "id": "3514809",
+      "source": "Ek dink hy weet van ons.",
+      "date": "2014-09-23",
+      "refs": [
+        "I think he knows about us."
+      ]
+    },
+    {
+      "id": "2783957",
+      "source": "Ek sal reg agter jou wees.",
+      "date": "2013-10-11",
+      "refs": [
+        "I'll be right behind you."
+      ]
+    },
+    {
+      "id": "384978",
+      "source": "Los volgende Saterdag middag oop asseblief.",
+      "date": "2010-05-02",
+      "refs": [
+        "Please leave next Saturday afternoon free."
+      ]
+    },
+    {
+      "id": "2784126",
+      "source": "Tom is sopas terug vanaf Boston.",
+      "date": "2013-10-11",
+      "refs": [
+        "Tom just got back from Boston."
+      ]
+    },
+    {
+      "id": "2364369",
+      "source": "Tom mag dit dalk kan doen, maar ek betwyfel dit.",
+      "date": "2013-04-07",
+      "refs": [
+        "Tom might be able to do that, but I doubt it."
+      ]
+    },
+    {
+      "id": "4693707",
+      "source": "Mamma is besig om te werk.",
+      "date": "2015-11-11",
+      "refs": [
+        "Mom is busy working.",
+        "Mum is busy working."
+      ]
+    },
+    {
+      "id": "1948701",
+      "source": "Dis 'n goeie begin.",
+      "date": "2012-10-24",
+      "refs": [
+        "It's a good start."
+      ]
+    },
+    {
+      "id": "5678232",
+      "source": "Tom was ook dronk.",
+      "date": "2016-12-12",
+      "refs": [
+        "Tom was also drunk."
+      ]
+    },
+    {
+      "id": "2364245",
+      "source": "Ek het nie geweet jy kan so goed Frans praat nie.",
+      "date": "2013-04-07",
+      "refs": [
+        "I didn't know that you could speak French so well."
+      ]
+    },
+    {
+      "id": "1766992",
+      "source": "Hy kan 'n bietjie Engels praat.",
+      "date": "2012-08-10",
+      "refs": [
+        "He can speak a little English."
+      ]
+    },
+    {
+      "id": "983996",
+      "source": "Hierdie hond is van my.",
+      "date": "2011-07-10",
+      "refs": [
+        "This dog is mine."
+      ]
+    },
+    {
+      "id": "6456311",
+      "source": "Ek het oor haar rond gevra.",
+      "date": "2017-11-10",
+      "refs": [
+        "I asked around about her."
+      ]
+    },
+    {
+      "id": "5535194",
+      "source": "Hierde boek was baie interessant.",
+      "date": "2016-10-21",
+      "refs": [
+        "This book was very interesting."
+      ]
+    },
+    {
+      "id": "1259062",
+      "source": "Snags is alle katte grou.",
+      "date": "2011-11-24",
+      "refs": [
+        "All cats are grey in the dark.",
+        "At night all cats are grey."
+      ]
+    },
+    {
+      "id": "1815894",
+      "source": "Hierdie tomaties het geen smaak nie.",
+      "date": "2012-09-04",
+      "refs": [
+        "These tomatoes don't have any taste."
+      ]
+    },
+    {
+      "id": "1423624",
+      "source": "Daar is niks snobisties oor haar nie.",
+      "date": "2012-02-09",
+      "refs": [
+        "She has nothing snobbish about her."
+      ]
+    },
+    {
+      "id": "1857668",
+      "source": "My oupa het sy eie meubels gemaak.",
+      "date": "2012-09-22",
+      "refs": [
+        "My grandfather used to make furniture for himself."
+      ]
+    },
+    {
+      "id": "2332508",
+      "source": "Die nuwe biblioteek is in aanbou sedert verlede jaar.",
+      "date": "2013-03-23",
+      "refs": [
+        "The new library has been under construction since last year."
+      ]
+    },
+    {
+      "id": "11321548",
+      "source": "Hy het huis toe gekom.",
+      "date": "2022-12-12",
+      "refs": [
+        "He's come home."
+      ]
+    },
+    {
+      "id": "1830190",
+      "source": "My vader het gese ek mag nie alleen oorsee gaan nie.",
+      "date": "2012-09-10",
+      "refs": [
+        "My father said that I may not go overseas alone."
+      ]
+    },
+    {
+      "id": "4870711",
+      "source": "Ek is lief vir jou seun.",
+      "date": "2016-01-30",
+      "refs": [
+        "I love your son."
+      ]
+    },
+    {
+      "id": "5897666",
+      "source": "Die pensioen is nie genoeg vir die lewenskoste nie.",
+      "date": "2017-02-24",
+      "refs": [
+        "The pension is not sufficient for living expenses."
+      ]
+    },
+    {
+      "id": "1759558",
+      "source": "Die pakkie weeg meer as een pond.",
+      "date": "2012-08-08",
+      "refs": [
+        "The parcel weighs more than one pound."
+      ]
+    },
+    {
+      "id": "6005812",
+      "source": "Hy is geen apteker nie.",
+      "date": "2017-04-10",
+      "refs": [
+        "He's not a pharmacist."
+      ]
+    },
+    {
+      "id": "1769380",
+      "source": "Hoe drink jy jou koffie?",
+      "date": "2012-08-12",
+      "refs": [
+        "How do you like your coffee?"
+      ]
+    },
+    {
+      "id": "2364351",
+      "source": "Die sproeier skiet 'n stroom water oor die gras.",
+      "date": "2013-04-07",
+      "refs": [
+        "The sprinkler is shooting out a stream of water onto the grass."
+      ]
+    },
+    {
+      "id": "2786710",
+      "source": "Ek dog jy sou kwaad vir my wees.",
+      "date": "2013-10-12",
+      "refs": [
+        "I thought that you might be mad at me.",
+        "I thought you might be mad at me."
+      ]
+    },
+    {
+      "id": "1759549",
+      "source": "Niks is heilig nie.",
+      "date": "2012-08-08",
+      "refs": [
+        "Nothing is holy."
+      ]
+    },
+    {
+      "id": "6456253",
+      "source": "Sy is 'n bietjie 'n handvol.",
+      "date": "2017-11-10",
+      "refs": [
+        "She's a bit of a handful."
+      ]
+    },
+    {
+      "id": "10471875",
+      "source": "Hulle is die enigste studente wat Sjinees studeer.",
+      "date": "2021-10-30",
+      "refs": [
+        "They are the only students who study Chinese."
+      ]
+    },
+    {
+      "id": "2783378",
+      "source": "Jy ken nie my pa nie, doen jy?",
+      "date": "2013-10-11",
+      "refs": [
+        "You don't know my dad, do you?"
+      ]
+    },
+    {
+      "id": "3677911",
+      "source": "Sy is soos my eie kind.",
+      "date": "2014-12-06",
+      "refs": [
+        "She is like my own child."
+      ]
+    },
+    {
+      "id": "384917",
+      "source": "Jy mag nou maar gaan meneer.",
+      "date": "2010-05-01",
+      "refs": [
+        "You can go now, sir."
+      ]
+    },
+    {
+      "id": "6458266",
+      "source": "Tom was toe besig.",
+      "date": "2017-11-11",
+      "refs": [
+        "Tom was busy then."
+      ]
+    },
+    {
+      "id": "2795283",
+      "source": "Ek sou ongelukkig nie baie goeie geselskap wees nie.",
+      "date": "2013-10-17",
+      "refs": [
+        "I'm afraid I wouldn't be very good company."
+      ]
+    },
+    {
+      "id": "7986808",
+      "source": "Ek is in 'n toneelstuk.",
+      "date": "2019-06-18",
+      "refs": [
+        "I am in a play."
+      ]
+    },
+    {
+      "id": "6456329",
+      "source": "Hoekom moet ek oor hulle omgee?",
+      "date": "2017-11-10",
+      "refs": [
+        "Why should I care about them?"
+      ]
+    },
+    {
+      "id": "6456519",
+      "source": "My Fraans is sleg.",
+      "date": "2017-11-10",
+      "refs": [
+        "My French is bad."
+      ]
+    },
+    {
+      "id": "2783393",
+      "source": "Studente lees nie baie boeke nie as gevolg van TV en strokiesprente.",
+      "date": "2013-10-11",
+      "refs": [
+        "Students don't read many books because of TV and comics."
+      ]
+    },
+    {
+      "id": "753002",
+      "source": "Ek ken hom nie.",
+      "date": "2011-02-12",
+      "refs": [
+        "I don't know him."
+      ]
+    },
+    {
+      "id": "7986769",
+      "source": "Hoekom het jy na hulle geluister?",
+      "date": "2019-06-18",
+      "refs": [
+        "Why did you listen to them?"
+      ]
+    },
+    {
+      "id": "2364385",
+      "source": "Ons sal hierdie verder bespreek.",
+      "date": "2013-04-07",
+      "refs": [
+        "We will continue the discussion."
+      ]
+    },
+    {
+      "id": "6456226",
+      "source": "Tom skryf selde aan sy ouers.",
+      "date": "2017-11-10",
+      "refs": [
+        "Tom seldom writes to his parents."
+      ]
+    },
+    {
+      "id": "6456368",
+      "source": "Ek was bekommerd oor hulle.",
+      "date": "2017-11-10",
+      "refs": [
+        "I've been concerned about them."
+      ]
+    },
+    {
+      "id": "5535814",
+      "source": "Mooi dag, is dit nie?",
+      "date": "2016-10-21",
+      "refs": [
+        "Beautiful day, isn't it?"
+      ]
+    },
+    {
+      "id": "3211136",
+      "source": "Julle het almal gedoen wat julle kon.",
+      "date": "2014-04-28",
+      "refs": [
+        "You all did what you could."
+      ]
+    },
+    {
+      "id": "1765245",
+      "source": "Kan ek jou help?",
+      "date": "2012-08-10",
+      "refs": [
+        "Can I help you?"
+      ]
+    }
+  ]
+}

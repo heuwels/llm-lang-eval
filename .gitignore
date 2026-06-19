@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+tmp/
+
+# Secrets — never commit (OpenRouter etc.)
+.env
+.env.*
+!.env.example
+
+# Large raw Tatoeba dumps and per-model raw outputs are regenerable.
+data/raw/
+results/raw_outputs/
+
+# Test sets (data/testsets/) and results/scores.json ARE committed for
+# reproducibility — they are small and seeded.

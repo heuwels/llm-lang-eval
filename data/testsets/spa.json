@@ -1,0 +1,1428 @@
+{
+  "meta": {
+    "lang": "spa",
+    "language_name": "Spanish",
+    "requested": 200,
+    "available": 223632,
+    "selected": 200,
+    "seed": 13,
+    "filters": {
+      "min_words": 4,
+      "max_words": 25
+    },
+    "multi_ref": true,
+    "source_corpus": "Tatoeba",
+    "license": "CC-BY 2.0 FR"
+  },
+  "items": [
+    {
+      "id": "9996690",
+      "source": "¿Te vas a Australia de vacaciones?",
+      "refs": [
+        "Are you going to Australia on vacation?"
+      ]
+    },
+    {
+      "id": "8631892",
+      "source": "¿Tom es su amigo?",
+      "refs": [
+        "Is Tom your friend?"
+      ]
+    },
+    {
+      "id": "2327307",
+      "source": "No estoy tan borracho.",
+      "refs": [
+        "I'm not that drunk."
+      ]
+    },
+    {
+      "id": "1953468",
+      "source": "Se me olvidó su nombre.",
+      "refs": [
+        "I forgot his name."
+      ]
+    },
+    {
+      "id": "2815629",
+      "source": "Hoy es el cumpleaños de mi hija.",
+      "refs": [
+        "Today's my daughter's birthday."
+      ]
+    },
+    {
+      "id": "1263582",
+      "source": "Yo encuentro su apariencia atractiva.",
+      "refs": [
+        "I find her appearance attractive."
+      ]
+    },
+    {
+      "id": "1038577",
+      "source": "Nuestro bebé está aprendiendo a hablar.",
+      "refs": [
+        "Our baby is learning to speak."
+      ]
+    },
+    {
+      "id": "2397536",
+      "source": "María le dijo a la Policía que ella había visto a Tom.",
+      "refs": [
+        "Mary told the police that she had seen Tom."
+      ]
+    },
+    {
+      "id": "1606388",
+      "source": "Él se puso con el trabajo.",
+      "refs": [
+        "He set about the work."
+      ]
+    },
+    {
+      "id": "1912220",
+      "source": "Estoy viendo una corona.",
+      "refs": [
+        "I see a crown."
+      ]
+    },
+    {
+      "id": "5750195",
+      "source": "Añade 100 gramos de azúcar a la mezcla.",
+      "refs": [
+        "Add 100 grams of sugar to the mixture."
+      ]
+    },
+    {
+      "id": "5704881",
+      "source": "Tu aprobación es importante para mí.",
+      "refs": [
+        "Your approval is important to me."
+      ]
+    },
+    {
+      "id": "1272526",
+      "source": "George Washington fue el primer presidente de Estados Unidos de América.",
+      "refs": [
+        "George Washington was the first President of the United States of America."
+      ]
+    },
+    {
+      "id": "1492032",
+      "source": "Pídele ayuda a tu padre.",
+      "refs": [
+        "Ask your dad to help you."
+      ]
+    },
+    {
+      "id": "1179335",
+      "source": "Hay pocas chances de mantenerte esbelto, a menos que te apegues a una dieta.",
+      "refs": [
+        "There's little chance of keeping slim, unless you stick to a diet."
+      ]
+    },
+    {
+      "id": "3393058",
+      "source": "Ansiaba oírle decir que la amaba.",
+      "refs": [
+        "She longed to hear him say that he loved her."
+      ]
+    },
+    {
+      "id": "12848538",
+      "source": "Este aparato usa poca electricidad.",
+      "refs": [
+        "This device uses little electricity."
+      ]
+    },
+    {
+      "id": "808131",
+      "source": "¿Sabes distinguir la mantequilla de la margarina?",
+      "refs": [
+        "Can you tell butter from margarine?"
+      ]
+    },
+    {
+      "id": "8926036",
+      "source": "No, lo siento, pero de verdad que no puedo hacerlo.",
+      "refs": [
+        "No, I'm sorry, but I swear I can't do it."
+      ]
+    },
+    {
+      "id": "1232964",
+      "source": "Me están saliendo las muelas del juicio.",
+      "refs": [
+        "My wisdom teeth are coming in."
+      ]
+    },
+    {
+      "id": "6816393",
+      "source": "Ahora hay que enharinar el filete.",
+      "refs": [
+        "Now we have to flour the fillet."
+      ]
+    },
+    {
+      "id": "5767249",
+      "source": "Su indefensión apela a su compasión maternal.",
+      "refs": [
+        "His helplessness appeals to her motherly sympathy."
+      ]
+    },
+    {
+      "id": "1649139",
+      "source": "No lo puedo detener.",
+      "refs": [
+        "I can't stop him.",
+        "I cannot stop him."
+      ]
+    },
+    {
+      "id": "475340",
+      "source": "¿Cuál es el nombre de esta calle, por favor?",
+      "refs": [
+        "What's the name of this street, please?"
+      ]
+    },
+    {
+      "id": "1102734",
+      "source": "Pocos comprendieron lo que dijo.",
+      "refs": [
+        "Only a few understood what he said."
+      ]
+    },
+    {
+      "id": "10281462",
+      "source": "Nos llevó más tiempo hacerlo de lo que esperábamos.",
+      "refs": [
+        "It took us longer to do that than we expected."
+      ]
+    },
+    {
+      "id": "7917732",
+      "source": "Te daré todo lo que hay en esta caja.",
+      "refs": [
+        "I'll give you everything in this box."
+      ]
+    },
+    {
+      "id": "855619",
+      "source": "Estoy escuchando su recital.",
+      "refs": [
+        "I am listening to his recital."
+      ]
+    },
+    {
+      "id": "11931379",
+      "source": "La religión es un asunto privado.",
+      "refs": [
+        "Religion is a private affair."
+      ]
+    },
+    {
+      "id": "1102687",
+      "source": "¿Dónde fue a parar todo el pan?",
+      "refs": [
+        "Where did all the bread go?"
+      ]
+    },
+    {
+      "id": "589507",
+      "source": "¿De dónde salen los autobuses del aeropuerto?",
+      "refs": [
+        "Where do the airport buses leave from?"
+      ]
+    },
+    {
+      "id": "1307227",
+      "source": "Él habría tenido éxito.",
+      "refs": [
+        "He would have succeeded."
+      ]
+    },
+    {
+      "id": "1806905",
+      "source": "Estoy muy contento con mi nueva casa.",
+      "refs": [
+        "I am very pleased with my new house.",
+        "I'm very pleased with my new house."
+      ]
+    },
+    {
+      "id": "3747865",
+      "source": "Usted está leyendo mis pensamientos.",
+      "refs": [
+        "You are reading my thoughts."
+      ]
+    },
+    {
+      "id": "2229492",
+      "source": "Realmente me agrada el concepto de este sitio web.",
+      "refs": [
+        "I really like the concept of this website."
+      ]
+    },
+    {
+      "id": "10615784",
+      "source": "¿Eres un diccionario andante?",
+      "refs": [
+        "Are you a walking dictionary?"
+      ]
+    },
+    {
+      "id": "12857979",
+      "source": "Ziri casi se pegó la cabeza.",
+      "refs": [
+        "Ziri almost hit his head."
+      ]
+    },
+    {
+      "id": "2040621",
+      "source": "Le agradecería mucho que los enviase por avión.",
+      "refs": [
+        "I should be very grateful if you would send them by air."
+      ]
+    },
+    {
+      "id": "2268436",
+      "source": "El enfermo está en el hospital.",
+      "refs": [
+        "The patient's in the hospital."
+      ]
+    },
+    {
+      "id": "1630493",
+      "source": "Muchas gracias, no sé qué haríamos sin vosotros.",
+      "refs": [
+        "Thanks a lot. I don't know what we would do without you."
+      ]
+    },
+    {
+      "id": "1739757",
+      "source": "La puerta estaba cerrada, así que no pude entrar.",
+      "refs": [
+        "The door was locked, so I couldn't get in."
+      ]
+    },
+    {
+      "id": "855594",
+      "source": "El genial hombre recibió el prestigioso premio por primera vez.",
+      "refs": [
+        "The ingenious man received the prestigious award for the first time."
+      ]
+    },
+    {
+      "id": "444395",
+      "source": "Frota la mancha con vinagre.",
+      "refs": [
+        "Rub the stain with vinegar."
+      ]
+    },
+    {
+      "id": "3037693",
+      "source": "Estoy vendiendo mi coche con pérdida.",
+      "refs": [
+        "I'm selling my car at a loss."
+      ]
+    },
+    {
+      "id": "1190843",
+      "source": "Esto es culpa tuya.",
+      "refs": [
+        "This is on you.",
+        "This is your fault."
+      ]
+    },
+    {
+      "id": "3392078",
+      "source": "Este libro no es tan pesado como aquel.",
+      "refs": [
+        "This book isn't as heavy as that one."
+      ]
+    },
+    {
+      "id": "4463376",
+      "source": "Hideyo Noguchi era un gran hombre.",
+      "refs": [
+        "Hideyo Noguchi was a great man."
+      ]
+    },
+    {
+      "id": "4452282",
+      "source": "Las ayudas digitales nos hacen la vida más fácil. En vez de fiarnos de nuestra memoria, preferimos memorias externas. ¿A dónde nos llevará esta tendencia?",
+      "refs": [
+        "Digital helpers make our everyday life easier. Instead of relying on our own memory, we prefer external ones. Where will this trend lead?"
+      ]
+    },
+    {
+      "id": "3112463",
+      "source": "Es a ti a quien ella ama, no a mí.",
+      "refs": [
+        "It's you that she loves, not me."
+      ]
+    },
+    {
+      "id": "1421807",
+      "source": "Soy la oveja negra de la familia.",
+      "refs": [
+        "I'm the black sheep of the family."
+      ]
+    },
+    {
+      "id": "3295215",
+      "source": "¿Cómo se llama tu abogado?",
+      "refs": [
+        "What's your lawyer's name?"
+      ]
+    },
+    {
+      "id": "871314",
+      "source": "La \"h\" no se pronuncia en español, a menos que esté precedida de \"c\".",
+      "refs": [
+        "\"H\" is not pronounced in Spanish unless it is preceded by \"c.\""
+      ]
+    },
+    {
+      "id": "2790041",
+      "source": "Melanie está bebiendo leche.",
+      "refs": [
+        "Melanie is drinking milk."
+      ]
+    },
+    {
+      "id": "976222",
+      "source": "Cuando ya hable bien el holandés, charlaré con las flamencas.",
+      "refs": [
+        "As soon as I speak Dutch well, I will chat with Flemish women."
+      ]
+    },
+    {
+      "id": "9667911",
+      "source": "¿Qué quiere decir esta expresión en este contexto?",
+      "refs": [
+        "What does this expression mean in this context?"
+      ]
+    },
+    {
+      "id": "762104",
+      "source": "Él es buen carpintero.",
+      "refs": [
+        "He is a good carpenter."
+      ]
+    },
+    {
+      "id": "1208998",
+      "source": "El completo opuesto es la verdad.",
+      "refs": [
+        "The very opposite is the truth."
+      ]
+    },
+    {
+      "id": "1335504",
+      "source": "Leo mis comics y soy feliz.",
+      "refs": [
+        "I read my comic books and I'm happy."
+      ]
+    },
+    {
+      "id": "5980022",
+      "source": "¿Abriste todas las cajas?",
+      "refs": [
+        "Did you open all the boxes?"
+      ]
+    },
+    {
+      "id": "6298671",
+      "source": "¿Es bueno saber siempre la verdad?",
+      "refs": [
+        "Is it always good to know the truth?"
+      ]
+    },
+    {
+      "id": "2209557",
+      "source": "Mamá, ¿todavía recuerdas cómo se hace?",
+      "refs": [
+        "Mom, do you still remember how to do it?"
+      ]
+    },
+    {
+      "id": "10140859",
+      "source": "Tienen celos de nosotros.",
+      "refs": [
+        "They are jealous of us."
+      ]
+    },
+    {
+      "id": "1415459",
+      "source": "Y yo respondo: no.",
+      "refs": [
+        "And I answer: no."
+      ]
+    },
+    {
+      "id": "1235212",
+      "source": "Debes pagar extra por las baterías.",
+      "refs": [
+        "You need to pay extra for the batteries."
+      ]
+    },
+    {
+      "id": "2907450",
+      "source": "¿Quién quiere traducir este artículo?",
+      "refs": [
+        "Who wants to translate this article?"
+      ]
+    },
+    {
+      "id": "1920170",
+      "source": "Muchísimas gracias por tu regalo.",
+      "refs": [
+        "Thank you very much for your present."
+      ]
+    },
+    {
+      "id": "509781",
+      "source": "Tenía 23 años de edad cuando pinté este cuadro.",
+      "refs": [
+        "When I painted this picture, I was 23 years old."
+      ]
+    },
+    {
+      "id": "702689",
+      "source": "Por favor, no preguntes.",
+      "refs": [
+        "Please don't ask."
+      ]
+    },
+    {
+      "id": "642409",
+      "source": "Al llegar allí, fue a verla.",
+      "refs": [
+        "On arriving there, he went to see her."
+      ]
+    },
+    {
+      "id": "6132867",
+      "source": "Tom sólo está tratando de sobrevivir.",
+      "refs": [
+        "Tom is just trying to survive."
+      ]
+    },
+    {
+      "id": "844018",
+      "source": "La entrevista comenzó a las 10.",
+      "refs": [
+        "The interview began at 10 o'clock."
+      ]
+    },
+    {
+      "id": "1745929",
+      "source": "Almuerzo con el gerente casi todos los días.",
+      "refs": [
+        "I have lunch with the manager almost every day."
+      ]
+    },
+    {
+      "id": "931299",
+      "source": "Él ha escrito muchos libros sobre su experiencia en el exterior.",
+      "refs": [
+        "He has written lots of books about his experience abroad."
+      ]
+    },
+    {
+      "id": "1406645",
+      "source": "No puedo creer que ella sea mayor que mi madre.",
+      "refs": [
+        "I can't believe that she is older than my mother."
+      ]
+    },
+    {
+      "id": "10768704",
+      "source": "Nadie me espera en ningún sitio.",
+      "refs": [
+        "Nobody is waiting for me anywhere."
+      ]
+    },
+    {
+      "id": "1689635",
+      "source": "El tatarabuelo de Tom fue un pirata.",
+      "refs": [
+        "Tom's great-great-grandfather was a pirate."
+      ]
+    },
+    {
+      "id": "1710959",
+      "source": "¿Por qué no escuchas a la razón?",
+      "refs": [
+        "Why will you not listen to reason?"
+      ]
+    },
+    {
+      "id": "2199657",
+      "source": "El ascensor no funciona.",
+      "refs": [
+        "The elevator isn't running."
+      ]
+    },
+    {
+      "id": "2869420",
+      "source": "\"¿Puedo ayudarte?\" \"Sí, estoy buscando un vestido.\"",
+      "refs": [
+        "\"May I help you?\" \"Yes, I'm looking for a dress.\""
+      ]
+    },
+    {
+      "id": "1084642",
+      "source": "Tengo un poco de fiebre hoy.",
+      "refs": [
+        "I have a slight fever today."
+      ]
+    },
+    {
+      "id": "1503495",
+      "source": "Tírame la pelota de vuelta.",
+      "refs": [
+        "Throw the ball back to me."
+      ]
+    },
+    {
+      "id": "966309",
+      "source": "La experiencia es la mejor instrucción.",
+      "refs": [
+        "Experience is the best teacher."
+      ]
+    },
+    {
+      "id": "1070814",
+      "source": "Participé en la competencia.",
+      "refs": [
+        "I took part in the contest."
+      ]
+    },
+    {
+      "id": "1241069",
+      "source": "Tú eres un panda.",
+      "refs": [
+        "You are a panda."
+      ]
+    },
+    {
+      "id": "11532522",
+      "source": "Nos vamos en una hora. ¿Cuándo te prepararás?",
+      "refs": [
+        "We are leaving in an hour. When will you get ready?"
+      ]
+    },
+    {
+      "id": "10569824",
+      "source": "Mi mamá nos hizo las maletas.",
+      "refs": [
+        "My mom packed our suitcases."
+      ]
+    },
+    {
+      "id": "1718175",
+      "source": "El juego fue cancelado.",
+      "refs": [
+        "The game was called off."
+      ]
+    },
+    {
+      "id": "864849",
+      "source": "Él y yo hemos sido amigos inseparables desde nuestra época de estudiantes.",
+      "refs": [
+        "He and I have been inseparable friends since our student days."
+      ]
+    },
+    {
+      "id": "11952731",
+      "source": "He modificado mi traducción como corresponde.",
+      "refs": [
+        "I have modified my translation accordingly."
+      ]
+    },
+    {
+      "id": "1683819",
+      "source": "¿Qué diablos es esa cosa?",
+      "refs": [
+        "What the hell is that thing?"
+      ]
+    },
+    {
+      "id": "5473590",
+      "source": "¿Tenéis las fotos de Boston?",
+      "refs": [
+        "Do you guys have the photos from Boston?",
+        "Do you guys have the photos of Boston?"
+      ]
+    },
+    {
+      "id": "937276",
+      "source": "Ellos lograron una victoria.",
+      "refs": [
+        "They gained a victory."
+      ]
+    },
+    {
+      "id": "1580391",
+      "source": "Él está pintando su casa.",
+      "refs": [
+        "He's painting his house."
+      ]
+    },
+    {
+      "id": "2001708",
+      "source": "¿Qué se te ocurrió?",
+      "refs": [
+        "What have you come up with?"
+      ]
+    },
+    {
+      "id": "6866536",
+      "source": "Nunca podré hacerlo tan bien como tú.",
+      "refs": [
+        "I'll never be able to do that as well as you."
+      ]
+    },
+    {
+      "id": "13816774",
+      "source": "Soy un hombre terco.",
+      "refs": [
+        "I'm a stubborn man."
+      ]
+    },
+    {
+      "id": "803447",
+      "source": "La pelota de golf casi entró en el hoyo.",
+      "refs": [
+        "The golf ball almost went in the hole."
+      ]
+    },
+    {
+      "id": "1354675",
+      "source": "Ellos simpatizaron con el miserable criminal.",
+      "refs": [
+        "They sympathized with the miserable criminal."
+      ]
+    },
+    {
+      "id": "694570",
+      "source": "¿Cómo de formal es esta ceremonia?",
+      "refs": [
+        "How formal is this ceremony?"
+      ]
+    },
+    {
+      "id": "8005654",
+      "source": "Mary vino a visitarnos con su nuevo novio.",
+      "refs": [
+        "Mary came to visit us with her new boyfriend."
+      ]
+    },
+    {
+      "id": "7559569",
+      "source": "¿Qué tengo que cambiar?",
+      "refs": [
+        "What do I have to change?"
+      ]
+    },
+    {
+      "id": "6881750",
+      "source": "Tom se negó a abrir la puerta.",
+      "refs": [
+        "Tom refused to open the door."
+      ]
+    },
+    {
+      "id": "1392519",
+      "source": "¿Es esa la llave que buscas?",
+      "refs": [
+        "Is that the key you're looking for?"
+      ]
+    },
+    {
+      "id": "6760640",
+      "source": "¿Puedes ir a buscar leña?",
+      "refs": [
+        "Could you go get some wood for the fire?"
+      ]
+    },
+    {
+      "id": "4435664",
+      "source": "Cree que no sé lo que dijo.",
+      "refs": [
+        "She thinks I don't know what she said."
+      ]
+    },
+    {
+      "id": "434529",
+      "source": "¿Tenemos que bajar del tren en la frontera?",
+      "refs": [
+        "Do we have to get off the train at the border?"
+      ]
+    },
+    {
+      "id": "1574751",
+      "source": "Flores diferentes tienen significados diferentes.",
+      "refs": [
+        "Different flowers represent different meanings."
+      ]
+    },
+    {
+      "id": "1406548",
+      "source": "Ella no pudo entender ni una sola palabra.",
+      "refs": [
+        "She failed to understand a single word."
+      ]
+    },
+    {
+      "id": "6549344",
+      "source": "Estoy en casa de mis padres.",
+      "refs": [
+        "I'm at my parents' house."
+      ]
+    },
+    {
+      "id": "347501",
+      "source": "Él llegó demasiado pronto.",
+      "refs": [
+        "He arrived too early."
+      ]
+    },
+    {
+      "id": "12659819",
+      "source": "Ella escribió un libro sobre los pájaros.",
+      "refs": [
+        "She wrote a book about birds."
+      ]
+    },
+    {
+      "id": "12969841",
+      "source": "No creo que Tom vaya a volver a hacer eso jamás.",
+      "refs": [
+        "I don't think that Tom is going to do that anymore."
+      ]
+    },
+    {
+      "id": "1689452",
+      "source": "Si él vuelve a agredirte, no dudes en llamar a la policía.",
+      "refs": [
+        "If he attacks you again, don't hesitate to call the police."
+      ]
+    },
+    {
+      "id": "545197",
+      "source": "¿Por qué lo has hecho?",
+      "refs": [
+        "Why did you do that?"
+      ]
+    },
+    {
+      "id": "1310071",
+      "source": "Tú sabes hablar el francés con fluidez.",
+      "refs": [
+        "You know how to speak French fluently."
+      ]
+    },
+    {
+      "id": "10823963",
+      "source": "Tatoeba es un libro que se ha escrito en cientos de idiomas y que ya tiene más de un millón de páginas.",
+      "refs": [
+        "Tatoeba is a book that has been written in hundreds of languages and is now over a million pages long."
+      ]
+    },
+    {
+      "id": "8252683",
+      "source": "La polución auditiva en aquella ciudad era horrorosa.",
+      "refs": [
+        "The noise pollution in that city was horrifying."
+      ]
+    },
+    {
+      "id": "831226",
+      "source": "¿Es verdad que te vas a ir a estudiar a Londres?",
+      "refs": [
+        "Is it true that you are going to study in London?"
+      ]
+    },
+    {
+      "id": "2259652",
+      "source": "Adelantaron a todos los demás.",
+      "refs": [
+        "They went ahead of all the others."
+      ]
+    },
+    {
+      "id": "957258",
+      "source": "No hables con las manos en los bolsillos.",
+      "refs": [
+        "Don't speak with your hands in your pockets."
+      ]
+    },
+    {
+      "id": "1279924",
+      "source": "Tom dijo que entiende cómo te sientes.",
+      "refs": [
+        "Tom said he understood how you were feeling."
+      ]
+    },
+    {
+      "id": "457860",
+      "source": "Hay muchas flores rojas en el jardín.",
+      "refs": [
+        "There are many red flowers in the garden."
+      ]
+    },
+    {
+      "id": "5854175",
+      "source": "Evita cruzar esta calle cuando llueve.",
+      "refs": [
+        "Avoid crossing this street when it is raining."
+      ]
+    },
+    {
+      "id": "10104924",
+      "source": "Dan tenía permiso de ausentarse.",
+      "refs": [
+        "Dan was on a leave of absence."
+      ]
+    },
+    {
+      "id": "1784333",
+      "source": "Deberías ir a verlo por ti mismo.",
+      "refs": [
+        "You should go and see for yourself."
+      ]
+    },
+    {
+      "id": "574391",
+      "source": "Estoy ocupado preparando para el siguiente examen.",
+      "refs": [
+        "I am busy preparing for the next exam."
+      ]
+    },
+    {
+      "id": "4695568",
+      "source": "La policía la busca.",
+      "refs": [
+        "The police are looking for her."
+      ]
+    },
+    {
+      "id": "1305651",
+      "source": "Oí que él come ranas.",
+      "refs": [
+        "I hear that he eats frogs."
+      ]
+    },
+    {
+      "id": "13028717",
+      "source": "Tom se negó a admitir la derrota.",
+      "refs": [
+        "Tom refused to acknowledge defeat."
+      ]
+    },
+    {
+      "id": "663788",
+      "source": "Él puso atención en lo que ella dijo.",
+      "refs": [
+        "He concentrated his attention on what she said."
+      ]
+    },
+    {
+      "id": "1704896",
+      "source": "El odio no aparece sencillamente de la nada, comúnmente sale de la envidia o el miedo.",
+      "refs": [
+        "Hatred doesn't just appear out of thin air; it usually starts from envy or fear."
+      ]
+    },
+    {
+      "id": "1297004",
+      "source": "Sólo queda una lata de carne.",
+      "refs": [
+        "There is only one can of meat left."
+      ]
+    },
+    {
+      "id": "856257",
+      "source": "De alguna forma saldremos adelante sin dinero.",
+      "refs": [
+        "We'll get along without that much money somehow."
+      ]
+    },
+    {
+      "id": "4250692",
+      "source": "Nuestro plan salió mal desde el principio.",
+      "refs": [
+        "Our plan went wrong from the beginning."
+      ]
+    },
+    {
+      "id": "1618535",
+      "source": "Bailamos bajo la tenue luz.",
+      "refs": [
+        "We danced in the subdued lighting."
+      ]
+    },
+    {
+      "id": "4317952",
+      "source": "¿Cómo pudo ocurrir todo esto?",
+      "refs": [
+        "How could this all happen?"
+      ]
+    },
+    {
+      "id": "2253321",
+      "source": "Tome un libro del estante.",
+      "refs": [
+        "Take a book from the shelf."
+      ]
+    },
+    {
+      "id": "13555865",
+      "source": "John se había puesto el jersey del revés.",
+      "refs": [
+        "John had put his sweater on inside out."
+      ]
+    },
+    {
+      "id": "12987179",
+      "source": "La extensión instalada no está soportada para esta versión del navegador.",
+      "refs": [
+        "The installed extension is not supported for this version of the browser."
+      ]
+    },
+    {
+      "id": "436820",
+      "source": "Necesito un chocolate caliente.",
+      "refs": [
+        "I need a hot chocolate."
+      ]
+    },
+    {
+      "id": "987211",
+      "source": "Iré al baile aunque no te guste.",
+      "refs": [
+        "I'm going to the dance, even though you don't like it."
+      ]
+    },
+    {
+      "id": "1336666",
+      "source": "Dámelo con mucho hielo.",
+      "refs": [
+        "I want it with plenty of ice."
+      ]
+    },
+    {
+      "id": "13905727",
+      "source": "Una semana tiene siete días: lunes, martes, miércoles, jueves, viernes, sábado y domingo.",
+      "refs": [
+        "A week has seven days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday and Sunday."
+      ]
+    },
+    {
+      "id": "13035672",
+      "source": "No se suponía que estuvieras aquí.",
+      "refs": [
+        "You were not supposed to be here."
+      ]
+    },
+    {
+      "id": "2041649",
+      "source": "Tal vez quieras hablar con Tom.",
+      "refs": [
+        "You might want to talk to Tom."
+      ]
+    },
+    {
+      "id": "1406553",
+      "source": "Ella ha bebido bastante.",
+      "refs": [
+        "She has had quite a lot to drink."
+      ]
+    },
+    {
+      "id": "1330820",
+      "source": "Ella esperaba que él solucionara el problema.",
+      "refs": [
+        "She expected him to solve the problem."
+      ]
+    },
+    {
+      "id": "8621076",
+      "source": "Tom se está escondiendo debajo de la cama.",
+      "refs": [
+        "Tom is hiding under the bed."
+      ]
+    },
+    {
+      "id": "2267590",
+      "source": "Mi amigo quiere negociar con casas sudamericanas.",
+      "refs": [
+        "My friend wants to do business with South American firms."
+      ]
+    },
+    {
+      "id": "637326",
+      "source": "Para los otros 600 millones de personas, el inglés es o una segunda lengua, o una lengua extranjera.",
+      "refs": [
+        "For the other 600 million people, English is either a second language or a foreign language."
+      ]
+    },
+    {
+      "id": "2721562",
+      "source": "Japón importa naranjas desde California.",
+      "refs": [
+        "Japan imports oranges from California."
+      ]
+    },
+    {
+      "id": "1580244",
+      "source": "¿Cuándo nos vamos a casa?",
+      "refs": [
+        "When will we go home?"
+      ]
+    },
+    {
+      "id": "1041707",
+      "source": "¿Me puedo quedar en tu casa? No tengo a donde ir.",
+      "refs": [
+        "Can I stay at your house? I don't have a place to go.",
+        "Can I stay at your place? I have nowhere to go."
+      ]
+    },
+    {
+      "id": "9667482",
+      "source": "¿Por qué no se lo dices tú?",
+      "refs": [
+        "Why don't you tell her yourself?"
+      ]
+    },
+    {
+      "id": "12149294",
+      "source": "La gimnasta ejecutó muy bien su ejercicio.",
+      "refs": [
+        "The gymnast executed her exercise very well."
+      ]
+    },
+    {
+      "id": "1643005",
+      "source": "Él fue en lugar de su padre.",
+      "refs": [
+        "He went instead of his father."
+      ]
+    },
+    {
+      "id": "10124629",
+      "source": "Tom durmió sin almohada.",
+      "refs": [
+        "Tom slept without a pillow."
+      ]
+    },
+    {
+      "id": "863160",
+      "source": "La educación es el único camino que conduce a la paz y a la felicidad de las personas como personas.",
+      "refs": [
+        "Education is the only way that leads to peace and happiness for people as individuals."
+      ]
+    },
+    {
+      "id": "10063053",
+      "source": "¡Mirad lo que habéis hecho!",
+      "refs": [
+        "Look at what you've done!"
+      ]
+    },
+    {
+      "id": "740411",
+      "source": "No rompas las ramas.",
+      "refs": [
+        "Don't break the branches."
+      ]
+    },
+    {
+      "id": "1455714",
+      "source": "A pesar de que reuní valor e invité a Mary a ver una película, me dejó plantado.",
+      "refs": [
+        "Even though I plucked up courage to invite Mary to a film, she stood me up."
+      ]
+    },
+    {
+      "id": "1302163",
+      "source": "Quiero que me beses.",
+      "refs": [
+        "I want you to kiss me."
+      ]
+    },
+    {
+      "id": "3100678",
+      "source": "Su interpretación en el piano sonó fantástico.",
+      "refs": [
+        "His piano playing sounded fantastic."
+      ]
+    },
+    {
+      "id": "505988",
+      "source": "¿Qué piensas que lo hizo romper su promesa?",
+      "refs": [
+        "What do you think made him break his promise?"
+      ]
+    },
+    {
+      "id": "344079",
+      "source": "Parece que ella tiene muchos amigos.",
+      "refs": [
+        "It looks like she has a lot of friends.",
+        "It looks like she's got a lot of friends.",
+        "She appears to have a lot of friends.",
+        "She appears to have many friends."
+      ]
+    },
+    {
+      "id": "892043",
+      "source": "Soy un hombre que no soporta estar solo.",
+      "refs": [
+        "I am a man who can't stand being alone.",
+        "I'm a man who can't stand being alone."
+      ]
+    },
+    {
+      "id": "1049263",
+      "source": "El jardinero plantó un rosal en medio del jardín.",
+      "refs": [
+        "The gardener planted a rose tree in the middle of the garden."
+      ]
+    },
+    {
+      "id": "11144497",
+      "source": "El compromiso es el arte de partir un pastel de tal manera que todos piensen que tienen el pedazo más grande.",
+      "refs": [
+        "A compromise is the art of dividing a cake so that everybody thinks they got the biggest piece."
+      ]
+    },
+    {
+      "id": "673917",
+      "source": "El avión despegó con facilidad.",
+      "refs": [
+        "The plane took off easily."
+      ]
+    },
+    {
+      "id": "453688",
+      "source": "Ella tiene pocos amigos.",
+      "refs": [
+        "She has few friends."
+      ]
+    },
+    {
+      "id": "1711135",
+      "source": "Soy un estudiante inglés.",
+      "refs": [
+        "I am an English student."
+      ]
+    },
+    {
+      "id": "1723648",
+      "source": "Me perdí la primera vez que fui a visitarte.",
+      "refs": [
+        "I got lost when I visited you for the first time."
+      ]
+    },
+    {
+      "id": "854773",
+      "source": "Disculpe, ¿qué hora es?",
+      "refs": [
+        "Excuse me, what time is it?"
+      ]
+    },
+    {
+      "id": "2827901",
+      "source": "Ella se durmió a las diez ayer.",
+      "refs": [
+        "She slept at ten o'clock yesterday."
+      ]
+    },
+    {
+      "id": "6791361",
+      "source": "No se sabe si alguien le ayudó.",
+      "refs": [
+        "No one knows if someone helped him."
+      ]
+    },
+    {
+      "id": "5769394",
+      "source": "Estaré listo para el lunes.",
+      "refs": [
+        "I'll be ready by Monday."
+      ]
+    },
+    {
+      "id": "11699307",
+      "source": "Deberíamos seguir el consejo del profesor.",
+      "refs": [
+        "We should follow the teacher's advice."
+      ]
+    },
+    {
+      "id": "6682546",
+      "source": "¿Vas a hacer eso?",
+      "refs": [
+        "Are you going to do that?"
+      ]
+    },
+    {
+      "id": "5840337",
+      "source": "Tom buscaba un trabajo.",
+      "refs": [
+        "Tom was looking for a job."
+      ]
+    },
+    {
+      "id": "11885463",
+      "source": "Tom puede ser cómplice de homicidio.",
+      "refs": [
+        "Tom may be an accessory to murder."
+      ]
+    },
+    {
+      "id": "1085429",
+      "source": "Preferiría tener un gato que un perro.",
+      "refs": [
+        "I would rather have a cat than a dog."
+      ]
+    },
+    {
+      "id": "1202418",
+      "source": "¿Qué fue inventado por Bell?",
+      "refs": [
+        "What was invented by Bell?"
+      ]
+    },
+    {
+      "id": "1185742",
+      "source": "Yo salí temprano de casa para así poder coger un buen asiento.",
+      "refs": [
+        "I left home early to get a good seat."
+      ]
+    },
+    {
+      "id": "2230050",
+      "source": "Podéis ver la televisión después de cenar.",
+      "refs": [
+        "You can watch television after dinner."
+      ]
+    },
+    {
+      "id": "1292826",
+      "source": "Él pagó todas sus deudas, lo que da prueba de su honestidad.",
+      "refs": [
+        "He paid all his debts, which is the proof of his honesty."
+      ]
+    },
+    {
+      "id": "7923175",
+      "source": "¿Crees que debería detener a Tom?",
+      "refs": [
+        "Do you think I should stop Tom?"
+      ]
+    },
+    {
+      "id": "2032101",
+      "source": "Fred le escribió una larga carta a su madre.",
+      "refs": [
+        "Fred wrote his mother a long letter."
+      ]
+    },
+    {
+      "id": "6692076",
+      "source": "Te has olvidado tirar de la cadena.",
+      "refs": [
+        "You forgot to flush the toilet."
+      ]
+    },
+    {
+      "id": "2566038",
+      "source": "Te llamo mañana a la mañana.",
+      "refs": [
+        "I'll give you a ring tomorrow morning."
+      ]
+    },
+    {
+      "id": "12573603",
+      "source": "Tom tiene un nuevo plan.",
+      "refs": [
+        "Tom has a new plan."
+      ]
+    },
+    {
+      "id": "2136982",
+      "source": "No me puedo acordar de cómo ir ahí.",
+      "refs": [
+        "I can't remember how to go there."
+      ]
+    },
+    {
+      "id": "1999951",
+      "source": "Te encargo todo a ti.",
+      "refs": [
+        "I'll leave everything to you."
+      ]
+    },
+    {
+      "id": "1172268",
+      "source": "Si es necesario, vendré mañana a las nueve.",
+      "refs": [
+        "If necessary, I'll come at nine tomorrow."
+      ]
+    },
+    {
+      "id": "10106000",
+      "source": "¿Cómo es el día de Tanabata en Japón?",
+      "refs": [
+        "What kind of day is Tanabata in Japan?"
+      ]
+    },
+    {
+      "id": "6086865",
+      "source": "No reces por una vida fácil, reza para tener la fortaleza de afrontar una vida difícil.",
+      "refs": [
+        "Do not pray for an easy life, pray for the strength to endure a difficult one."
+      ]
+    },
+    {
+      "id": "8618656",
+      "source": "Nunca me contó usted nada sobre el accidente.",
+      "refs": [
+        "You never told me anything about the accident."
+      ]
+    },
+    {
+      "id": "4769214",
+      "source": "¿Te vas a sentar conmigo?",
+      "refs": [
+        "Are you going to sit with me?"
+      ]
+    },
+    {
+      "id": "2917107",
+      "source": "Vos distorsionás las cosas.",
+      "refs": [
+        "You distort things."
+      ]
+    },
+    {
+      "id": "2707035",
+      "source": "¿Soy yo tu amigo?",
+      "refs": [
+        "Am I your friend?"
+      ]
+    },
+    {
+      "id": "5569099",
+      "source": "Este gato es café.",
+      "refs": [
+        "This cat is brown."
+      ]
+    }
+  ]
+}

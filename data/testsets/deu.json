@@ -1,0 +1,1459 @@
+{
+  "meta": {
+    "lang": "deu",
+    "language_name": "German",
+    "requested": 200,
+    "available": 459992,
+    "selected": 200,
+    "seed": 13,
+    "filters": {
+      "min_words": 4,
+      "max_words": 25
+    },
+    "multi_ref": true,
+    "source_corpus": "Tatoeba",
+    "license": "CC-BY 2.0 FR"
+  },
+  "items": [
+    {
+      "id": "11721452",
+      "source": "Ich will, dass du führst.",
+      "refs": [
+        "I want you to lead."
+      ]
+    },
+    {
+      "id": "12642196",
+      "source": "Bist du ein gewalttätiger Mensch?",
+      "refs": [
+        "Are you a violent person?"
+      ]
+    },
+    {
+      "id": "5369078",
+      "source": "Die Leute sprechen nicht immer in ganzen Sätzen.",
+      "refs": [
+        "People don't always speak in full sentences."
+      ]
+    },
+    {
+      "id": "3586444",
+      "source": "Muss ich ihn kennen?",
+      "refs": [
+        "Do I have to know him?"
+      ]
+    },
+    {
+      "id": "11398661",
+      "source": "Meine Mutter wird älter.",
+      "refs": [
+        "My mother is getting older."
+      ]
+    },
+    {
+      "id": "7423391",
+      "source": "Tom und Maria warten noch immer auf dich.",
+      "refs": [
+        "Tom and Mary are still waiting for you."
+      ]
+    },
+    {
+      "id": "5390462",
+      "source": "Wie viel schuldest du?",
+      "refs": [
+        "How much do you owe?"
+      ]
+    },
+    {
+      "id": "678906",
+      "source": "Ihre Ansicht scheint überholt zu sein.",
+      "refs": [
+        "Your opinion seems to be out of date."
+      ]
+    },
+    {
+      "id": "967929",
+      "source": "Der Schmerz war nicht auszuhalten.",
+      "refs": [
+        "The pain was unbearable."
+      ]
+    },
+    {
+      "id": "816857",
+      "source": "Die anderen haben keine Lust.",
+      "refs": [
+        "The others can't be bothered."
+      ]
+    },
+    {
+      "id": "568617",
+      "source": "Er hat nur ein Lebensziel: Geld verdienen.",
+      "refs": [
+        "He has only one aim in life, to make money."
+      ]
+    },
+    {
+      "id": "12599478",
+      "source": "Ich fühle mich hier unwohl.",
+      "refs": [
+        "I feel uneasy here."
+      ]
+    },
+    {
+      "id": "8787801",
+      "source": "Wenn man jung und verliebt ist, sieht es schön aus in der Welt.",
+      "refs": [
+        "When you're young and you're in love, the world seems beautiful."
+      ]
+    },
+    {
+      "id": "2228501",
+      "source": "Du willst schon seit langem dahin, oder?",
+      "refs": [
+        "You have wanted to go there for a long time, haven't you?"
+      ]
+    },
+    {
+      "id": "6629178",
+      "source": "Tom wird wahrscheinlich klarkommen.",
+      "refs": [
+        "Tom will probably be fine."
+      ]
+    },
+    {
+      "id": "3513563",
+      "source": "Wie ist Ihr Treffen mit Tom verlaufen?",
+      "refs": [
+        "How did your meeting with Tom go?"
+      ]
+    },
+    {
+      "id": "6619545",
+      "source": "Niemand hat Tom gerufen.",
+      "refs": [
+        "Nobody called Tom."
+      ]
+    },
+    {
+      "id": "7696906",
+      "source": "Layla begriff, was vor sich ging.",
+      "refs": [
+        "Layla realized what was happening."
+      ]
+    },
+    {
+      "id": "8331364",
+      "source": "Wie kann man Zeckenstiche vermeiden?",
+      "refs": [
+        "How can tick bites be avoided?",
+        "How can you avoid being bitten by a tick?",
+        "How can you avoid tick bites?"
+      ]
+    },
+    {
+      "id": "5206078",
+      "source": "Ich hoffe, morgen meine Eltern zu sehen.",
+      "refs": [
+        "I hope to see my parents tomorrow."
+      ]
+    },
+    {
+      "id": "2574913",
+      "source": "Tom verließ die Tanzfläche.",
+      "refs": [
+        "Tom walked off the dance floor."
+      ]
+    },
+    {
+      "id": "11966707",
+      "source": "Es wurde getuschelt, als sie das Zimmer betrat.",
+      "refs": [
+        "There was a murmur when she entered the room."
+      ]
+    },
+    {
+      "id": "1561406",
+      "source": "Gib dich nicht mit ihm ab.",
+      "refs": [
+        "Don't keep company with him."
+      ]
+    },
+    {
+      "id": "1441030",
+      "source": "Sie gab ihm die Hand.",
+      "refs": [
+        "She shook hands with him."
+      ]
+    },
+    {
+      "id": "13827938",
+      "source": "Ich trat zur Seite, damit sie vorbeikonnte.",
+      "refs": [
+        "I stepped aside for her to pass by."
+      ]
+    },
+    {
+      "id": "4284153",
+      "source": "Ich habe einen neuen Plan.",
+      "refs": [
+        "I have a new plan.",
+        "I've got a new plan."
+      ]
+    },
+    {
+      "id": "10054604",
+      "source": "Die Polizisten spielten auf der Polizeistation Schach.",
+      "refs": [
+        "The police officers were playing chess at the police station."
+      ]
+    },
+    {
+      "id": "6052764",
+      "source": "Was machst du nächste Woche?",
+      "refs": [
+        "What are you doing next week?"
+      ]
+    },
+    {
+      "id": "5789487",
+      "source": "Ich bin von Deutschland nach Italien gefahren.",
+      "refs": [
+        "I drove from Germany to Italy."
+      ]
+    },
+    {
+      "id": "13661658",
+      "source": "Ich habe gedacht, dass Tom ein Computerprogrammierer wäre.",
+      "refs": [
+        "I thought that Tom was a computer programmer."
+      ]
+    },
+    {
+      "id": "12544557",
+      "source": "Hat dich das wütend gemacht?",
+      "refs": [
+        "Did it make you angry?"
+      ]
+    },
+    {
+      "id": "8501546",
+      "source": "Er weiß, wer sie sind.",
+      "refs": [
+        "He knows who they are."
+      ]
+    },
+    {
+      "id": "7431019",
+      "source": "Tom wurde am 20. Okrober 2013 geboren.",
+      "refs": [
+        "Tom was born on October 20th, 2013."
+      ]
+    },
+    {
+      "id": "12365660",
+      "source": "Gebt mir den Wein.",
+      "refs": [
+        "Give me the wine."
+      ]
+    },
+    {
+      "id": "5346353",
+      "source": "Ich konnte kaum verstehen, was Tom sagte.",
+      "refs": [
+        "I could hardly hear what Tom was saying."
+      ]
+    },
+    {
+      "id": "12576844",
+      "source": "Ich schenkte mir noch eine Tasse Kaffee ein.",
+      "refs": [
+        "I poured myself another cup of coffee."
+      ]
+    },
+    {
+      "id": "871948",
+      "source": "Womit wurden Sie geschlagen?",
+      "refs": [
+        "What did they hit you with?",
+        "What did you get hit with?"
+      ]
+    },
+    {
+      "id": "13489399",
+      "source": "Ich bin nie mit ihr ausgekommen.",
+      "refs": [
+        "I never got along with her."
+      ]
+    },
+    {
+      "id": "12379880",
+      "source": "Wenn du es nicht magst, dann iss es nicht.",
+      "refs": [
+        "If you don't like it, then don't eat it."
+      ]
+    },
+    {
+      "id": "9641662",
+      "source": "Warum will Tom dort wohnen?",
+      "refs": [
+        "Why does Tom want to live there?"
+      ]
+    },
+    {
+      "id": "3887606",
+      "source": "Ich weiß jetzt gerade nicht, was ich tun soll.",
+      "refs": [
+        "I don't know what to do right now."
+      ]
+    },
+    {
+      "id": "9985772",
+      "source": "Er machte mir Angst.",
+      "refs": [
+        "He frightened me."
+      ]
+    },
+    {
+      "id": "810196",
+      "source": "Ich fand dieses Buch sehr schwer zu lesen.",
+      "refs": [
+        "I found this book very difficult."
+      ]
+    },
+    {
+      "id": "9348053",
+      "source": "Tom wechselt jeden Tag die Kleidung.",
+      "refs": [
+        "Tom changes clothes every day."
+      ]
+    },
+    {
+      "id": "1434412",
+      "source": "Ich habe nur drei Ziele im Leben: lernen, lernen und nochmals lernen.",
+      "refs": [
+        "I have only three goals in life: learning, learning and learning."
+      ]
+    },
+    {
+      "id": "2800933",
+      "source": "Ich finde, es kommt in der Welt nicht so sehr darauf an, wo wir stehen, sondern in welche Richtung wir uns begeben.",
+      "refs": [
+        "I find the great thing in this world is not so much where we stand as in what direction we are moving."
+      ]
+    },
+    {
+      "id": "6079892",
+      "source": "„Ich werde die Königstochter freien!“ riefen sie beide aus.",
+      "refs": [
+        "\"I shall win the king's daughter!\" they both cried."
+      ]
+    },
+    {
+      "id": "6645357",
+      "source": "Dies ist eine Goldmine.",
+      "refs": [
+        "This is a gold mine."
+      ]
+    },
+    {
+      "id": "6321488",
+      "source": "Fische und sogar Wale und Robben ernähren sich vom Krill.",
+      "refs": [
+        "Fish and even whales and seals feed on the krill."
+      ]
+    },
+    {
+      "id": "6645263",
+      "source": "Du darfst das Buch lesen.",
+      "refs": [
+        "You may read this book."
+      ]
+    },
+    {
+      "id": "7464121",
+      "source": "Es reute mich, dass ich das getan hatte.",
+      "refs": [
+        "I regretted having done that."
+      ]
+    },
+    {
+      "id": "11265088",
+      "source": "Das Volk, auf dessen Land wir uns befinden, wurde nach Oklahoma zwangsumgesiedelt.",
+      "refs": [
+        "The nation whose land we're on was forcibly relocated to Oklahoma."
+      ]
+    },
+    {
+      "id": "12556064",
+      "source": "Ich weiß, wo ihr logiert.",
+      "refs": [
+        "I know where you're staying."
+      ]
+    },
+    {
+      "id": "2045602",
+      "source": "Stell es dort hin, wo es kindersicher ist.",
+      "refs": [
+        "Put it where children can't get at it."
+      ]
+    },
+    {
+      "id": "2366321",
+      "source": "Unser Plan wird eine Menge Geld erfordern.",
+      "refs": [
+        "Our plan will call for a lot of money."
+      ]
+    },
+    {
+      "id": "10311885",
+      "source": "Ich habe drei Französischlehrbücher.",
+      "refs": [
+        "I have three French textbooks."
+      ]
+    },
+    {
+      "id": "9940780",
+      "source": "Ich weiß über diese Sache nichts.",
+      "refs": [
+        "I know nothing about this matter."
+      ]
+    },
+    {
+      "id": "5551993",
+      "source": "Erklären Sie mir das!",
+      "refs": [
+        "Explain it to me.",
+        "Explain that to me."
+      ]
+    },
+    {
+      "id": "11781121",
+      "source": "Ich habe nicht gesagt, dass ich sie überredet hätte.",
+      "refs": [
+        "I didn't say I persuaded her."
+      ]
+    },
+    {
+      "id": "6808283",
+      "source": "Mach die Tür da zu!",
+      "refs": [
+        "Close that door!",
+        "Close that door."
+      ]
+    },
+    {
+      "id": "8483422",
+      "source": "Ich will aufs Land ziehen.",
+      "refs": [
+        "I want to move to the country."
+      ]
+    },
+    {
+      "id": "2036718",
+      "source": "Beim ersten Hahnenschrei verschwand er.",
+      "refs": [
+        "At daybreak, he vanished.",
+        "He disappeared at dawn.",
+        "He disappeared at daybreak.",
+        "He vanished at first light."
+      ]
+    },
+    {
+      "id": "6615233",
+      "source": "Tom ist nicht schwach.",
+      "refs": [
+        "Tom isn't weak.",
+        "Tom's not weak."
+      ]
+    },
+    {
+      "id": "12510609",
+      "source": "Das Getreide und Gemüse auf dem Ackerland gegen Solarparks auszutauschen, damit wir mit Elektroautos herumfahren können, ist absurd.",
+      "refs": [
+        "It's absurd to give up the grains and vegetables on the farm for solar farms just so we can drive around in electric cars."
+      ]
+    },
+    {
+      "id": "3690423",
+      "source": "Du musst aufpassen, dass du keine Zeit verschwendest.",
+      "refs": [
+        "You must be careful not to waste time."
+      ]
+    },
+    {
+      "id": "6624825",
+      "source": "Wir mögen dich nicht.",
+      "refs": [
+        "We don't like you."
+      ]
+    },
+    {
+      "id": "10029500",
+      "source": "Ich kann nicht glauben, dass ich das wirklich getan habe.",
+      "refs": [
+        "I can't believe I really did that."
+      ]
+    },
+    {
+      "id": "7029071",
+      "source": "Tom wirkt leicht gereizt.",
+      "refs": [
+        "Tom looks a little annoyed."
+      ]
+    },
+    {
+      "id": "8303464",
+      "source": "Es war eines der schönsten Dinge, die Tom je gesehen hatte.",
+      "refs": [
+        "It was one of the most beautiful things that Tom had ever seen."
+      ]
+    },
+    {
+      "id": "1832374",
+      "source": "Meine Stadt ist immer eine Reise wert.",
+      "refs": [
+        "My city is always worth a visit."
+      ]
+    },
+    {
+      "id": "13618884",
+      "source": "Ich färbe mir die Haare.",
+      "refs": [
+        "I've been dyeing my hair."
+      ]
+    },
+    {
+      "id": "12633304",
+      "source": "Sie sollten jeden Morgen Ihr Bett machen.",
+      "refs": [
+        "You should make your bed every morning."
+      ]
+    },
+    {
+      "id": "1552467",
+      "source": "Wir erhielten einen Räumungsbescheid.",
+      "refs": [
+        "We received an eviction notice."
+      ]
+    },
+    {
+      "id": "1243978",
+      "source": "Je höher der Baum, desto schwerer der Fall.",
+      "refs": [
+        "The higher you fly, the harder you fall."
+      ]
+    },
+    {
+      "id": "9082777",
+      "source": "Tom spricht mit dir mehr als mit jedem anderen Mädchen.",
+      "refs": [
+        "Tom talks to you more than he talks to any other girl."
+      ]
+    },
+    {
+      "id": "2118073",
+      "source": "Warum konntest du nicht am Samstag kommen?",
+      "refs": [
+        "Why couldn't you come on Saturday?"
+      ]
+    },
+    {
+      "id": "799539",
+      "source": "Aus Altersgründen hört mein Großvater nicht gut.",
+      "refs": [
+        "Because of his age, my grandfather doesn't hear well."
+      ]
+    },
+    {
+      "id": "12450500",
+      "source": "Ich schlage vor, daß ihr tut, was sie sagt.",
+      "refs": [
+        "I suggest you do as she says.",
+        "I suggest you do what she says."
+      ]
+    },
+    {
+      "id": "9927193",
+      "source": "Das Älterwerden ist obligatorisch. Das Erwachsenwerden ist optional.",
+      "refs": [
+        "Growing old is mandatory. Growing up is optional."
+      ]
+    },
+    {
+      "id": "459124",
+      "source": "Es tut mir sehr leid.",
+      "refs": [
+        "I am very sorry.",
+        "I'm extremely sorry.",
+        "I'm very sorry."
+      ]
+    },
+    {
+      "id": "4140664",
+      "source": "Tom konnte es kaum erwarten, seine neue Arbeit anzutreten.",
+      "refs": [
+        "Tom could hardly wait to start his new job."
+      ]
+    },
+    {
+      "id": "2725112",
+      "source": "Schämst du dich nicht? Warum suchst du dir keine Arbeit und verdienst dir dein Brot, statt dich als Bettler auf der Straße herumzutreiben?",
+      "refs": [
+        "Aren't you ashamed? Instead of being a beggar in the streets, why don't you look for work and earn your own bread?"
+      ]
+    },
+    {
+      "id": "12458624",
+      "source": "Hat es Ihnen hier nicht gefallen?",
+      "refs": [
+        "Did you not like it here?"
+      ]
+    },
+    {
+      "id": "5797699",
+      "source": "Tom bricht gerne in die Häuser Jugendlicher ein, um deren brutale Videospiele zu entwenden und zu vernichten.",
+      "refs": [
+        "Tom likes to break into the homes of teenagers to steal and destroy their violent video games."
+      ]
+    },
+    {
+      "id": "12685544",
+      "source": "Willst du wissen, warum Tom nicht gewonnen hat?",
+      "refs": [
+        "Do you want to know why Tom didn't win?"
+      ]
+    },
+    {
+      "id": "588716",
+      "source": "Wir sangen Lieder im Chor.",
+      "refs": [
+        "We sang songs in chorus."
+      ]
+    },
+    {
+      "id": "12287140",
+      "source": "Nachdem er einen Passanten angebellt hatte, zog sich der Hund wieder in seine Hundehütte zurück.",
+      "refs": [
+        "After barking at a passer-by, the dog sauntered back to its kennel."
+      ]
+    },
+    {
+      "id": "4095570",
+      "source": "Sie hat eine Sonnenbrille auf.",
+      "refs": [
+        "She's wearing sunglasses."
+      ]
+    },
+    {
+      "id": "11945607",
+      "source": "Wir tanzten zu Diskomusik.",
+      "refs": [
+        "We danced to disco music."
+      ]
+    },
+    {
+      "id": "3970962",
+      "source": "Du bist sehr emotional.",
+      "refs": [
+        "You're very emotional."
+      ]
+    },
+    {
+      "id": "379863",
+      "source": "Mutter schnitt den Kuchen in 8 Teile.",
+      "refs": [
+        "Mother divided the cake into eight pieces."
+      ]
+    },
+    {
+      "id": "3683814",
+      "source": "Ich kann Sie lehren, wie Sie Ihren Wagen reparieren können.",
+      "refs": [
+        "I can teach you how to repair your car."
+      ]
+    },
+    {
+      "id": "368642",
+      "source": "Die Klinge des Messers ist scharf.",
+      "refs": [
+        "The knife has a very sharp edge."
+      ]
+    },
+    {
+      "id": "3623306",
+      "source": "Wer ist mit dem Abwasch dran?",
+      "refs": [
+        "Whose turn is it to wash the dishes?"
+      ]
+    },
+    {
+      "id": "5200209",
+      "source": "Ich habe Tom Maria anschreien hören.",
+      "refs": [
+        "I heard Tom yelling at Mary."
+      ]
+    },
+    {
+      "id": "5363600",
+      "source": "Der schnellste Weg zum Himmel ist ein Sprung in einen tiefen Schlund.",
+      "refs": [
+        "The fastest way to heaven is a leap into a deep abyss."
+      ]
+    },
+    {
+      "id": "11525770",
+      "source": "Ich habe dein Geschenk heute abgeschickt!",
+      "refs": [
+        "I sent your present today!"
+      ]
+    },
+    {
+      "id": "1968686",
+      "source": "Welche Beschwerden haben Sie?",
+      "refs": [
+        "What seems to be the matter?",
+        "What seems to be the trouble?"
+      ]
+    },
+    {
+      "id": "2290911",
+      "source": "Lautsprecher verstärken die Stimme, aber nicht die Argumente.",
+      "refs": [
+        "Loudspeakers strengthen the voice, but not the argument."
+      ]
+    },
+    {
+      "id": "7827494",
+      "source": "Ihr kennt die Wahrheit schon.",
+      "refs": [
+        "You already know the truth."
+      ]
+    },
+    {
+      "id": "8444240",
+      "source": "Tom behauptet, er kenne die ersten tausend Dezimalstellen von Pi.",
+      "refs": [
+        "Tom claims he knows the value of pi to a thousand places."
+      ]
+    },
+    {
+      "id": "13061295",
+      "source": "Ich will nicht mit jemandem trinken, der nach dem Trinken gewalttätig wird.",
+      "refs": [
+        "I don't want to go drinking with someone who gets violent after drinking."
+      ]
+    },
+    {
+      "id": "2182914",
+      "source": "Er ist der Größte in der Klasse.",
+      "refs": [
+        "He is the tallest person in the class.",
+        "He's the tallest in the class."
+      ]
+    },
+    {
+      "id": "673503",
+      "source": "Der alte Mann sprach auf Französisch zu mir.",
+      "refs": [
+        "The old man spoke to me in French."
+      ]
+    },
+    {
+      "id": "11804800",
+      "source": "Ich fürchte, du kannst mir nicht helfen.",
+      "refs": [
+        "I'm afraid you can't help me."
+      ]
+    },
+    {
+      "id": "2768672",
+      "source": "Tom ist ein Vom-Tellerwäscher-zum-Millionär-Typ.",
+      "refs": [
+        "Tom is a self-made man."
+      ]
+    },
+    {
+      "id": "5622242",
+      "source": "Maria hat Selbstverteidigungsunterricht genommen.",
+      "refs": [
+        "Mary took a self-defence class."
+      ]
+    },
+    {
+      "id": "1217696",
+      "source": "Tom weiß nicht, was zu sagen ist, damit Mary sich besser fühlt.",
+      "refs": [
+        "Tom doesn't know what to say to make Mary feel better."
+      ]
+    },
+    {
+      "id": "5836995",
+      "source": "Tom verpasste den letzten Zug und musste mit dem Taxi nach Hause fahren.",
+      "refs": [
+        "Tom missed the last train and had to take a taxi home."
+      ]
+    },
+    {
+      "id": "5064328",
+      "source": "Das ist eine großartige Anlage.",
+      "refs": [
+        "This is a great facility."
+      ]
+    },
+    {
+      "id": "913574",
+      "source": "Würden Sie bitte mit dieser Kamera ein Foto von uns machen?",
+      "refs": [
+        "Would you take a picture of us with this camera?"
+      ]
+    },
+    {
+      "id": "5287110",
+      "source": "Manche Leute sind farbenblind: Sie können bestimmte Farben nicht auseinanderhalten.",
+      "refs": [
+        "Some people are colour-blind: they are unable to distinguish between certain colours."
+      ]
+    },
+    {
+      "id": "4004061",
+      "source": "Beichten tut der Seele gut.",
+      "refs": [
+        "Confession is good for the soul."
+      ]
+    },
+    {
+      "id": "731799",
+      "source": "Ich wollte schon lange Maler werden.",
+      "refs": [
+        "I have wanted to be a painter for a long time.",
+        "I've wanted to be a painter for a long time."
+      ]
+    },
+    {
+      "id": "10901423",
+      "source": "Der Boden hier ist fruchtbar.",
+      "refs": [
+        "The soil here is fertile."
+      ]
+    },
+    {
+      "id": "6112750",
+      "source": "Was ist deine Staatsbürgerschaft?",
+      "refs": [
+        "What is your nationality?",
+        "What's your nationality?"
+      ]
+    },
+    {
+      "id": "5430352",
+      "source": "Ich vermute, ihr habt sie gefunden.",
+      "refs": [
+        "I assume you found her."
+      ]
+    },
+    {
+      "id": "613497",
+      "source": "Sie machten immer Witze.",
+      "refs": [
+        "They were always making jokes."
+      ]
+    },
+    {
+      "id": "10205829",
+      "source": "Ich bereite mich auf die IELTS-Prüfung vor.",
+      "refs": [
+        "I'm preparing for the IELTS exam."
+      ]
+    },
+    {
+      "id": "1493453",
+      "source": "Wir sind in einen Verkehrsunfall verwickelt worden.",
+      "refs": [
+        "We got involved in a traffic accident."
+      ]
+    },
+    {
+      "id": "6553338",
+      "source": "Alle meine Kinder wurden in Boston geboren.",
+      "refs": [
+        "All of my children were born in Boston."
+      ]
+    },
+    {
+      "id": "1854889",
+      "source": "Wenn man gute Musik macht, hören die Leute nicht zu, und wenn man schlechte Musik macht, reden die Leute nicht.",
+      "refs": [
+        "If one plays good music, people don't listen and if one plays bad music people don't talk."
+      ]
+    },
+    {
+      "id": "8445055",
+      "source": "Nur im Schlaf komme ich zur Ruhe.",
+      "refs": [
+        "The only time I feel at peace is when I'm asleep."
+      ]
+    },
+    {
+      "id": "12514268",
+      "source": "Bitte sagen Sie mir, wann er zurück sein wird.",
+      "refs": [
+        "Please tell me when he'll be back."
+      ]
+    },
+    {
+      "id": "7546337",
+      "source": "Sie sind am größten.",
+      "refs": [
+        "They're tallest.",
+        "You are tallest."
+      ]
+    },
+    {
+      "id": "3856226",
+      "source": "Tom verließ das Büro unmittelbar nach der Arbeit.",
+      "refs": [
+        "Tom left the office immediately after work."
+      ]
+    },
+    {
+      "id": "12183155",
+      "source": "Tom ist auf den Schwanz seines Hundes getreten.",
+      "refs": [
+        "Tom stepped on his dog's tail."
+      ]
+    },
+    {
+      "id": "3591333",
+      "source": "Das ist nur eine Übergangslösung.",
+      "refs": [
+        "It's only a temporary fix."
+      ]
+    },
+    {
+      "id": "7022342",
+      "source": "Niemand wird mich je lieben.",
+      "refs": [
+        "No one is ever going to love me."
+      ]
+    },
+    {
+      "id": "2586581",
+      "source": "Ich war ebenso überrascht wie Sie.",
+      "refs": [
+        "I was as surprised as you."
+      ]
+    },
+    {
+      "id": "12089135",
+      "source": "Kann ich bitte etwas Wasser haben?",
+      "refs": [
+        "Can I please have some water?"
+      ]
+    },
+    {
+      "id": "12882624",
+      "source": "Die schwarze Katze schnurrte, wenn sie gestreichelt wurde.",
+      "refs": [
+        "The black cat purred when it was pet."
+      ]
+    },
+    {
+      "id": "12684049",
+      "source": "Ich bin auf einer Schnitzeljagd.",
+      "refs": [
+        "I'm on a scavenger hunt."
+      ]
+    },
+    {
+      "id": "2165435",
+      "source": "Deins ist da drüben.",
+      "refs": [
+        "Yours is over there."
+      ]
+    },
+    {
+      "id": "13357304",
+      "source": "Andererseits kann es auch zu Streß führen, sich derart strenge Einschränkungen aufzuerlegen. Mögliche Folgen sind Erschöpfung, Konzentrationsschwäche und Heißhungerattacken.",
+      "refs": [
+        "On the other hand, it can also be stressful to impose such strict restrictions on yourself. It can lead to feelings of exhaustion, poor concentration and an increased likelihood of binge eating."
+      ]
+    },
+    {
+      "id": "2757889",
+      "source": "Tom lud die Taschen in den Kofferraum seines Wagens.",
+      "refs": [
+        "Tom loaded the bags into the trunk of his car."
+      ]
+    },
+    {
+      "id": "12633458",
+      "source": "Wie oft gehen Sie ins Fitneßstudio?",
+      "refs": [
+        "How often do you work out?"
+      ]
+    },
+    {
+      "id": "2491350",
+      "source": "Ich habe es nicht vorausgesehen.",
+      "refs": [
+        "I didn't see it coming."
+      ]
+    },
+    {
+      "id": "11119017",
+      "source": "Meine Mutter spricht keine Fremdsprachen.",
+      "refs": [
+        "My mum doesn't speak any foreign languages."
+      ]
+    },
+    {
+      "id": "2139182",
+      "source": "Das ist wirklich überraschend!",
+      "refs": [
+        "That's really surprising."
+      ]
+    },
+    {
+      "id": "4046093",
+      "source": "Was gibt es da zu lächeln?",
+      "refs": [
+        "What's there to smile about?"
+      ]
+    },
+    {
+      "id": "866378",
+      "source": "Ich bin katholisch geworden, weil ich äußerst pessimistisch bin.",
+      "refs": [
+        "I became a Catholic because I'm extremely pessimistic."
+      ]
+    },
+    {
+      "id": "10263170",
+      "source": "Mary hat ihr Glas zerbrochen.",
+      "refs": [
+        "Mary broke her glasses."
+      ]
+    },
+    {
+      "id": "8603025",
+      "source": "Welcher Bus geht zum Bahnhof?",
+      "refs": [
+        "Which bus goes to the railway station?"
+      ]
+    },
+    {
+      "id": "12662354",
+      "source": "Hast du die Papiere schon unterschrieben?",
+      "refs": [
+        "Have you signed the papers yet?"
+      ]
+    },
+    {
+      "id": "13354437",
+      "source": "Ich lese gerade eine faszinierende Biographie.",
+      "refs": [
+        "I'm reading a fascinating biography."
+      ]
+    },
+    {
+      "id": "2935956",
+      "source": "Dieses Papier sollte für eure Zwecke geeignet sein.",
+      "refs": [
+        "This paper should be adequate for your purpose."
+      ]
+    },
+    {
+      "id": "5905727",
+      "source": "Es wird schwierig sein, das zu tun.",
+      "refs": [
+        "It'll be difficult to do that."
+      ]
+    },
+    {
+      "id": "1512841",
+      "source": "Können Sie mir sagen, wie man zum Baseballstadion kommt?",
+      "refs": [
+        "Could you tell me how to get to the ballpark?"
+      ]
+    },
+    {
+      "id": "4830210",
+      "source": "Lesen Sie den Text durch und schreiben Sie alle Verben der Vergangenheit heraus!",
+      "refs": [
+        "Read through the text and write out all those verbs which are in the past tense."
+      ]
+    },
+    {
+      "id": "1984626",
+      "source": "Ist das ein Schnellzug?",
+      "refs": [
+        "Is that an express train?"
+      ]
+    },
+    {
+      "id": "868596",
+      "source": "Jack war es, den ich gestern getroffen habe.",
+      "refs": [
+        "It was Jack that I met yesterday."
+      ]
+    },
+    {
+      "id": "2238129",
+      "source": "Das Kaninchen versteckte sich hinter dem Baum.",
+      "refs": [
+        "The rabbit hid behind the tree."
+      ]
+    },
+    {
+      "id": "10177608",
+      "source": "Es sind zwar nur manche Schlangen giftig, aber ich fürchte alle.",
+      "refs": [
+        "Only certain snakes are venomous but I fear all of them."
+      ]
+    },
+    {
+      "id": "6614918",
+      "source": "Tom war nicht hier.",
+      "refs": [
+        "Tom wasn't here."
+      ]
+    },
+    {
+      "id": "10688032",
+      "source": "Welcher Film hat Ihnen besser gefallen?",
+      "refs": [
+        "Which film did you like more?",
+        "Which movie did you like better?"
+      ]
+    },
+    {
+      "id": "11629839",
+      "source": "Dieses Bett scheint stabil zu sein.",
+      "refs": [
+        "This bed seems sturdy."
+      ]
+    },
+    {
+      "id": "7451704",
+      "source": "Ich werde dich nicht brauchen.",
+      "refs": [
+        "I won't need you."
+      ]
+    },
+    {
+      "id": "13916393",
+      "source": "Wo seid ihr morgen abend?",
+      "refs": [
+        "Where are you going to be tomorrow evening?",
+        "Where will you be tomorrow evening?"
+      ]
+    },
+    {
+      "id": "1731363",
+      "source": "Stimmt es, dass du diesen Berg erklommen hast?",
+      "refs": [
+        "Is it true that you climbed this mountain?"
+      ]
+    },
+    {
+      "id": "5781567",
+      "source": "Tom konnte es kaum ertragen.",
+      "refs": [
+        "Tom could hardly stand it."
+      ]
+    },
+    {
+      "id": "5304292",
+      "source": "Sag schon mal den anderen, dass wir kommen!",
+      "refs": [
+        "Go ahead and tell the others we're coming."
+      ]
+    },
+    {
+      "id": "1805283",
+      "source": "Ich werde dich anrufen, wenn ich mir die Sache überlegt habe.",
+      "refs": [
+        "I'll phone you when I've thought about it.",
+        "I'll phone you when I've thought it over.",
+        "I'll ring you when I've thought about it.",
+        "I'll ring you when I've thought it over."
+      ]
+    },
+    {
+      "id": "8861400",
+      "source": "Er hat es versucht.",
+      "refs": [
+        "He tried."
+      ]
+    },
+    {
+      "id": "9813387",
+      "source": "Maria ist in ihrem Zimmer.",
+      "refs": [
+        "Mary is in her room."
+      ]
+    },
+    {
+      "id": "8636818",
+      "source": "Er studiert an der Technischen Universität.",
+      "refs": [
+        "He studies at the technical university.",
+        "He's studying at the technical university."
+      ]
+    },
+    {
+      "id": "8891277",
+      "source": "Sind Tom und Maria jetzt bei dir?",
+      "refs": [
+        "Are Tom and Mary with you now?"
+      ]
+    },
+    {
+      "id": "2915179",
+      "source": "Dieser Satz ist traurig.",
+      "refs": [
+        "This sentence is sad."
+      ]
+    },
+    {
+      "id": "12287426",
+      "source": "Das könnte der Ausweg sein.",
+      "refs": [
+        "This might be the way out."
+      ]
+    },
+    {
+      "id": "2750419",
+      "source": "Tom und Maria haben ihre Hausaufgaben zusammen gemacht.",
+      "refs": [
+        "Tom and Mary did their homework together."
+      ]
+    },
+    {
+      "id": "12360348",
+      "source": "Denkst du, dass ich sexy bin?",
+      "refs": [
+        "Do you think I'm sexy?"
+      ]
+    },
+    {
+      "id": "7360715",
+      "source": "Das kann ich mit bloßen Händen.",
+      "refs": [
+        "I can do that with my bare hands."
+      ]
+    },
+    {
+      "id": "1099331",
+      "source": "Ich bin nicht der gleiche Dummkopf wie vor 15 Jahren.",
+      "refs": [
+        "I'm not the same fool I was fifteen years ago."
+      ]
+    },
+    {
+      "id": "1785145",
+      "source": "Du kannst doch schwimmen, oder?",
+      "refs": [
+        "You can swim, can't you?"
+      ]
+    },
+    {
+      "id": "10074495",
+      "source": "Warum hast du es zuerst Tom gesagt?",
+      "refs": [
+        "Why did you tell Tom first?"
+      ]
+    },
+    {
+      "id": "8373180",
+      "source": "Dieses Messer ist nicht scharf genug.",
+      "refs": [
+        "This knife is not sharp enough.",
+        "This knife isn't sharp enough."
+      ]
+    },
+    {
+      "id": "7993851",
+      "source": "Sei nicht so streng gegen ihn!",
+      "refs": [
+        "Don't be so hard on him."
+      ]
+    },
+    {
+      "id": "3540356",
+      "source": "Du bist zu ehrlich.",
+      "refs": [
+        "You're being too honest."
+      ]
+    },
+    {
+      "id": "9809441",
+      "source": "Der Verkehr heute ist verrückt.",
+      "refs": [
+        "The traffic is bonkers today.",
+        "The traffic today is mad.",
+        "Traffic's crazy today."
+      ]
+    },
+    {
+      "id": "1239172",
+      "source": "Ich las ihm den Brief vor.",
+      "refs": [
+        "I read the letter to him."
+      ]
+    },
+    {
+      "id": "12512512",
+      "source": "Dachtest du, daß ich schliefe?",
+      "refs": [
+        "Did you think I was asleep?"
+      ]
+    },
+    {
+      "id": "13661634",
+      "source": "Sie wird taub, nicht wahr?",
+      "refs": [
+        "She's going deaf, isn't she?"
+      ]
+    },
+    {
+      "id": "2980786",
+      "source": "Grüß deine Freunde von mir.",
+      "refs": [
+        "Say hello to your friends."
+      ]
+    },
+    {
+      "id": "2820248",
+      "source": "Diese Dame war heute Nachmittag um drei Zeugin eines Unfalls.",
+      "refs": [
+        "This lady witnessed an accident at three o'clock this afternoon."
+      ]
+    },
+    {
+      "id": "4571942",
+      "source": "Ich wusste nicht, dass Tom und Maria Geschwister sind.",
+      "refs": [
+        "I didn't know that Tom and Mary were brother and sister."
+      ]
+    },
+    {
+      "id": "1218856",
+      "source": "Ich habe die ganze Zeit das Lied im Ohr, das ich vorhin im Bahnhof gehört habe.",
+      "refs": [
+        "The song I heard before in the train station loops endlessly around my head."
+      ]
+    },
+    {
+      "id": "12659421",
+      "source": "Maria sagte mir, daß sie lieber Rotwein trinke.",
+      "refs": [
+        "Mary told me she preferred red wine."
+      ]
+    },
+    {
+      "id": "691698",
+      "source": "Nicht jeder kann ein Künstler sein.",
+      "refs": [
+        "Every man can't be an artist.",
+        "Not everybody can be an artist."
+      ]
+    },
+    {
+      "id": "6538347",
+      "source": "Der Kuss ging daneben.",
+      "refs": [
+        "The kiss missed."
+      ]
+    },
+    {
+      "id": "13015230",
+      "source": "Sie sind mit der verachtenswerteste Mensch, dem ich je begegnen mußte.",
+      "refs": [
+        "You are one of the most despicable people it has ever been my displeasure to meet."
+      ]
+    },
+    {
+      "id": "13272391",
+      "source": "Du bist in Mathe.",
+      "refs": [
+        "You're in math class."
+      ]
+    },
+    {
+      "id": "7673969",
+      "source": "Tom hatte einen guten Grund dafür.",
+      "refs": [
+        "Tom had a good reason to do that."
+      ]
+    },
+    {
+      "id": "12015164",
+      "source": "Wir stehen schon seit über einer Stunde an.",
+      "refs": [
+        "We've been queuing for over an hour.",
+        "We've been waiting in line for over an hour."
+      ]
+    },
+    {
+      "id": "9299512",
+      "source": "Maria trank drei Tassen Kaffee, bevor sie zur Arbeit fuhr.",
+      "refs": [
+        "Mary drank three cups of coffee before she left for work."
+      ]
+    },
+    {
+      "id": "10514320",
+      "source": "Er will ein Baumhaus bauen.",
+      "refs": [
+        "He wants to build a tree house."
+      ]
+    },
+    {
+      "id": "13727803",
+      "source": "Habt ihr diesen Brief irgend jemandem gezeigt?",
+      "refs": [
+        "Have you shown this letter to anybody?",
+        "Have you shown this letter to anyone?"
+      ]
+    },
+    {
+      "id": "11983273",
+      "source": "Ich sollte bis Montag warten.",
+      "refs": [
+        "I should wait until Monday."
+      ]
+    },
+    {
+      "id": "976178",
+      "source": "Wo ist das Klo?",
+      "refs": [
+        "Where is the bathroom?",
+        "Where is the loo?",
+        "Where is the toilet?",
+        "Where's the bathroom?",
+        "Where's the bog?",
+        "Where's the khazi?",
+        "Where's the lav?",
+        "Where's the lavatory?",
+        "Where's the loo?",
+        "Where's the toilet?"
+      ]
+    },
+    {
+      "id": "646871",
+      "source": "Ken möchte sein Englisch aufpolieren.",
+      "refs": [
+        "Ken wishes to brush up his English."
+      ]
+    },
+    {
+      "id": "8333043",
+      "source": "Tom weiß das schon.",
+      "refs": [
+        "Tom already knows that.",
+        "Tom already knows this."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1227 @@
+{
+  "meta": {
+    "lang": "afr",
+    "language_name": "Afrikaans",
+    "stem": "afr-post",
+    "requested": 150,
+    "available": 463,
+    "selected": 150,
+    "seed": 13,
+    "filters": {
+      "min_words": 4,
+      "max_words": 25,
+      "after": "2025-01-01",
+      "before": null
+    },
+    "date_range": [
+      "2025-01-15",
+      "2026-06-05"
+    ],
+    "multi_ref": true,
+    "source_corpus": "Tatoeba",
+    "license": "CC-BY 2.0 FR"
+  },
+  "items": [
+    {
+      "id": "13912069",
+      "source": "“Hoekom is jy so koud?” — “Omdat ek dood is.”",
+      "date": "2026-05-22",
+      "refs": [
+        "\"Why are you so cold?\" \"Because I'm dead.\""
+      ]
+    },
+    {
+      "id": "13157769",
+      "source": "Yster is harder as goud.",
+      "date": "2025-04-17",
+      "refs": [
+        "Iron is harder than gold."
+      ]
+    },
+    {
+      "id": "13458392",
+      "source": "Yidir is iemand wat gewoond is daaraan om te lieg.",
+      "date": "2025-09-15",
+      "refs": [
+        "Yidir is somebody who is used to lying."
+      ]
+    },
+    {
+      "id": "13585284",
+      "source": "Hy het my vir meer geld gevra as wat hy nodig het.",
+      "date": "2025-11-16",
+      "refs": [
+        "He asked me for more money than he needed."
+      ]
+    },
+    {
+      "id": "13699236",
+      "source": "Dit behoort goed te wees.",
+      "date": "2026-01-11",
+      "refs": [
+        "This should be good."
+      ]
+    },
+    {
+      "id": "13368834",
+      "source": "Die swart boks is nie regtig swart nie.",
+      "date": "2025-07-26",
+      "refs": [
+        "The black box is not actually black."
+      ]
+    },
+    {
+      "id": "13458327",
+      "source": "Tom is nie bang vir jou nie.",
+      "date": "2025-09-15",
+      "refs": [
+        "Tom isn't afraid of you."
+      ]
+    },
+    {
+      "id": "13585278",
+      "source": "Hy het aansoek gedoen vir 'n werk.",
+      "date": "2025-11-16",
+      "refs": [
+        "He has applied for a job."
+      ]
+    },
+    {
+      "id": "13585302",
+      "source": "Dit reën baie tydens die reënseisoen.",
+      "date": "2025-11-16",
+      "refs": [
+        "It rains a lot during the rainy season."
+      ]
+    },
+    {
+      "id": "13458300",
+      "source": "Sy het net haar bene gerêk.",
+      "date": "2025-09-15",
+      "refs": [
+        "She was just stretching her legs."
+      ]
+    },
+    {
+      "id": "13370651",
+      "source": "Niks goed kan daarvan kom nie.",
+      "date": "2025-07-27",
+      "refs": [
+        "Nothing good can come of all this."
+      ]
+    },
+    {
+      "id": "13585239",
+      "source": "Ek drink selde bier.",
+      "date": "2025-11-16",
+      "refs": [
+        "I don't often drink beer."
+      ]
+    },
+    {
+      "id": "13636249",
+      "source": "Wie se kind is dit?",
+      "date": "2025-12-10",
+      "refs": [
+        "Whose kid is this?"
+      ]
+    },
+    {
+      "id": "13585334",
+      "source": "Ek dink nie ons gaan genoeg tyd hê nie.",
+      "date": "2025-11-16",
+      "refs": [
+        "I don't think we'll have enough time."
+      ]
+    },
+    {
+      "id": "13903853",
+      "source": "Dit is 'n olyf.",
+      "date": "2026-05-16",
+      "refs": [
+        "This is an olive."
+      ]
+    },
+    {
+      "id": "13904733",
+      "source": "Dit is nie die woord van God nie.",
+      "date": "2026-05-17",
+      "refs": [
+        "This is not the word of God."
+      ]
+    },
+    {
+      "id": "13203066",
+      "source": "Medusa het my versteen!",
+      "date": "2025-05-05",
+      "refs": [
+        "Medusa petrified me!"
+      ]
+    },
+    {
+      "id": "13651483",
+      "source": "Die hoofstad van Liechtenstein is Vaduz.",
+      "date": "2025-12-17",
+      "refs": [
+        "The capital of Liechtenstein is Vaduz."
+      ]
+    },
+    {
+      "id": "13490267",
+      "source": "Hier is jou boeke.",
+      "date": "2025-10-03",
+      "refs": [
+        "Here are your books."
+      ]
+    },
+    {
+      "id": "13490276",
+      "source": "Lees asseblief hierdie boek.",
+      "date": "2025-10-03",
+      "refs": [
+        "Please read this book."
+      ]
+    },
+    {
+      "id": "13375391",
+      "source": "Hulle het vir 'n aantal jare in Spanje gewoon.",
+      "date": "2025-07-30",
+      "refs": [
+        "They lived in Spain for several years."
+      ]
+    },
+    {
+      "id": "13375437",
+      "source": "Sy het gedink haar ouers is dood.",
+      "date": "2025-07-30",
+      "refs": [
+        "She thought her parents had died."
+      ]
+    },
+    {
+      "id": "13838078",
+      "source": "Ek is 'n kat.",
+      "date": "2026-04-02",
+      "refs": [
+        "I'm a cat."
+      ]
+    },
+    {
+      "id": "13491741",
+      "source": "Ek sal net vir 'n paar dae hier wees.",
+      "date": "2025-10-03",
+      "refs": [
+        "I'll only be here for a few days."
+      ]
+    },
+    {
+      "id": "13835130",
+      "source": "Hy doen iets in die geesteswetenskappe.",
+      "date": "2026-03-31",
+      "refs": [
+        "He does something in the humanities."
+      ]
+    },
+    {
+      "id": "13368833",
+      "source": "Tom is 'n klein seuntjie.",
+      "date": "2025-07-26",
+      "refs": [
+        "Tom is a small boy."
+      ]
+    },
+    {
+      "id": "13458369",
+      "source": "Hallo. Hoe gaan dit?",
+      "date": "2025-09-15",
+      "refs": [
+        "Good day. How are you?"
+      ]
+    },
+    {
+      "id": "13375406",
+      "source": "Hy het ons gevra om stil te bly.",
+      "date": "2025-07-30",
+      "refs": [
+        "He asked that we be silent."
+      ]
+    },
+    {
+      "id": "13368825",
+      "source": "Daardie huis is te huur.",
+      "date": "2025-07-26",
+      "refs": [
+        "That house is for rent."
+      ]
+    },
+    {
+      "id": "13903131",
+      "source": "Ek is 'n hoer.",
+      "date": "2026-05-16",
+      "refs": [
+        "I'm a whore."
+      ]
+    },
+    {
+      "id": "13641926",
+      "source": "Ek heet nie Eve nie.",
+      "date": "2025-12-12",
+      "refs": [
+        "My name is not Eve."
+      ]
+    },
+    {
+      "id": "13375429",
+      "source": "Ek het dit vir myself gekoop, nie vir jou nie.",
+      "date": "2025-07-30",
+      "refs": [
+        "I bought it for myself, not for you."
+      ]
+    },
+    {
+      "id": "13910114",
+      "source": "Hy het gesterf sodat ons kon lewe.",
+      "date": "2026-05-21",
+      "refs": [
+        "He died so that we may live."
+      ]
+    },
+    {
+      "id": "13585274",
+      "source": "Het Tom vir haar toestemming gegee?",
+      "date": "2025-11-16",
+      "refs": [
+        "Did Tom give her permission?"
+      ]
+    },
+    {
+      "id": "13375417",
+      "source": "Ek kon nie sy gesig in fokus kry nie.",
+      "date": "2025-07-30",
+      "refs": [
+        "I couldn't bring his face into focus."
+      ]
+    },
+    {
+      "id": "13458400",
+      "source": "Hulle is baie welaf.",
+      "date": "2025-09-15",
+      "refs": [
+        "They are very wealthy."
+      ]
+    },
+    {
+      "id": "13585287",
+      "source": "Hierdie is 'n baie gevaarlike woonbuurt.",
+      "date": "2025-11-16",
+      "refs": [
+        "This is a very dangerous neighborhood."
+      ]
+    },
+    {
+      "id": "13375426",
+      "source": "Hoe kan hulle seker wees?",
+      "date": "2025-07-30",
+      "refs": [
+        "How can they be sure?"
+      ]
+    },
+    {
+      "id": "13368798",
+      "source": "Jy praat Japanees baie goed.",
+      "date": "2025-07-26",
+      "refs": [
+        "You speak Japanese so well!"
+      ]
+    },
+    {
+      "id": "13916644",
+      "source": "Die meermin het in seeskuim verander.",
+      "date": "2026-05-25",
+      "refs": [
+        "The mermaid turned to foam."
+      ]
+    },
+    {
+      "id": "13458304",
+      "source": "Bêl my voor jy kom.",
+      "date": "2025-09-15",
+      "refs": [
+        "Call me before you come."
+      ]
+    },
+    {
+      "id": "13458344",
+      "source": "Die vervolging van dïegene wat 'n staatsgreep probeer uitvoer is nie 'n heksejag nie.",
+      "date": "2025-09-15",
+      "refs": [
+        "Prosecuting those who attempted a coup is not a witch hunt."
+      ]
+    },
+    {
+      "id": "13651486",
+      "source": "Hoekom dra jy altyd daardie hoed?",
+      "date": "2025-12-17",
+      "refs": [
+        "Why do you always wear that hat?"
+      ]
+    },
+    {
+      "id": "13578021",
+      "source": "Tom gee nooit op nie.",
+      "date": "2025-11-13",
+      "refs": [
+        "Tom never gives up."
+      ]
+    },
+    {
+      "id": "13370570",
+      "source": "Hy moet daardie vertrek skoonmaak.",
+      "date": "2025-07-27",
+      "refs": [
+        "He must clean that room."
+      ]
+    },
+    {
+      "id": "13375396",
+      "source": "Ek sal nooit geld aan enigiemand leen nie.",
+      "date": "2025-07-30",
+      "refs": [
+        "I would never lend money to anyone."
+      ]
+    },
+    {
+      "id": "13017827",
+      "source": "Met wie het jy gepraat?",
+      "date": "2025-02-01",
+      "refs": [
+        "Who did you talk to?",
+        "With whom did you talk?"
+      ]
+    },
+    {
+      "id": "13577989",
+      "source": "Ek wil nie hê jy moet dink dat ek nie gelukkig is met jou besluit nie.",
+      "date": "2025-11-13",
+      "refs": [
+        "I don't want you to think that I'm not happy with your decision."
+      ]
+    },
+    {
+      "id": "13370632",
+      "source": "Die kinders gaan reeds skool toe.",
+      "date": "2025-07-27",
+      "refs": [
+        "The kids already go to school."
+      ]
+    },
+    {
+      "id": "13458357",
+      "source": "Die goeie student leer nou die leermeester.",
+      "date": "2025-09-15",
+      "refs": [
+        "The good student now teaches the teacher."
+      ]
+    },
+    {
+      "id": "13107973",
+      "source": "Hierdie pruime is ryp.",
+      "date": "2025-03-26",
+      "refs": [
+        "These plums are ripe."
+      ]
+    },
+    {
+      "id": "13368827",
+      "source": "Ziri se palm bome dra baie minder dadels.",
+      "date": "2025-07-26",
+      "refs": [
+        "Ziri's palm trees produce much less dates."
+      ]
+    },
+    {
+      "id": "13368841",
+      "source": "Algeria is ryk aan natuurlike gasse.",
+      "date": "2025-07-26",
+      "refs": [
+        "Algeria is rich in natural gas."
+      ]
+    },
+    {
+      "id": "13585223",
+      "source": "Luister en leer iets.",
+      "date": "2025-11-16",
+      "refs": [
+        "Listen and learn something."
+      ]
+    },
+    {
+      "id": "13904447",
+      "source": "Ek is die keiser van die aarde.",
+      "date": "2026-05-17",
+      "refs": [
+        "I am the emperor of Earth."
+      ]
+    },
+    {
+      "id": "13368838",
+      "source": "Ons het vanmiddag 'n lekker lang gesprek gehad.",
+      "date": "2025-07-26",
+      "refs": [
+        "We had a nice long talk this afternoon."
+      ]
+    },
+    {
+      "id": "13585294",
+      "source": "Ek dink Latyn is nie so moeilik soos Grieks nie.",
+      "date": "2025-11-16",
+      "refs": [
+        "I think Latin is not as hard as Greek."
+      ]
+    },
+    {
+      "id": "13368836",
+      "source": "Beplan jy om na daardie restaurant te gaan?",
+      "date": "2025-07-26",
+      "refs": [
+        "Do you intend to go to that restaurant?"
+      ]
+    },
+    {
+      "id": "13458413",
+      "source": "Jy moes verkeerd gehoor het.",
+      "date": "2025-09-15",
+      "refs": [
+        "You must’ve misheard it."
+      ]
+    },
+    {
+      "id": "13018167",
+      "source": "Daar is nie genoeg lemoene nie.",
+      "date": "2025-02-01",
+      "refs": [
+        "There are not enough oranges."
+      ]
+    },
+    {
+      "id": "13368843",
+      "source": "Ek wonder hoe dit nou lyk.",
+      "date": "2025-07-26",
+      "refs": [
+        "I wonder what it looks like now."
+      ]
+    },
+    {
+      "id": "13584970",
+      "source": "Hy het 'n meisie van Juneau ontmoet.",
+      "date": "2025-11-16",
+      "refs": [
+        "He met a girl from Juneau."
+      ]
+    },
+    {
+      "id": "13903004",
+      "source": "Tom is in die ruimte gebore.",
+      "date": "2026-05-16",
+      "refs": [
+        "Tom was born in space."
+      ]
+    },
+    {
+      "id": "13458283",
+      "source": "Hierdie is die slegste plek om te probeer omdraai.",
+      "date": "2025-09-15",
+      "refs": [
+        "This is the worst possible place to try to make a U-turn."
+      ]
+    },
+    {
+      "id": "13368788",
+      "source": "Sy het gelieg oor waar sy was.",
+      "date": "2025-07-26",
+      "refs": [
+        "She lied about where she'd been."
+      ]
+    },
+    {
+      "id": "13585247",
+      "source": "Om te kan weet, moet jy lees.",
+      "date": "2025-11-16",
+      "refs": [
+        "To know, you have to read."
+      ]
+    },
+    {
+      "id": "13490256",
+      "source": "Tom is baie moeg.",
+      "date": "2025-10-03",
+      "refs": [
+        "Tom is very tired."
+      ]
+    },
+    {
+      "id": "13458328",
+      "source": "Hy het 'n groot restaurant naby die see.",
+      "date": "2025-09-15",
+      "refs": [
+        "He has a large restaurant close to the ocean."
+      ]
+    },
+    {
+      "id": "13908264",
+      "source": "Dit is goed vir ons om ander kulture te verstaan.",
+      "date": "2026-05-19",
+      "refs": [
+        "It is good for us to understand other cultures."
+      ]
+    },
+    {
+      "id": "13458397",
+      "source": "Jy is baie ryk.",
+      "date": "2025-09-15",
+      "refs": [
+        "You are very wealthy."
+      ]
+    },
+    {
+      "id": "13585291",
+      "source": "James was dubbeld Amanda se kêrel se ouderdom.",
+      "date": "2025-11-16",
+      "refs": [
+        "James was twice the age of Amanda's boyfriend."
+      ]
+    },
+    {
+      "id": "13636294",
+      "source": "Dit is 'n moeilike spel om te speel.",
+      "date": "2025-12-10",
+      "refs": [
+        "This is a difficult game to play."
+      ]
+    },
+    {
+      "id": "13650687",
+      "source": "Wat dink jy van Maria se huis?",
+      "date": "2025-12-16",
+      "refs": [
+        "What do you think about Mary's house?"
+      ]
+    },
+    {
+      "id": "13699271",
+      "source": "Kan ek op julle albei staatmaak om daar te wees?",
+      "date": "2026-01-11",
+      "refs": [
+        "Can I count on you both to be there?"
+      ]
+    },
+    {
+      "id": "13368789",
+      "source": "Tom en Mary sê hulle dink nie John sal Alice toelaat om dit te doen nie.",
+      "date": "2025-07-26",
+      "refs": [
+        "Tom and Mary say they don't think John would let Alice do that."
+      ]
+    },
+    {
+      "id": "13458414",
+      "source": "Dit is heeltemaal gratis vir Tom.",
+      "date": "2025-09-15",
+      "refs": [
+        "It is completely free for Tom."
+      ]
+    },
+    {
+      "id": "13578013",
+      "source": "Hy hou 'n dagboek.",
+      "date": "2025-11-13",
+      "refs": [
+        "He keeps a diary."
+      ]
+    },
+    {
+      "id": "13585314",
+      "source": "Wat het Elias vir jou gedoen?",
+      "date": "2025-11-16",
+      "refs": [
+        "What has Elias done for you?"
+      ]
+    },
+    {
+      "id": "13458333",
+      "source": "Wie se idee was dit om so 'n kleurvolle asdrom vir die voortuin te koop?",
+      "date": "2025-09-15",
+      "refs": [
+        "Who had the idea to buy such a colourful dustbin for the front yard?"
+      ]
+    },
+    {
+      "id": "13458435",
+      "source": "Gee my 'n paar voorbeelde.",
+      "date": "2025-09-15",
+      "refs": [
+        "Just give me a few examples."
+      ]
+    },
+    {
+      "id": "13375432",
+      "source": "Hy is 'n baie oulike seun.",
+      "date": "2025-07-30",
+      "refs": [
+        "He's a very nice boy."
+      ]
+    },
+    {
+      "id": "13909943",
+      "source": "Daar bestaan nie so iets soos kunsmatige intelligensie nie.",
+      "date": "2026-05-21",
+      "refs": [
+        "There's no such thing as Artificial Intelligence."
+      ]
+    },
+    {
+      "id": "13017831",
+      "source": "My kat is siek.",
+      "date": "2025-02-01",
+      "refs": [
+        "My cat is sick."
+      ]
+    },
+    {
+      "id": "13585266",
+      "source": "Sy vriende het vir hom gelag.",
+      "date": "2025-11-16",
+      "refs": [
+        "He was laughed at by his friends."
+      ]
+    },
+    {
+      "id": "13917939",
+      "source": "Nietemin is ek steeds paranoïes.",
+      "date": "2026-05-26",
+      "refs": [
+        "I'm still paranoid."
+      ]
+    },
+    {
+      "id": "13491773",
+      "source": "Hoekom is Februarie so kort?",
+      "date": "2025-10-03",
+      "refs": [
+        "Why is February so short?"
+      ]
+    },
+    {
+      "id": "13458420",
+      "source": "Daar was geen warm water nie.",
+      "date": "2025-09-15",
+      "refs": [
+        "There was no hot water at all."
+      ]
+    },
+    {
+      "id": "13370633",
+      "source": "Ek hou regtig baie van die reën.",
+      "date": "2025-07-27",
+      "refs": [
+        "I really love the rain."
+      ]
+    },
+    {
+      "id": "13578016",
+      "source": "Ek het die oorskiet brood gestoor.",
+      "date": "2025-11-13",
+      "refs": [
+        "I stored the leftover bread."
+      ]
+    },
+    {
+      "id": "13903767",
+      "source": "Die demokrasie is dood.",
+      "date": "2026-05-16",
+      "refs": [
+        "Democracy is dead."
+      ]
+    },
+    {
+      "id": "13585262",
+      "source": "Mary sal moontlik beter voel sodra sy iets te ete gekry het.",
+      "date": "2025-11-16",
+      "refs": [
+        "Mary will probably feel better once she gets something to eat."
+      ]
+    },
+    {
+      "id": "13458416",
+      "source": "Die dier sal nie binne die volgende twee jaar seksuele volwassenheid bereik nie.",
+      "date": "2025-09-15",
+      "refs": [
+        "The animal will not reach sexual maturity for another two years."
+      ]
+    },
+    {
+      "id": "13458419",
+      "source": "My vriend is baie tale magtig.",
+      "date": "2025-09-15",
+      "refs": [
+        "My friend is proficient in many languages."
+      ]
+    },
+    {
+      "id": "13370617",
+      "source": "Sy is nog in die kombuis, of nie?",
+      "date": "2025-07-27",
+      "refs": [
+        "She's still in the kitchen, isn't she?"
+      ]
+    },
+    {
+      "id": "13699269",
+      "source": "Hy het gesê hy sal blomme vir haar koop.",
+      "date": "2026-01-11",
+      "refs": [
+        "He said that he'd buy flowers for her."
+      ]
+    },
+    {
+      "id": "13458354",
+      "source": "Hierdie yskas moet ontvries word.",
+      "date": "2025-09-15",
+      "refs": [
+        "This fridge needs defrosting."
+      ]
+    },
+    {
+      "id": "13578000",
+      "source": "Ek het gesukkel om dit te doen.",
+      "date": "2025-11-13",
+      "refs": [
+        "I struggled to do it."
+      ]
+    },
+    {
+      "id": "13490341",
+      "source": "België is nie so groot soos Frankryk nie.",
+      "date": "2025-10-03",
+      "refs": [
+        "Belgium is not as big as France."
+      ]
+    },
+    {
+      "id": "13641924",
+      "source": "Haar naam is Eve.",
+      "date": "2025-12-12",
+      "refs": [
+        "Her name is Eve."
+      ]
+    },
+    {
+      "id": "13490291",
+      "source": "Tom is nie baie oud nie.",
+      "date": "2025-10-03",
+      "refs": [
+        "Tom isn't very old."
+      ]
+    },
+    {
+      "id": "13577991",
+      "source": "Ek sal later vanmiddag tyd hê om jou te help.",
+      "date": "2025-11-13",
+      "refs": [
+        "I'll have time to help you later in the afternoon."
+      ]
+    },
+    {
+      "id": "13585250",
+      "source": "Hierdie is iets wat ek op jou stoep gevind het.",
+      "date": "2025-11-16",
+      "refs": [
+        "This is something that I found on your porch."
+      ]
+    },
+    {
+      "id": "13706672",
+      "source": "Dit is belangrik om baie boeke te lees.",
+      "date": "2026-01-16",
+      "refs": [
+        "It's important to read a lot of books."
+      ]
+    },
+    {
+      "id": "13148293",
+      "source": "Spinnekoppe het nie ore nie.",
+      "date": "2025-04-13",
+      "refs": [
+        "Spiders don't have ears."
+      ]
+    },
+    {
+      "id": "13585216",
+      "source": "Wil jy tee maak? Jy moet eers die ketel vol water maak.",
+      "date": "2025-11-16",
+      "refs": [
+        "Do you want to make tea? First you have to fill the kettle with water."
+      ]
+    },
+    {
+      "id": "13699229",
+      "source": "Ek sal jou nou daarvan vertel.",
+      "date": "2026-01-11",
+      "refs": [
+        "I'll tell you about it now."
+      ]
+    },
+    {
+      "id": "13458361",
+      "source": "Ek het my wettenskap verloor.",
+      "date": "2025-09-15",
+      "refs": [
+        "I lost my bet."
+      ]
+    },
+    {
+      "id": "13585252",
+      "source": "Die grassnyer is petrol aangedrewe.",
+      "date": "2025-11-16",
+      "refs": [
+        "This lawn mower is gas powered."
+      ]
+    },
+    {
+      "id": "13585273",
+      "source": "Ek is 'n slegte verloorder.",
+      "date": "2025-11-16",
+      "refs": [
+        "I'm a bad loser."
+      ]
+    },
+    {
+      "id": "13585297",
+      "source": "Tom het my vertel hy dink Mary is oulik.",
+      "date": "2025-11-16",
+      "refs": [
+        "Tom told me that he thought Mary was cute."
+      ]
+    },
+    {
+      "id": "13375394",
+      "source": "Ek dink ek kan dit probeer.",
+      "date": "2025-07-30",
+      "refs": [
+        "I guess I could give it a shot."
+      ]
+    },
+    {
+      "id": "13458408",
+      "source": "Tom berei homself vir die Duolingo Engelse toets voor.",
+      "date": "2025-09-15",
+      "refs": [
+        "Tom is preparing himself for the Duolingo English Test."
+      ]
+    },
+    {
+      "id": "13017824",
+      "source": "Ek wil weet wat Tom dink.",
+      "date": "2025-02-01",
+      "refs": [
+        "I want to know what Tom thinks."
+      ]
+    },
+    {
+      "id": "13370591",
+      "source": "Dit was na middernag, Fadil en Layla het geslaap.",
+      "date": "2025-07-27",
+      "refs": [
+        "It was after midnight, and Fadil and Layla were sleeping."
+      ]
+    },
+    {
+      "id": "13458355",
+      "source": "Hierdie boek se voorwoord is nogal kort.",
+      "date": "2025-09-15",
+      "refs": [
+        "The foreword to this book is quite short."
+      ]
+    },
+    {
+      "id": "13585353",
+      "source": "Tom sal dit volgende keer doen.",
+      "date": "2025-11-16",
+      "refs": [
+        "Tom will do that the next time."
+      ]
+    },
+    {
+      "id": "13699222",
+      "source": "Sal jy die vashou?",
+      "date": "2026-01-11",
+      "refs": [
+        "Will you hold this?"
+      ]
+    },
+    {
+      "id": "13458411",
+      "source": "Jy is 'n baie gawe man!",
+      "date": "2025-09-15",
+      "refs": [
+        "What a generous man you are!"
+      ]
+    },
+    {
+      "id": "13699259",
+      "source": "Isabel se vaardige hantering van die skeduleringsfout het nie ongemerk by haar bestuurders verbygegaan nie.",
+      "date": "2026-01-11",
+      "refs": [
+        "Isabel's adroit handling of the scheduling mishap didn't go unnoticed by her superiors."
+      ]
+    },
+    {
+      "id": "13368831",
+      "source": "Tom probeer om van sy ou gewoontes ontslae te raak.",
+      "date": "2025-07-26",
+      "refs": [
+        "Tom is trying to unlearn his old habits."
+      ]
+    },
+    {
+      "id": "13585329",
+      "source": "Dit is 'n groot gemors.",
+      "date": "2025-11-16",
+      "refs": [
+        "This is a terrible mess."
+      ]
+    },
+    {
+      "id": "13491548",
+      "source": "Wat is jou gunsteling bordspel?",
+      "date": "2025-10-03",
+      "refs": [
+        "What's your favorite board game?"
+      ]
+    },
+    {
+      "id": "13368844",
+      "source": "Daar is 'n appel onder die lessenaar.",
+      "date": "2025-07-26",
+      "refs": [
+        "There is an apple under the desk."
+      ]
+    },
+    {
+      "id": "13930528",
+      "source": "Tom is 'n naam.",
+      "date": "2026-06-05",
+      "refs": [
+        "Tom is a name."
+      ]
+    },
+    {
+      "id": "13584570",
+      "source": "Die boek is wit.",
+      "date": "2025-11-16",
+      "refs": [
+        "The book is white."
+      ]
+    },
+    {
+      "id": "13458307",
+      "source": "Daardie koffie wat jy vir my toe gebring het, het my lewe gerêd.",
+      "date": "2025-09-15",
+      "refs": [
+        "That coffee that you brought me at that time saved my life."
+      ]
+    },
+    {
+      "id": "13585232",
+      "source": "Het jy Tom se nuutste musiek video gesien?",
+      "date": "2025-11-16",
+      "refs": [
+        "Have you seen Tom's latest music video?"
+      ]
+    },
+    {
+      "id": "13916648",
+      "source": "Die meermin het in skuim verander.",
+      "date": "2026-05-25",
+      "refs": [
+        "The mermaid turned to foam."
+      ]
+    },
+    {
+      "id": "13585283",
+      "source": "Dit het baie duidelik gelyk.",
+      "date": "2025-11-16",
+      "refs": [
+        "It seemed very obvious."
+      ]
+    },
+    {
+      "id": "13458426",
+      "source": "Ek woon net 'n entjie verder af in die pad.",
+      "date": "2025-09-15",
+      "refs": [
+        "I live just a bit further down the road."
+      ]
+    },
+    {
+      "id": "13585344",
+      "source": "Ek en Tom het vir die eerste keer in Boston ontmoet.",
+      "date": "2025-11-16",
+      "refs": [
+        "Tom and I first met in Boston."
+      ]
+    },
+    {
+      "id": "13578011",
+      "source": "Sy antwoord het haar verras.",
+      "date": "2025-11-13",
+      "refs": [
+        "His reply surprised her."
+      ]
+    },
+    {
+      "id": "13699217",
+      "source": "Tom wil nie kollege toe gaan nie.",
+      "date": "2026-01-11",
+      "refs": [
+        "Tom doesn't want to go to college."
+      ]
+    },
+    {
+      "id": "13585311",
+      "source": "Hy het sy vriende genader vir hulp.",
+      "date": "2025-11-16",
+      "refs": [
+        "He turned to his friends for help."
+      ]
+    },
+    {
+      "id": "13458410",
+      "source": "Trek uit jou T-hemp.",
+      "date": "2025-09-15",
+      "refs": [
+        "Take off your t-shirt."
+      ]
+    },
+    {
+      "id": "13458428",
+      "source": "Ons wil jou nie pla nie.",
+      "date": "2025-09-15",
+      "refs": [
+        "We don't want to be a burden to you."
+      ]
+    },
+    {
+      "id": "13585326",
+      "source": "Sami was in my klas.",
+      "date": "2025-11-16",
+      "refs": [
+        "Sami was in my class."
+      ]
+    },
+    {
+      "id": "13901134",
+      "source": "Dit is 'n eik.",
+      "date": "2026-05-14",
+      "refs": [
+        "It's an oak tree."
+      ]
+    },
+    {
+      "id": "13616987",
+      "source": "In watter taal droom jy?",
+      "date": "2025-11-30",
+      "refs": [
+        "What language do you dream in?"
+      ]
+    },
+    {
+      "id": "13458365",
+      "source": "Goeie naand, hoe gaan dit?",
+      "date": "2025-09-15",
+      "refs": [
+        "Good afternoon, how are you?"
+      ]
+    },
+    {
+      "id": "13458386",
+      "source": "Hulle het mekaar uitgedaag om nuwe avonture aan te pak.",
+      "date": "2025-09-15",
+      "refs": [
+        "They challenged each other to take on new adventures."
+      ]
+    },
+    {
+      "id": "13458360",
+      "source": "Die projek se tydlyn was drasties verkort.",
+      "date": "2025-09-15",
+      "refs": [
+        "The project timeline was drastically shortened."
+      ]
+    },
+    {
+      "id": "13458353",
+      "source": "Kulturele verval kom een of ander tyd voor.",
+      "date": "2025-09-15",
+      "refs": [
+        "Decadence always arrives sooner or later."
+      ]
+    },
+    {
+      "id": "12981342",
+      "source": "Ek hou van ham en eiers.",
+      "date": "2025-01-15",
+      "refs": [
+        "I like ham and eggs."
+      ]
+    },
+    {
+      "id": "13491729",
+      "source": "Tom is ook 'n Franse onderwyser.",
+      "date": "2025-10-03",
+      "refs": [
+        "Tom is a French teacher, too."
+      ]
+    },
+    {
+      "id": "13585269",
+      "source": "Jou advies het regtig baie gehelp.",
+      "date": "2025-11-16",
+      "refs": [
+        "Your advice has been really helpful."
+      ]
+    },
+    {
+      "id": "13614056",
+      "source": "Dit het geen betekenis nie.",
+      "date": "2025-11-28",
+      "refs": [
+        "It has no meaning."
+      ]
+    },
+    {
+      "id": "13699230",
+      "source": "Ek is oortuig dat iets tussen hulle aan die gang is.",
+      "date": "2026-01-11",
+      "refs": [
+        "I am convinced that something is happening between them."
+      ]
+    },
+    {
+      "id": "13370577",
+      "source": "Lukas het die deur onmiddelik gesluit.",
+      "date": "2025-07-27",
+      "refs": [
+        "Lukas immediately locked the door."
+      ]
+    },
+    {
+      "id": "13831473",
+      "source": "Hy is ons derde seun.",
+      "date": "2026-03-29",
+      "refs": [
+        "He's our third son."
+      ]
+    }
+  ]
+}

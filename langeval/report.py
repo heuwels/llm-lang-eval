@@ -1,0 +1,388 @@
+"""Generate a self-contained, blog-post-style HTML eval report.
+
+Mirrors the shape of a code/reasoning-model benchmark writeup:
+  - headline leaderboard (chrF++ / BLEU per model x language)
+  - per-language bar charts (inline SVG, no JS/CDN)
+  - side-by-side model GENERATIONS for sentences where models disagree most
+  - methodology + caveats + a one-line recommendation
+
+Reads results/scores.json, results/raw_outputs/*.jsonl, and data/testsets/*.json.
+Output is one portable HTML file (inline CSS, light/dark via prefers-color-scheme)
+that can be published as-is or dropped into the Lector site's /blog.
+"""
+
+import html
+import json
+from pathlib import Path
+
+import yaml
+from sacrebleu.metrics import CHRF
+
+ROOT = Path(__file__).resolve().parent.parent
+SCORES = ROOT / "results" / "scores.json"
+RAW = ROOT / "results" / "raw_outputs"
+TESTSETS = ROOT / "data" / "testsets"
+CONFIG = ROOT / "config" / "models.yaml"
+OUT = ROOT / "results" / "report.html"
+
+LANG_NAMES = {"afr": "Afrikaans", "deu": "German", "spa": "Spanish"}
+_CHRF = CHRF(word_order=2)
+
+# deployment tier per config section, for colour-coding
+_TIER_OF_SECTION = {"local": "box", "ondevice": "ondevice", "cloud": "cloud",
+                    "cloud_reference": "cloud"}
+_TIER_LABEL = {"ondevice": "on-device (laptop)", "box": "self-hosted box (18 GB)",
+               "cloud": "cloud (OpenRouter)"}
+
+
+def _tiers() -> dict:
+    if not CONFIG.exists():
+        return {}
+    cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8")) or {}
+    out = {}
+    for sec, tier in _TIER_OF_SECTION.items():
+        for m in (cfg.get(sec) or []):
+            out[m["id"]] = tier
+    return out
+
+
+def _esc(s) -> str:
+    return html.escape(str(s if s is not None else ""))
+
+
+def _load_scores() -> list:
+    return json.loads(SCORES.read_text(encoding="utf-8")) if SCORES.exists() else []
+
+
+def _load_hyps(model: str, lang: str) -> dict:
+    f = RAW / f"{model}__{lang}.jsonl"
+    if not f.exists():
+        return {}
+    out = {}
+    for line in f.read_text(encoding="utf-8").splitlines():
+        r = json.loads(line)
+        if r.get("hypothesis"):
+            out[r["id"]] = r["hypothesis"]
+    return out
+
+
+def _load_testset(lang: str) -> dict:
+    f = TESTSETS / f"{lang}.json"
+    if not f.exists():
+        return {}
+    data = json.loads(f.read_text(encoding="utf-8"))
+    return {it["id"]: it for it in data["items"]}
+
+
+def _sent_chrf(hyp: str, refs: list) -> float:
+    return _CHRF.sentence_score(hyp, refs).score
+
+
+# ---- HTML building blocks --------------------------------------------------
+
+def _bar_chart(rows: list, value_key: str = "chrf2", max_val: float = 100.0) -> str:
+    """rows: [{'label','chrf2','best'}]. Horizontal SVG bars."""
+    bar_h, gap, label_w, track_w, pad = 26, 12, 150, 360, 8
+    w = label_w + track_w + 60
+    h = pad * 2 + len(rows) * (bar_h + gap)
+    parts = [f'<svg viewBox="0 0 {w} {h}" role="img" class="chart">']
+    y = pad
+    for r in rows:
+        val = r.get(value_key) or 0
+        bw = max(2, (val / max_val) * track_w)
+        cls = "bar bar--best" if r.get("best") else "bar"
+        parts.append(
+            f'<text x="{label_w - 8}" y="{y + bar_h * 0.7}" class="bar-label" '
+            f'text-anchor="end">{_esc(r["label"])}</text>'
+            f'<rect x="{label_w}" y="{y}" width="{track_w}" height="{bar_h}" class="bar-track"/>'
+            f'<rect x="{label_w}" y="{y}" width="{bw:.1f}" height="{bar_h}" class="{cls}"/>'
+            f'<text x="{label_w + bw + 6:.1f}" y="{y + bar_h * 0.7}" class="bar-val">{val:.1f}</text>'
+        )
+        y += bar_h + gap
+    parts.append("</svg>")
+    return "".join(parts)
+
+
+def _leaderboard(scores: list, langs: list, models: list) -> str:
+    by = {(s["model"], s["lang"]): s for s in scores}
+    tiers = _tiers()
+    has_comet = any("comet" in s for s in scores)
+    primary = "comet" if has_comet else "chrf2"  # rank/highlight by the meaning metric when present
+    best = {l: max((by[(m, l)].get(primary) for m in models if (m, l) in by and by[(m, l)].get(primary) is not None),
+                   default=None) for l in langs}
+    unit = "COMET · chrF++" if has_comet else "chrF++ · BLEU"
+    head = "".join(f"<th>{_esc(LANG_NAMES.get(l, l))}<br><span class='unit'>{unit}</span></th>" for l in langs)
+    rows = []
+    for m in models:
+        cells = []
+        for l in langs:
+            s = by.get((m, l))
+            if not s:
+                cells.append("<td class='na'>—</td>")
+                continue
+            pv = s.get(primary)
+            star = " ★" if pv is not None and pv == best[l] else ""
+            hi = " td--best" if pv is not None and pv == best[l] else ""
+            if has_comet:
+                top = f"{s['comet']:.1f}{star}" if s.get("comet") is not None else "—"
+                sub = f"chrF {s['chrf2']:.1f}"
+            else:
+                top = f"{s['chrf2']:.1f}{star}"
+                sub = f"BLEU {s['bleu']:.1f}"
+            cells.append(
+                f"<td class='num{hi}'><span class='chrf'>{top}</span>"
+                f"<span class='bleu'>{sub}</span></td>"
+            )
+        tier = tiers.get(m, "")
+        dot = (f"<span class='tier tier-{tier}' title='{_TIER_LABEL.get(tier, '')}'></span>"
+               if tier else "")
+        rows.append(f"<tr><td class='model'>{dot}{_esc(m)}</td>{''.join(cells)}</tr>")
+    return (f"<table class='board'><thead><tr><th>Model</th>{head}</tr></thead>"
+            f"<tbody>{''.join(rows)}</tbody></table>")
+
+
+def _generations(lang: str, models: list, k: int = 6) -> str:
+    ts = _load_testset(lang)
+    hyps = {m: _load_hyps(m, lang) for m in models}
+    present = [m for m in models if hyps[m]]
+    if not present or not ts:
+        return ""
+    rows = []
+    for sid, it in ts.items():
+        cells = {m: hyps[m].get(sid) for m in present}
+        if not any(cells.values()):
+            continue
+        chrf = {m: (_sent_chrf(h, it["refs"]) if h else None) for m, h in cells.items()}
+        vals = [v for v in chrf.values() if v is not None]
+        rng = (max(vals) - min(vals)) if len(vals) > 1 else 0.0
+        rows.append({"sid": sid, "source": it["source"], "refs": it["refs"],
+                     "hyps": cells, "chrf": chrf, "range": rng})
+    # most inter-model disagreement first — the interesting comparisons
+    rows.sort(key=lambda r: -r["range"])
+    rows = rows[:k]
+
+    out = [f"<h3>{_esc(LANG_NAMES.get(lang, lang))} — where the models diverge</h3>",
+           "<p class='muted'>Sentences chosen for the widest spread in per-sentence chrF++ "
+           "across models. Reference(s) are held-out Tatoeba translations.</p>"]
+    for r in rows:
+        gens = []
+        best_m = max((m for m in present if r["chrf"][m] is not None),
+                     key=lambda m: r["chrf"][m], default=None)
+        for m in present:
+            h = r["hyps"][m]
+            sc = r["chrf"][m]
+            cls = "gen gen--best" if m == best_m else "gen"
+            score_tag = f"<span class='gen-score'>{sc:.0f}</span>" if sc is not None else ""
+            out.append(
+                f"<div class='{cls}'><div class='gen-model'>{_esc(m)} {score_tag}</div>"
+                f"<div class='gen-text'>{_esc(h) or '<em>(empty)</em>'}</div></div>"
+            )
+            gens.append(h)
+        refs = " &nbsp;·&nbsp; ".join(_esc(x) for x in r["refs"])
+        out.insert(len(out) - len(present),
+                   f"<div class='ex'><div class='ex-src'><span class='tag'>{_esc(lang)}</span>"
+                   f"{_esc(r['source'])}</div>"
+                   f"<div class='ex-ref'><span class='tag tag--ref'>ref</span>{refs}</div>"
+                   f"<div class='gens'>")
+        out.append("</div></div>")
+    return "".join(out)
+
+
+def _contamination(scores: list) -> str:
+    """Per-model pre-2023 vs 2025-26 Afrikaans comparison (the holdout test)."""
+    by = {(s["model"], s["lang"]): s for s in scores}
+    models = {m for (m, l) in by if l == "afr-post" and (m, "afr-pre") in by}
+    if not models:
+        return ""
+    has_comet = any(by[(m, "afr-post")].get("comet") is not None for m in models)
+    metric, mname = ("comet", "COMET") if has_comet else ("chrf2", "chrF++")
+    ordered = sorted(models, key=lambda m: -(by[(m, "afr-post")].get(metric) or 0))
+    rows = []
+    for m in ordered:
+        pre, post = by[(m, "afr-pre")], by[(m, "afr-post")]
+        pv, qv = pre.get(metric), post.get(metric)
+        if pv is None or qv is None:
+            continue
+        delta = qv - pv
+        cls = "delta-bad" if delta <= -3 else ("delta-warn" if delta <= -1 else "delta-ok")
+        rows.append(f"<tr><td class='model'>{_esc(m)}</td>"
+                    f"<td class='num'>{pv:.1f}</td><td class='num'>{qv:.1f}</td>"
+                    f"<td class='num {cls}'>{delta:+.1f}</td></tr>")
+    return (f"<table class='board'><thead><tr><th>Model</th>"
+            f"<th>pre-2023<br><span class='unit'>{mname}</span></th>"
+            f"<th>2025–26<br><span class='unit'>{mname}</span></th>"
+            f"<th>Δ</th></tr></thead><tbody>{''.join(rows)}</tbody></table>")
+
+
+CSS = """
+:root{--bg:#fafafa;--card:#fff;--text:#1a1a1a;--muted:#636363;--border:#e2e2e2;
+--accent:#b45309;--accent-soft:#fde9d3;--best:#15803d;--best-soft:#dcfce7;--mono:#1e1e2e}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1a1a1a;--text:#e4e4e4;
+--muted:#999;--border:#2a2a2a;--accent:#f59e0b;--accent-soft:#3a2a10;--best:#4ade80;--best-soft:#14301f}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.65;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:2rem;letter-spacing:-.02em;margin:0 0 .25rem}
+h2{font-size:1.4rem;margin:2.75rem 0 1rem;padding-top:1rem;border-top:1px solid var(--border)}
+h3{font-size:1.1rem;margin:1.75rem 0 .5rem}
+.date{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+.lead{font-size:1.1rem;color:var(--muted)}
+a{color:var(--accent)}.muted{color:var(--muted);font-size:.92rem}
+table.board{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
+.board th,.board td{border-bottom:1px solid var(--border);padding:.55rem .6rem;text-align:center}
+.board th{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.board th .unit{font-size:.72rem;letter-spacing:0;text-transform:none}
+.board td.model{text-align:left;font-weight:600;font-family:var(--mono),monospace;font-size:.85rem}
+.board td.num .chrf{font-weight:700}.board td.num .bleu{color:var(--muted);font-size:.8rem;margin-left:.4rem}
+.board td.td--best{background:var(--best-soft)}.board td.td--best .chrf{color:var(--best)}
+.board td.na{color:var(--muted)}
+.chart{width:100%;height:auto}.bar-track{fill:var(--border);opacity:.5;rx:3}
+.bar{fill:var(--accent);rx:3}.bar--best{fill:var(--best)}
+.bar-label{fill:var(--text);font-size:12px;font-family:var(--mono),monospace}
+.bar-val{fill:var(--muted);font-size:12px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0}
+.ex{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:.85rem 0}
+.ex-src{font-size:1.02rem}.ex-ref{color:var(--muted);font-size:.92rem;margin-top:.2rem}
+.tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.66rem;font-weight:700;
+text-transform:uppercase;letter-spacing:.05em;padding:.1rem .4rem;border-radius:4px;margin-right:.5rem;vertical-align:middle}
+.tag--ref{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.gens{display:grid;gap:.5rem;margin-top:.75rem}
+.gen{border:1px solid var(--border);border-radius:6px;padding:.5rem .7rem;display:flex;gap:.75rem;align-items:baseline}
+.gen--best{border-color:var(--best);background:var(--best-soft)}
+.gen-model{font-family:var(--mono),monospace;font-size:.78rem;color:var(--muted);min-width:150px;font-weight:600}
+.gen-score{display:inline-block;background:var(--border);border-radius:999px;padding:0 .4rem;font-size:.7rem;margin-left:.3rem}
+.gen-text{flex:1}
+.callout{background:var(--accent-soft);border-left:3px solid var(--accent);padding:.85rem 1.1rem;border-radius:0 6px 6px 0;margin:1rem 0;font-size:.95rem}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+code{background:var(--border);padding:.1rem .35rem;border-radius:4px;font-size:.85em}
+.delta-bad{color:#dc2626;font-weight:700}.delta-warn{color:#d97706;font-weight:700}
+.delta-ok{color:var(--best);font-weight:700}
+.tier{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.tier-ondevice{background:#8b5cf6}.tier-box{background:#0ea5e9}.tier-cloud{background:#f59e0b}
+.legend .tier{margin:0 .25rem 0 .5rem}
+.warn{background:#fef2f2;border-left:3px solid #dc2626;padding:.85rem 1.1rem;border-radius:0 6px 6px 0;margin:1rem 0;font-size:.95rem}
+@media(prefers-color-scheme:dark){.warn{background:#2a1416}}
+"""
+
+
+def generate(date: str = "", title: str = "") -> Path:
+    scores = _load_scores()
+    if not scores:
+        raise SystemExit("no results/scores.json yet — run some models first")
+    langs = [l for l in ("afr", "deu", "spa") if any(s["lang"] == l for s in scores)]
+    # rank models by mean chrF++ across languages (desc)
+    by_model: dict = {}
+    for s in scores:
+        by_model.setdefault(s["model"], []).append(s["chrf2"])
+    models = sorted(by_model, key=lambda m: -sum(by_model[m]) / len(by_model[m]))
+
+    focus = "afr" if "afr" in langs else langs[0]
+    by = {(s["model"], s["lang"]): s for s in scores}
+    n_focus = next((by[(m, focus)]["n"] for m in models if (m, focus) in by), 0)
+
+    title = title or "Which local LLM translates best? A reproducible eval"
+    date = date or "—"
+
+    contam_table = _contamination(scores)
+    contam_section = f"""
+<h2>Contamination check: does it survive on unseen data?</h2>
+<div class="warn"><strong>The honest limitation.</strong> Tatoeba is almost certainly in every model's
+pretraining, so a high score can mean "translated well" <em>or</em> "regurgitated a memorised pair" — the
+score alone can't tell us which. To bound it, each model is compared on two matched 150-sentence Afrikaans
+samples (same length filter): <strong>pre-2023</strong> (added 2010–2022, almost certainly seen in training)
+versus <strong>2025–26</strong> (added after the training cutoff of the older-generation models here, so they
+cannot have memorised them). A large drop on the recent set is the fingerprint of memorisation; a stable
+score is evidence of genuine translation ability.</div>
+{contam_table}
+<p class="muted">Caveat on the caveat: exact training-cutoff dates aren't published for every model, and
+recently-added sentences may differ subtly in style or difficulty — so read a small Δ as "holds up", not as a
+precise measurement of contamination.</p>
+""" if contam_table else ""
+
+    # charts per language
+    charts = []
+    for l in langs:
+        ranked = sorted((s for s in scores if s["lang"] == l), key=lambda s: -s["chrf2"])
+        if not ranked:
+            continue
+        best_v = ranked[0]["chrf2"]
+        chart_rows = [{"label": s["model"], "chrf2": s["chrf2"], "best": s["chrf2"] == best_v}
+                      for s in ranked]
+        charts.append(f"<h3>{_esc(LANG_NAMES.get(l, l))} (chrF++, n={ranked[0]['n']})</h3>"
+                      f"<div class='panel'>{_bar_chart(chart_rows)}</div>")
+
+    gens = "".join(_generations(l, models) for l in langs)
+
+    # recommendation line — prefer the meaning metric (COMET) when present
+    has_comet = any("comet" in s for s in scores)
+    metric, mname = ("comet", "COMET") if has_comet else ("chrf2", "chrF++")
+    top = sorted((s for s in scores if s["lang"] == focus and s.get(metric) is not None),
+                 key=lambda s: -s[metric])
+    rec = ""
+    if top:
+        rec = (f"On <strong>{_esc(LANG_NAMES.get(focus, focus))}</strong>, "
+               f"<code>{_esc(top[0]['model'])}</code> leads at {mname} "
+               f"<strong>{top[0][metric]:.1f}</strong>"
+               + (f", ahead of <code>{_esc(top[1]['model'])}</code> ({top[1][metric]:.1f})."
+                  if len(top) > 1 else "."))
+
+    doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{_esc(title)}</title><style>{CSS}</style></head><body><div class="wrap">
+<h1>{_esc(title)}</h1>
+<p class="date">{_esc(date)} · source → English · Afrikaans / German / Spanish</p>
+<p class="lead">A reproducible benchmark of local LLMs on sentence translation into English,
+built to choose a translation model for <a href="https://github.com/heuwels/lector">Lector</a> —
+with the low-resource case (Afrikaans) front and centre. Every model gets the same blinded
+Tatoeba source sentences, the same prompt, greedy decoding, and is scored multi-reference with
+chrF++ and BLEU.</p>
+
+<div class="callout">{rec or "Run more models to populate the leaderboard."}</div>
+
+<h2>Leaderboard</h2>
+<p class="muted">Two metrics, because they measure different things. <strong>chrF++</strong> rewards
+character overlap with the reference — strict about wording, so it docks valid paraphrases
+(<em>"scenery is magnificent"</em> vs <em>"landscape is breathtaking"</em>). <strong>COMET</strong>
+is a neural metric that scores <em>meaning</em> against the source and reference, crediting
+correct-but-differently-worded translations — the better proxy for "is this accurate?". The table
+ranks by COMET where available (shown ×100), with chrF++ beneath. ★ = best in column;
+n≈{n_focus} per language.</p>
+{_leaderboard(scores, langs, models)}
+<p class="muted legend">Deployment tier:<span class="tier tier-ondevice"></span>on-device (laptop)
+<span class="tier tier-box"></span>self-hosted box (18 GB)
+<span class="tier tier-cloud"></span>cloud (OpenRouter)</p>
+
+{contam_section}
+
+<h2>Scores by language</h2>
+{''.join(charts)}
+
+<h2>Side-by-side generations</h2>
+<p class="muted">The numbers only say so much. Here are the actual translations where models
+disagree most — green = highest per-sentence chrF++ for that sentence.</p>
+{gens}
+
+<h2>Methodology</h2>
+<div class="panel"><ul>
+<li><strong>Task.</strong> Blinded source → English. The model sees only the source sentence; references are held out for scoring.</li>
+<li><strong>Data.</strong> <a href="https://tatoeba.org">Tatoeba</a> sentence pairs (CC-BY 2.0 FR), seeded random sample, multi-reference where available, length-filtered.</li>
+<li><strong>Prompt.</strong> One fixed user message, identical across models (no per-model tuning). Chain-of-thought disabled (<code>reasoning_effort: none</code>) — translation needs none.</li>
+<li><strong>Structured output.</strong> Every model is constrained to emit <code>{{"translation": "…"}}</code> via a json_schema <code>response_format</code>. This is the equaliser: small models otherwise "think out loud" in plain text and bury the answer in preamble. Constrained decoding makes that impossible, gives every model the identical constraint, and mirrors how Lector itself prompts.</li>
+<li><strong>Decoding.</strong> <code>temperature = 0</code> (greedy), one model resident at a time on an 18&nbsp;GB host (JIT load/evict).</li>
+<li><strong>Metrics.</strong> chrF++ and BLEU via sacreBLEU (signatures recorded). COMET planned.</li>
+</ul></div>
+
+<h2>Caveats</h2>
+<div class="panel"><ul>
+<li><strong>This is a proxy.</strong> It measures general sentence MT, not Lector's actual word/phrase dictionary-lookup task — a strong signal for model choice, not "Lector's output graded."</li>
+<li><strong>Contamination — the big one.</strong> Tatoeba is in these models' pretraining, so a high score can reflect <em>memorising the pair</em> rather than reasoning about the language — and the score alone can't separate the two. The contamination-check section above bounds this with a post-cutoff holdout; treat absolute scores with suspicion and weight the pre-vs-post deltas and relative gaps over the headline numbers.</li>
+<li><strong>Into-English is the easy direction</strong>, and Afrikaans here is largely single-reference. Read accordingly.</li>
+</ul></div>
+
+<div class="footer">Generated by <a href="https://github.com/heuwels/llm-lang-eval">llm-lang-eval</a>.
+Harness + raw generations are open and reproducible.</div>
+</div></body></html>"""
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(doc, encoding="utf-8")
+    return OUT

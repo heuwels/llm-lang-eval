@@ -1,0 +1,1437 @@
+{
+  "meta": {
+    "lang": "afr",
+    "language_name": "Afrikaans",
+    "requested": 200,
+    "available": 2986,
+    "selected": 200,
+    "seed": 13,
+    "filters": {
+      "min_words": 4,
+      "max_words": 25
+    },
+    "multi_ref": true,
+    "source_corpus": "Tatoeba",
+    "license": "CC-BY 2.0 FR"
+  },
+  "items": [
+    {
+      "id": "1810768",
+      "source": "Daar is heelwat teorieë oor die oorsprong van die lewe.",
+      "refs": [
+        "There are many theories about the origin of life."
+      ]
+    },
+    {
+      "id": "2205131",
+      "source": "Ek dink met my kop.",
+      "refs": [
+        "I think with my head."
+      ]
+    },
+    {
+      "id": "5509989",
+      "source": "Ons staan onder sy bevel.",
+      "refs": [
+        "We are under his command."
+      ]
+    },
+    {
+      "id": "5691025",
+      "source": "Jy kan die verwarmer aanskakel indien jy koud kry.",
+      "refs": [
+        "You can turn on the heater if you're cold."
+      ]
+    },
+    {
+      "id": "4871249",
+      "source": "Ek wil nie swem nie.",
+      "refs": [
+        "I don't want to swim."
+      ]
+    },
+    {
+      "id": "1422322",
+      "source": "Die landskap is awemrowend.",
+      "refs": [
+        "This scenery is magnificent."
+      ]
+    },
+    {
+      "id": "2784148",
+      "source": "Tom gaan nie ons môre help nie.",
+      "refs": [
+        "Tom won't be helping us tomorrow."
+      ]
+    },
+    {
+      "id": "1857717",
+      "source": "Gaan jy te voet skool toe?",
+      "refs": [
+        "Do you go to school on foot?"
+      ]
+    },
+    {
+      "id": "7986811",
+      "source": "Is jy 'n elektrisiën in 'n teater?",
+      "refs": [
+        "Are you an electrician in a theater?"
+      ]
+    },
+    {
+      "id": "13904447",
+      "source": "Ek is die keiser van die aarde.",
+      "refs": [
+        "I am the emperor of Earth."
+      ]
+    },
+    {
+      "id": "5540622",
+      "source": "Tom het Mary oppad huis toe ontmoet.",
+      "refs": [
+        "Tom met Mary on his way home."
+      ]
+    },
+    {
+      "id": "1783229",
+      "source": "Maak asseblief die venster toe.",
+      "refs": [
+        "Please close the window."
+      ]
+    },
+    {
+      "id": "7988401",
+      "source": "Jy kan eet wat jy wil.",
+      "refs": [
+        "You can eat whatever you like."
+      ]
+    },
+    {
+      "id": "3514826",
+      "source": "Moet nie alles glo wat mense jou vertel nie.",
+      "refs": [
+        "Don't believe everything people tell you."
+      ]
+    },
+    {
+      "id": "13458365",
+      "source": "Goeie naand, hoe gaan dit?",
+      "refs": [
+        "Good afternoon, how are you?"
+      ]
+    },
+    {
+      "id": "4874577",
+      "source": "Ek het gekom om met jou te praat.",
+      "refs": [
+        "I've come to talk with you."
+      ]
+    },
+    {
+      "id": "13577985",
+      "source": "Hoe ouer jy word, hoe meer moet jy jou oor jou gesondheid bekommer.",
+      "refs": [
+        "The older you become, the more you have to worry about your health."
+      ]
+    },
+    {
+      "id": "2458891",
+      "source": "Sy't vandag sy middagete gebring.",
+      "refs": [
+        "She brought his lunch today."
+      ]
+    },
+    {
+      "id": "5540597",
+      "source": "Tom sal nie vanaand bel nie.",
+      "refs": [
+        "Tom won't call this evening."
+      ]
+    },
+    {
+      "id": "13370605",
+      "source": "Yanni het probeer om te ontspan.",
+      "refs": [
+        "Yanni tried to relax."
+      ]
+    },
+    {
+      "id": "9153041",
+      "source": "Wat maak jy vandag?",
+      "refs": [
+        "What are you doing today?"
+      ]
+    },
+    {
+      "id": "5540567",
+      "source": "Tom het vergeet om sy hande te was.",
+      "refs": [
+        "Tom forgot to wash his hands."
+      ]
+    },
+    {
+      "id": "6456297",
+      "source": "Tom weet alles van hulle.",
+      "refs": [
+        "Tom knows all about them."
+      ]
+    },
+    {
+      "id": "7986649",
+      "source": "Ek was by die hospitaal.",
+      "refs": [
+        "I was at the hospital."
+      ]
+    },
+    {
+      "id": "3328107",
+      "source": "Kan ek vir jou 'n drankie maak?",
+      "refs": [
+        "Can I fix you a drink?"
+      ]
+    },
+    {
+      "id": "13636250",
+      "source": "Wie se kind is hierdie?",
+      "refs": [
+        "Whose kid is this?"
+      ]
+    },
+    {
+      "id": "1769348",
+      "source": "Het julle 'n selfoon?",
+      "refs": [
+        "Do you have a cellphone?",
+        "Do you have a smartphone?"
+      ]
+    },
+    {
+      "id": "2364245",
+      "source": "Ek het nie geweet jy kan so goed Frans praat nie.",
+      "refs": [
+        "I didn't know that you could speak French so well."
+      ]
+    },
+    {
+      "id": "13907005",
+      "source": "Almal sê dit, niemand weet dit nie.",
+      "refs": [
+        "Everyone says it, nobody knows it."
+      ]
+    },
+    {
+      "id": "13490274",
+      "source": "Sien jy daardie groot boek?",
+      "refs": [
+        "Do you see that big book?"
+      ]
+    },
+    {
+      "id": "1838935",
+      "source": "Deur ander mense te belaster verkry jy niks nie.",
+      "refs": [
+        "You gain nothing by speaking ill of others."
+      ]
+    },
+    {
+      "id": "13368798",
+      "source": "Jy praat Japanees baie goed.",
+      "refs": [
+        "You speak Japanese so well!"
+      ]
+    },
+    {
+      "id": "4871235",
+      "source": "Ek wil nie bly nie.",
+      "refs": [
+        "I don't want to stay."
+      ]
+    },
+    {
+      "id": "1796535",
+      "source": "Dit was gister koud.",
+      "refs": [
+        "It was cold yesterday."
+      ]
+    },
+    {
+      "id": "1838404",
+      "source": "Hierdie is die laaste kos wat oorbly op hierdie boot.",
+      "refs": [
+        "This is the last food there is on this boat."
+      ]
+    },
+    {
+      "id": "3443017",
+      "source": "Maar hy leef nog?",
+      "refs": [
+        "But he is still alive?",
+        "But he's still alive?"
+      ]
+    },
+    {
+      "id": "6456489",
+      "source": "Ek haat dit om te bestuur.",
+      "refs": [
+        "I hate driving."
+      ]
+    },
+    {
+      "id": "5535194",
+      "source": "Hierde boek was baie interessant.",
+      "refs": [
+        "This book was very interesting."
+      ]
+    },
+    {
+      "id": "1854967",
+      "source": "Ekskuus tog, Jorge! Ek het jou nie gesien nie!",
+      "refs": [
+        "I'm sorry, Jorge! I didn't see you!"
+      ]
+    },
+    {
+      "id": "6456098",
+      "source": "Jy is verkeerd. Ek is nie pessimisties nie, maar skepties.",
+      "refs": [
+        "You're wrong. I'm not pessimistic, but sceptical."
+      ]
+    },
+    {
+      "id": "1409680",
+      "source": "Alles goed eindig goed.",
+      "refs": [
+        "All is well that ends well.",
+        "All's well that ends well."
+      ]
+    },
+    {
+      "id": "13906521",
+      "source": "Ek was eens jonk.",
+      "refs": [
+        "I was young once."
+      ]
+    },
+    {
+      "id": "5509973",
+      "source": "Hy weet alles oor Duitsland.",
+      "refs": [
+        "He knows everything about Germany."
+      ]
+    },
+    {
+      "id": "5554676",
+      "source": "Eintlik het sy gelieg.",
+      "refs": [
+        "In fact she lied."
+      ]
+    },
+    {
+      "id": "6456413",
+      "source": "Hoe voel jy nou oor haar?",
+      "refs": [
+        "How do you feel about her now?"
+      ]
+    },
+    {
+      "id": "6020807",
+      "source": "Ek hou van boontjies.",
+      "refs": [
+        "I like beans."
+      ]
+    },
+    {
+      "id": "1346796",
+      "source": "Die hond is dood.",
+      "refs": [
+        "The dog is dead."
+      ]
+    },
+    {
+      "id": "13375388",
+      "source": "My fiets het 'n pap wiel.",
+      "refs": [
+        "My bike's got a flat tyre."
+      ]
+    },
+    {
+      "id": "7986588",
+      "source": "Die boek is oop.",
+      "refs": [
+        "The book is open."
+      ]
+    },
+    {
+      "id": "5540565",
+      "source": "Ons was albei 'n bietjie dronk.",
+      "refs": [
+        "We were both a bit drunk."
+      ]
+    },
+    {
+      "id": "6456499",
+      "source": "Tom het 'n besering opgedoen.",
+      "refs": [
+        "Tom got wounded."
+      ]
+    },
+    {
+      "id": "1820370",
+      "source": "'n By het by die venster uitgevlieg.",
+      "refs": [
+        "A bee flew out of the window."
+      ]
+    },
+    {
+      "id": "1799316",
+      "source": "Dit lyk asof ons sukkel met die selfde ou probleem.",
+      "refs": [
+        "We seem to keep grappling with the same old problem."
+      ]
+    },
+    {
+      "id": "8524564",
+      "source": "Ek bly nou in Noorweë.",
+      "refs": [
+        "I live in Norway now."
+      ]
+    },
+    {
+      "id": "753322",
+      "source": "Rome is die hoofstad van die wêreld.",
+      "refs": [
+        "Rome is the capital of the world."
+      ]
+    },
+    {
+      "id": "13458385",
+      "source": "Na hulle stappie het hulle by die plaaslike meer afgekoel.",
+      "refs": [
+        "After their hike, they cooled off by the local lake."
+      ]
+    },
+    {
+      "id": "1906423",
+      "source": "Waneer het hulle huis toe gegaan?",
+      "refs": [
+        "When did they go home?"
+      ]
+    },
+    {
+      "id": "2783426",
+      "source": "Tom wonder waar hy veronderstel is om te sit.",
+      "refs": [
+        "Tom wondered where he was supposed to sit."
+      ]
+    },
+    {
+      "id": "2783930",
+      "source": "Tom het terug buitentoe gegaan.",
+      "refs": [
+        "Tom went back outside."
+      ]
+    },
+    {
+      "id": "2345891",
+      "source": "Is jou ma tuis?",
+      "refs": [
+        "Is your mum at home?"
+      ]
+    },
+    {
+      "id": "13642072",
+      "source": "Hy het 'n groot springbok gesien.",
+      "refs": [
+        "He saw a big springbok."
+      ]
+    },
+    {
+      "id": "5540540",
+      "source": "Ek het geweet Tom sou dit nie ordentlik gedoen het nie.",
+      "refs": [
+        "I knew Tom wouldn't do it properly."
+      ]
+    },
+    {
+      "id": "2783394",
+      "source": "Tom wil bewonderd word.",
+      "refs": [
+        "Tom wants to be admired."
+      ]
+    },
+    {
+      "id": "2783849",
+      "source": "As jy regtig sou wou weet moet jy net vra.",
+      "refs": [
+        "If you really want to know, all you have to do is ask."
+      ]
+    },
+    {
+      "id": "5540595",
+      "source": "Tom sal nou trots op my wees.",
+      "refs": [
+        "Tom will now be proud of me."
+      ]
+    },
+    {
+      "id": "1767691",
+      "source": "Niemand het gekom nie.",
+      "refs": [
+        "No one came.",
+        "Nobody came."
+      ]
+    },
+    {
+      "id": "5535105",
+      "source": "Niemand wil dit doen nie, maar een van ons moet.",
+      "refs": [
+        "Nobody wants to do it, but one of us has to."
+      ]
+    },
+    {
+      "id": "5934336",
+      "source": "Hy hou van ham en eiers.",
+      "refs": [
+        "He likes ham and eggs."
+      ]
+    },
+    {
+      "id": "13585223",
+      "source": "Luister en leer iets.",
+      "refs": [
+        "Listen and learn something."
+      ]
+    },
+    {
+      "id": "1994653",
+      "source": "Diere kan nie onderskei tussen reg en verkeerd nie.",
+      "refs": [
+        "Animals can't distinguish right from wrong.",
+        "Animals cannot distinguish right from wrong."
+      ]
+    },
+    {
+      "id": "2010042",
+      "source": "Die oorlog het twee jaar geduur.",
+      "refs": [
+        "The war lasted two years."
+      ]
+    },
+    {
+      "id": "13458355",
+      "source": "Hierdie boek se voorwoord is nogal kort.",
+      "refs": [
+        "The foreword to this book is quite short."
+      ]
+    },
+    {
+      "id": "1916766",
+      "source": "Ek gaan volgende Sondag trou.",
+      "refs": [
+        "I'm getting married next Sunday."
+      ]
+    },
+    {
+      "id": "5535732",
+      "source": "Dis net nie die moeite werd nie.",
+      "refs": [
+        "It's just not worth it."
+      ]
+    },
+    {
+      "id": "13370630",
+      "source": "Ons ontmoet môre-oggend by die stasie.",
+      "refs": [
+        "We're meeting at the station tomorrow morning."
+      ]
+    },
+    {
+      "id": "13902490",
+      "source": "Ek is 'n boer.",
+      "refs": [
+        "I'm a peasant."
+      ]
+    },
+    {
+      "id": "1888816",
+      "source": "Ek neem 'n boek.",
+      "refs": [
+        "I'm taking a book."
+      ]
+    },
+    {
+      "id": "1766923",
+      "source": "Hy het 30 minute laat opgedaag.",
+      "refs": [
+        "He turned up 30 minutes late."
+      ]
+    },
+    {
+      "id": "3331631",
+      "source": "Tom wil beroemd word.",
+      "refs": [
+        "Tom wants to become famous."
+      ]
+    },
+    {
+      "id": "6011426",
+      "source": "Moet ek vir die petrol betaal?",
+      "refs": [
+        "Do I have to pay for the petrol?",
+        "Have I got to pay for the petrol?",
+        "Must I pay for the petrol?"
+      ]
+    },
+    {
+      "id": "2784080",
+      "source": "Ek gaan nie uittree nie.",
+      "refs": [
+        "I'm not backing out."
+      ]
+    },
+    {
+      "id": "2001954",
+      "source": "My pen is nuut.",
+      "refs": [
+        "My pen is new."
+      ]
+    },
+    {
+      "id": "13375425",
+      "source": "Ek het nog nooit 'n rooi yskas gesien nie.",
+      "refs": [
+        "I have never seen a red refrigerator."
+      ]
+    },
+    {
+      "id": "2783884",
+      "source": "Is daar enigiets wat jy vir ons wil vertel?",
+      "refs": [
+        "Is there anything you want to tell us?"
+      ]
+    },
+    {
+      "id": "5540674",
+      "source": "Ons moet dit begin doen.",
+      "refs": [
+        "We've got to start doing that."
+      ]
+    },
+    {
+      "id": "13913019",
+      "source": "Hierdie appel is rooier.",
+      "refs": [
+        "This apple is redder."
+      ]
+    },
+    {
+      "id": "5540487",
+      "source": "Hoekom praat jy nie met my daaroor nie?",
+      "refs": [
+        "Why don't you talk to me about it?"
+      ]
+    },
+    {
+      "id": "2783879",
+      "source": "Dit lyk nie so sleg nie.",
+      "refs": [
+        "It doesn't look so bad."
+      ]
+    },
+    {
+      "id": "2786677",
+      "source": "Ek moet seker terug ingaan.",
+      "refs": [
+        "I'd better get back inside."
+      ]
+    },
+    {
+      "id": "2364380",
+      "source": "Moenie met Tom praat nie.",
+      "refs": [
+        "Don't talk to Tom."
+      ]
+    },
+    {
+      "id": "1815894",
+      "source": "Hierdie tomaties het geen smaak nie.",
+      "refs": [
+        "These tomatoes don't have any taste."
+      ]
+    },
+    {
+      "id": "13905434",
+      "source": "Die kosbaarste goed is vryheid.",
+      "refs": [
+        "The most precious good is freedom."
+      ]
+    },
+    {
+      "id": "6456321",
+      "source": "Vind uit alles wat jy kan oor hulle.",
+      "refs": [
+        "Find out all you can about them."
+      ]
+    },
+    {
+      "id": "3451764",
+      "source": "Ek verdien 100 euros 'n dag.",
+      "refs": [
+        "I earn 100 Euros a day.",
+        "I earn 100 euros a day.",
+        "I make 100 euros a day.",
+        "I make 100 euros per day.",
+        "I make €100 a day."
+      ]
+    },
+    {
+      "id": "2060205",
+      "source": "Dit was sy besluit.",
+      "refs": [
+        "It was his decision."
+      ]
+    },
+    {
+      "id": "7968677",
+      "source": "Hulle het hulle werk op Maandag verloor.",
+      "refs": [
+        "They lost their jobs on Monday."
+      ]
+    },
+    {
+      "id": "8478199",
+      "source": "Sy het water nodig.",
+      "refs": [
+        "She needs water."
+      ]
+    },
+    {
+      "id": "1753589",
+      "source": "Ons weet dat sy in Kanada gebore is.",
+      "refs": [
+        "We know that she was born in Canada."
+      ]
+    },
+    {
+      "id": "6456530",
+      "source": "Tom was gevangenis geneem.",
+      "refs": [
+        "Tom was captured."
+      ]
+    },
+    {
+      "id": "7986827",
+      "source": "Ek het 'n koerant.",
+      "refs": [
+        "I have a newspaper."
+      ]
+    },
+    {
+      "id": "6456425",
+      "source": "Vertel my hoe jy oor hulle voel.",
+      "refs": [
+        "Tell me how you feel about them."
+      ]
+    },
+    {
+      "id": "10473157",
+      "source": "Wanneer gaan Tom inkopies doen?",
+      "refs": [
+        "When is Tom going shopping?"
+      ]
+    },
+    {
+      "id": "13370579",
+      "source": "Felix het 'n artikel gelees.",
+      "refs": [
+        "Felix was reading an article."
+      ]
+    },
+    {
+      "id": "5105646",
+      "source": "Die tyd sal leer.",
+      "refs": [
+        "Time will tell."
+      ]
+    },
+    {
+      "id": "12827590",
+      "source": "Ek het aanlyn Engels geleer.",
+      "refs": [
+        "I learned English online."
+      ]
+    },
+    {
+      "id": "7331456",
+      "source": "Tom het vir my opgestaan.",
+      "refs": [
+        "Tom stood up for me."
+      ]
+    },
+    {
+      "id": "3211136",
+      "source": "Julle het almal gedoen wat julle kon.",
+      "refs": [
+        "You all did what you could."
+      ]
+    },
+    {
+      "id": "2784216",
+      "source": "Ek kan dit nie aan myself doen nie.",
+      "refs": [
+        "I can't do it by myself."
+      ]
+    },
+    {
+      "id": "4340299",
+      "source": "Die meisie in die blou jas is my dogter.",
+      "refs": [
+        "The girl in the blue coat is my daughter."
+      ]
+    },
+    {
+      "id": "3189724",
+      "source": "Jy het 'n groen boek.",
+      "refs": [
+        "You have a green book."
+      ]
+    },
+    {
+      "id": "13585334",
+      "source": "Ek dink nie ons gaan genoeg tyd hê nie.",
+      "refs": [
+        "I don't think we'll have enough time."
+      ]
+    },
+    {
+      "id": "13081261",
+      "source": "Ek is nie soos jy nie.",
+      "refs": [
+        "I am not like you."
+      ]
+    },
+    {
+      "id": "5540587",
+      "source": "Ek kan nie glo jy het dit aan my gedoen nie.",
+      "refs": [
+        "I can't believe you did this to me."
+      ]
+    },
+    {
+      "id": "11895795",
+      "source": "Dit is hoe ons roomys maak.",
+      "refs": [
+        "This is how we make ice cream."
+      ]
+    },
+    {
+      "id": "4872146",
+      "source": "As God nie bestaan het nie, sou ons hom moes bedink het.",
+      "refs": [
+        "If God did not exist, we'd have to invent him."
+      ]
+    },
+    {
+      "id": "1974508",
+      "source": "Dit is die hoogste berg ter wêreld.",
+      "refs": [
+        "It is the highest mountain in the world.",
+        "That is the highest mountain in the world."
+      ]
+    },
+    {
+      "id": "13636264",
+      "source": "Gaan dit goed met julle albei?",
+      "refs": [
+        "Are you both doing well?"
+      ]
+    },
+    {
+      "id": "4869615",
+      "source": "Hy het glad nie met my gepraat nie.",
+      "refs": [
+        "He didn't speak to me at all."
+      ]
+    },
+    {
+      "id": "6456308",
+      "source": "Weet jy enige iets van ons?",
+      "refs": [
+        "Do you know anything about us?"
+      ]
+    },
+    {
+      "id": "6456514",
+      "source": "Ek sal nie Tom soen nie.",
+      "refs": [
+        "I won't kiss Tom."
+      ]
+    },
+    {
+      "id": "13458341",
+      "source": "Ek leer vir Tom.",
+      "refs": [
+        "I'm teaching Tom."
+      ]
+    },
+    {
+      "id": "1345790",
+      "source": "Ek praat geen Japannees nie.",
+      "refs": [
+        "I don't speak Japanese."
+      ]
+    },
+    {
+      "id": "6456374",
+      "source": "Ons is bekommerd oor haar.",
+      "refs": [
+        "We're concerned about her."
+      ]
+    },
+    {
+      "id": "6456165",
+      "source": "Het u 'n oomblik?",
+      "refs": [
+        "Have you got a moment?"
+      ]
+    },
+    {
+      "id": "1847925",
+      "source": "Ek sal gou terugbel.",
+      "refs": [
+        "I'll call back soon."
+      ]
+    },
+    {
+      "id": "1731974",
+      "source": "As jy opstaan sal hy besig wees om te studeer.",
+      "refs": [
+        "He will be studying when you get up."
+      ]
+    },
+    {
+      "id": "13368834",
+      "source": "Die swart boks is nie regtig swart nie.",
+      "refs": [
+        "The black box is not actually black."
+      ]
+    },
+    {
+      "id": "6458260",
+      "source": "Tom kon dalk dood gegaan het.",
+      "refs": [
+        "Tom may have died."
+      ]
+    },
+    {
+      "id": "1857691",
+      "source": "Tom weet beter as om met jou te baklei.",
+      "refs": [
+        "Tom knows better than to fight with you."
+      ]
+    },
+    {
+      "id": "1752685",
+      "source": "Ons sal vermoedelik voor donker daar aankom.",
+      "refs": [
+        "We are likely to get there before dark.",
+        "We're likely to get there before dark."
+      ]
+    },
+    {
+      "id": "1948694",
+      "source": "Tom weet nie wat om te sê nie.",
+      "refs": [
+        "Tom doesn't know what to say."
+      ]
+    },
+    {
+      "id": "7986584",
+      "source": "Daardie is my suster se boeke.",
+      "refs": [
+        "Those are my sister's books."
+      ]
+    },
+    {
+      "id": "13375392",
+      "source": "Ek het ophou huil.",
+      "refs": [
+        "I stopped crying."
+      ]
+    },
+    {
+      "id": "5540668",
+      "source": "Wanneer gaan jy dit doen?",
+      "refs": [
+        "When are you going to do that?"
+      ]
+    },
+    {
+      "id": "8486803",
+      "source": "Ons het 'n groot tuin.",
+      "refs": [
+        "We have a big garden.",
+        "We have a big yard."
+      ]
+    },
+    {
+      "id": "13107976",
+      "source": "Hierdie is 'n pruim.",
+      "refs": [
+        "This is a plum."
+      ]
+    },
+    {
+      "id": "13375398",
+      "source": "Laat ons liewers nie oor sport praat nie.",
+      "refs": [
+        "Let's not talk about sports."
+      ]
+    },
+    {
+      "id": "13010427",
+      "source": "Haar broer het skool toe gehardloop.",
+      "refs": [
+        "Her brother ran to school."
+      ]
+    },
+    {
+      "id": "6456304",
+      "source": "Weet jy enige iets van haar?",
+      "refs": [
+        "Do you know anything about her?"
+      ]
+    },
+    {
+      "id": "4871266",
+      "source": "Ek wil nie na jou verlang nie.",
+      "refs": [
+        "I don't want to miss you."
+      ]
+    },
+    {
+      "id": "653445",
+      "source": "Ek is 'n vry man.",
+      "refs": [
+        "I'm a free man."
+      ]
+    },
+    {
+      "id": "13491773",
+      "source": "Hoekom is Februarie so kort?",
+      "refs": [
+        "Why is February so short?"
+      ]
+    },
+    {
+      "id": "6456345",
+      "source": "Ek het vir haar om gegee.",
+      "refs": [
+        "I cared about her."
+      ]
+    },
+    {
+      "id": "13585328",
+      "source": "Hy het gesê hy sal dit later doen.",
+      "refs": [
+        "He said he'd do it later."
+      ]
+    },
+    {
+      "id": "2205112",
+      "source": "Het enigiemand enige ander vrae?",
+      "refs": [
+        "Does anyone have any other questions?"
+      ]
+    },
+    {
+      "id": "6456431",
+      "source": "Kom ons vergeet van haar.",
+      "refs": [
+        "Let's forget about her."
+      ]
+    },
+    {
+      "id": "2783372",
+      "source": "Vir my is dit nog nie bekend nie.",
+      "refs": [
+        "For me it is not yet known."
+      ]
+    },
+    {
+      "id": "6456555",
+      "source": "Tom het heeldag gehuil.",
+      "refs": [
+        "Tom cried all day."
+      ]
+    },
+    {
+      "id": "6456542",
+      "source": "Tom sal nie eet nie.",
+      "refs": [
+        "Tom wouldn't eat."
+      ]
+    },
+    {
+      "id": "13368820",
+      "source": "Elon Musk het niks met Twitter te doen gehad nie, maar hy het die vermoë om dit vir almal te vernietig.",
+      "refs": [
+        "Elon Musk had nothing to do with Twitter, but he has the ability to destroy it for everyone."
+      ]
+    },
+    {
+      "id": "13368805",
+      "source": "Aanvaar jy ook American Express?",
+      "refs": [
+        "Do you also accept American Express?"
+      ]
+    },
+    {
+      "id": "6456282",
+      "source": "Ons het skoon van haar vergeet.",
+      "refs": [
+        "We forgot all about her."
+      ]
+    },
+    {
+      "id": "6456397",
+      "source": "Ek droom aanhoudend oor haar.",
+      "refs": [
+        "I keep dreaming about her."
+      ]
+    },
+    {
+      "id": "7331438",
+      "source": "Wie besit hierdie lorrie?",
+      "refs": [
+        "Who owns this lorry?"
+      ]
+    },
+    {
+      "id": "1424430",
+      "source": "Het jy die boek wat ek nou die dag vir jou geleen het, klaar gelees?",
+      "refs": [
+        "Have you finished reading the book I lent you the other day?"
+      ]
+    },
+    {
+      "id": "2783402",
+      "source": "Jy het my geskrik, Robert!",
+      "refs": [
+        "You scared me, Robert!"
+      ]
+    },
+    {
+      "id": "5868899",
+      "source": "Die bus was vol.",
+      "refs": [
+        "The bus was full."
+      ]
+    },
+    {
+      "id": "1810761",
+      "source": "Praat julle oor die werk?",
+      "refs": [
+        "Are you talking about work?",
+        "Are you talking shop?"
+      ]
+    },
+    {
+      "id": "5540654",
+      "source": "Tom was die een wat dit gedoen het.",
+      "refs": [
+        "Tom was the one who did that."
+      ]
+    },
+    {
+      "id": "10472467",
+      "source": "Sien die aandnuusbrief vir 'n berig hieroor.",
+      "refs": [
+        "See the evening news bulletin for a report about this."
+      ]
+    },
+    {
+      "id": "6456443",
+      "source": "Ek wil nie van hom hoor nie.",
+      "refs": [
+        "I don't want to hear about him."
+      ]
+    },
+    {
+      "id": "6456104",
+      "source": "Julius en Cornelius gaan an hul huise.",
+      "refs": [
+        "Julius and Cornelius are going to their houses."
+      ]
+    },
+    {
+      "id": "754731",
+      "source": "My ouers woon in Windhoek en ek woon in Lüderitz.",
+      "refs": [
+        "My parents live in Windhoek and I live in Lüderitz."
+      ]
+    },
+    {
+      "id": "1762028",
+      "source": "Mnr Mitchel het geeis dat ek die res van die geld voor die einde van die week oorbetaal.",
+      "refs": [
+        "Mr Mitchel demanded that I pay the rest of the money by the end of the week.",
+        "Mr. Mitchel demanded that I pay the rest of the money by the end of the week."
+      ]
+    },
+    {
+      "id": "1730376",
+      "source": "Waar het u Italiaans geleer?",
+      "refs": [
+        "Where did you learn Italian?"
+      ]
+    },
+    {
+      "id": "13699236",
+      "source": "Dit behoort goed te wees.",
+      "refs": [
+        "This should be good."
+      ]
+    },
+    {
+      "id": "2786753",
+      "source": "Tom sit by venster besig om 'n boek te lees.",
+      "refs": [
+        "Tom sat by the window, reading a book."
+      ]
+    },
+    {
+      "id": "6456267",
+      "source": "Ek het heeltemal van haar vergeet.",
+      "refs": [
+        "I forgot all about her."
+      ]
+    },
+    {
+      "id": "5545542",
+      "source": "Ons kan so vinnig ry as wat ons wil.",
+      "refs": [
+        "We can drive as fast as we want."
+      ]
+    },
+    {
+      "id": "2788232",
+      "source": "Ek sal hier wees wanneer jy terugkom.",
+      "refs": [
+        "I'll be here when you get back."
+      ]
+    },
+    {
+      "id": "6897033",
+      "source": "Dis ‘n sterrenag vannag.",
+      "refs": [
+        "It’s a starry night tonight."
+      ]
+    },
+    {
+      "id": "1752687",
+      "source": "Ons is net betyds vir die laaste trein.",
+      "refs": [
+        "We are just in time for the last train.",
+        "We're just in time for the last train."
+      ]
+    },
+    {
+      "id": "2060231",
+      "source": "Dit was nie baie goed nie.",
+      "refs": [
+        "It wasn't very good."
+      ]
+    },
+    {
+      "id": "5507154",
+      "source": "Haal deur die neus asem.",
+      "refs": [
+        "Breathe through your nose."
+      ]
+    },
+    {
+      "id": "5535607",
+      "source": "Kan ek u 'n voorstel maak?",
+      "refs": [
+        "Can I make you a proposal?"
+      ]
+    },
+    {
+      "id": "13901279",
+      "source": "Tom is baie patrioties.",
+      "refs": [
+        "Tom is very patriotic."
+      ]
+    },
+    {
+      "id": "1855503",
+      "source": "Het jy gister na skool reguit huis toe gegaan?",
+      "refs": [
+        "Did you go straight home after school yesterday?"
+      ]
+    },
+    {
+      "id": "4871255",
+      "source": "Ek wil nie gebruik word nie.",
+      "refs": [
+        "I don't want to be used."
+      ]
+    },
+    {
+      "id": "6456222",
+      "source": "Tom het 'n goeie verbeelding.",
+      "refs": [
+        "Tom has a good imagination."
+      ]
+    },
+    {
+      "id": "12821448",
+      "source": "Die wurm is in die vrug.",
+      "refs": [
+        "The worm is in the fruit."
+      ]
+    },
+    {
+      "id": "3328198",
+      "source": "Kan jy so lank wag?",
+      "refs": [
+        "Can you wait that long?"
+      ]
+    },
+    {
+      "id": "5800974",
+      "source": "Watter een is jou sak?",
+      "refs": [
+        "Which is your bag?"
+      ]
+    },
+    {
+      "id": "12757736",
+      "source": "Hierdie handdoek is dik.",
+      "refs": [
+        "This towel is thick."
+      ]
+    },
+    {
+      "id": "2783434",
+      "source": "Die voëls sing rondom die parkie.",
+      "refs": [
+        "In the park birds are singing all around."
+      ]
+    },
+    {
+      "id": "1956505",
+      "source": "Waar het jy hulle weggesluit?",
+      "refs": [
+        "Where did you shut them away?"
+      ]
+    },
+    {
+      "id": "13458273",
+      "source": "\"Tom is nog lewendig.\" \"Is nie, hy lewe nie meer nie\"",
+      "refs": [
+        "\"Tom is still alive.\" \"No, he is not.\""
+      ]
+    },
+    {
+      "id": "12492108",
+      "source": "My vark het nie 'n stert nie.",
+      "refs": [
+        "My pig doesn't have a tail."
+      ]
+    },
+    {
+      "id": "2458890",
+      "source": "Sy mag maar trots vind in haar talent.",
+      "refs": [
+        "She may well take pride in her talent."
+      ]
+    },
+    {
+      "id": "1830191",
+      "source": "Ek voel nie lus om vandag Engels te studeer nie.",
+      "refs": [
+        "I don't feel like studying English today."
+      ]
+    },
+    {
+      "id": "13491741",
+      "source": "Ek sal net vir 'n paar dae hier wees.",
+      "refs": [
+        "I'll only be here for a few days."
+      ]
+    },
+    {
+      "id": "2364261",
+      "source": "Is dit 'n probleem?",
+      "refs": [
+        "Is that a problem?"
+      ]
+    },
+    {
+      "id": "1422339",
+      "source": "Ons sal u skakel wanneer u tafel gereed is.",
+      "refs": [
+        "We'll call you when your table is ready."
+      ]
+    },
+    {
+      "id": "5535735",
+      "source": "Dit is net nie die moeite werd nie.",
+      "refs": [
+        "It's just not worth it."
+      ]
+    },
+    {
+      "id": "2020429",
+      "source": "Jim hou van die doktor.",
+      "refs": [
+        "Jim likes the doctor."
+      ]
+    },
+    {
+      "id": "1810729",
+      "source": "Is hierdie 'n pen of 'n potlood?",
+      "refs": [
+        "Is this a pen or a pencil?"
+      ]
+    },
+    {
+      "id": "13699225",
+      "source": "Hy wil 'n groter gehoor bereik.",
+      "refs": [
+        "He wants to reach a wider audience."
+      ]
+    },
+    {
+      "id": "3514792",
+      "source": "Weet jy wanneer hy gaan terug kom?",
+      "refs": [
+        "Do you know when he'll come back?"
+      ]
+    },
+    {
+      "id": "5540516",
+      "source": "Tom het ontbyt gemaak.",
+      "refs": [
+        "Tom made breakfast."
+      ]
+    },
+    {
+      "id": "1799301",
+      "source": "Sy is twee jaar ouer as jy.",
+      "refs": [
+        "She is two years older than you.",
+        "She's two years older than you."
+      ]
+    },
+    {
+      "id": "5777450",
+      "source": "Die boks is amper leeg.",
+      "refs": [
+        "The box is almost empty."
+      ]
+    }
+  ]
+}

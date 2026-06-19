@@ -1,0 +1,57 @@
+# Models for the translation-quality benchmark.
+# Direction: source (afr/deu/spa) -> English, via OpenAI-compatible chat endpoints.
+#
+# RAM budget: target host has 18 GB TOTAL. Usable for weights is ~12-14 GB
+# (an 18 GB Mac's GPU wired limit defaults to ~12-13 GB; leave headroom for the
+# KV cache + OS). ram_gb below = approx Q4_K_M GGUF weight size.
+#   fit: ok    -> comfortable
+#        tight -> only with a small context window + raised wired limit; Q3 fallback
+#        no    -> won't fit (listed so nobody wastes time)
+# RUN ONE MODEL AT A TIME. api_model MUST match the id the server reports at
+# GET /v1/models (LM Studio shows it in the model list). `have: true` = already
+# downloaded on the host (confirmed via /v1/models on 2026-06-19).
+
+defaults:
+  lmstudio_endpoint: http://100.101.140.45:1234
+  # cloud keys are read from env: ANTHROPIC_API_KEY, OPENAI_API_KEY
+
+# ---- Local (LM Studio, GGUF) — within 18 GB -------------------------------
+local:
+  - {id: llama-3.2-3b,    api_model: "meta-llama-3.2-3b-instruct",  ram_gb: 2.0,  fit: ok,    have: false, note: "small baseline / floor"}
+  - {id: gemma-4-e4b,     api_model: "google/gemma-4-e4b",          ram_gb: 4.5,  fit: ok,    have: true,  note: "current Lector default; small Gemma"}
+  - {id: llama-3.1-8b,    api_model: "meta-llama-3.1-8b-instruct",  ram_gb: 4.9,  fit: ok,    have: false, note: "popular mid baseline; afr not an official Llama language"}
+  - {id: aya-expanse-8b,  api_model: "cohere/aya-expanse-8b",       ram_gb: 5.4,  fit: ok,    have: false, note: "multilingual specialist; strong deu/spa, but afr NOT in its 23 langs (instructive contrast)"}
+  - {id: qwen3.5-9b,      api_model: "qwen/qwen3.5-9b",             ram_gb: 5.8,  fit: ok,    have: true,  note: "disable thinking mode for MT"}
+  - {id: gemma-4-12b,     api_model: "google/gemma-4-12b",          ram_gb: 7.3,  fit: ok,    have: true,  note: "Gemma 12B (non-QAT) — pair with -qat to measure quant loss"}
+  - {id: gemma-4-12b-qat, api_model: "google/gemma-4-12b-qat",      ram_gb: 7.5,  fit: ok,    have: true,  note: "EXPECTED budget winner for Afrikaans; QAT holds ~bf16 quality at 4-bit"}
+  # --- generational + outliers (added 2026-06-19) ---
+  - {id: gemma-3-12b,      api_model: "google/gemma-3-12b",                 ram_gb: 7.3,  fit: ok,    have: true,  note: "Gemma 3 12B — generational comparison vs gemma-4-12b"}
+  - {id: gemma-3n-e4b,     api_model: "google/gemma-3n-e4b",                ram_gb: 4.5,  fit: ok,    have: true,  note: "Gemma 3n E4B — generational vs gemma-4-e4b"}
+  - {id: qwen2.5-coder-14b,api_model: "qwen/qwen2.5-coder-14b",             ram_gb: 9.0,  fit: ok,    have: true,  note: "Qwen2.5-Coder 14B — coder model; translation outlier (does code-tuning hurt MT?)"}
+  - {id: ministral-3-14b,  api_model: "mistralai/ministral-3-14b-reasoning",ram_gb: 9.0,  fit: ok,    have: true,  note: "Ministral 3 14B (reasoning) — JSON schema + reasoning_effort:none should constrain it"}
+  - {id: gpt-oss-20b,      api_model: "openai/gpt-oss-20b",                 ram_gb: 12.5, fit: tight, have: true,  note: "GPT-OSS 20B (MoE, reasoning) — largest; ~12.5GB, tight on 18GB; may need reasoning_effort:'low'"}
+  - {id: qwen3-14b,       api_model: "qwen/qwen3-14b",              ram_gb: 9.0,  fit: ok,    have: false, note: "strong generalist; disable thinking"}
+  - {id: phi-4-14b,       api_model: "microsoft/phi-4",             ram_gb: 9.0,  fit: ok,    have: false, note: "English-centric contrast; expected weak on afr"}
+  - {id: mistral-small-24b, api_model: "mistralai/mistral-small-3.2-24b-instruct-2506", ram_gb: 14.0, fit: tight, have: false, note: "STRETCH: small ctx + raised wired limit; Q3 fallback; strong European langs"}
+  - {id: gemma-4-26b-a4b, api_model: "google/gemma-4-26b-a4b",      ram_gb: 15.5, fit: tight, have: false, note: "STRETCH/local ceiling: MoE ~4B active but ALL ~26B weights resident; likely needs Q3 on 18 GB"}
+  - {id: gemma-4-31b,     api_model: "google/gemma-4-31b",          ram_gb: 19.0, fit: "no",  have: false, note: "does NOT fit 18 GB at Q4 — listed so it isn't attempted"}
+
+# ---- On-device: the laptop already running the app (tier: on-device) ------
+ondevice:
+  - {id: apfel-foundation, api_model: "apple-foundationmodel", endpoint: "http://localhost:11434", no_schema: true, note: "Apple on-device Foundation Model via Apfel — zero-setup on Apple Silicon. Ignores JSON-schema (heuristic extraction); Afrikaans is NOT in its supported-languages list."}
+  # Ollama (laptop baseline): `ollama serve` on a free port + pull a small model, then uncomment + set endpoint + have:true.
+  # - {id: ollama-llama3.2-3b, api_model: "llama3.2:3b", endpoint: "http://localhost:11435", note: "Ollama small model — cheap laptop baseline"}
+
+# ---- Cloud via OpenRouter (OpenAI-compatible; tier: cloud) -----------------
+# Populated once OPENROUTER_API_KEY is exported. Tiny translations (~80 tok each)
+# so each model is well under $1 for the full afr/deu/spa + pre/post run.
+cloud:
+  # - {id: claude-sonnet-4-5, api_model: "anthropic/claude-sonnet-4.5", endpoint: "https://openrouter.ai/api/v1", env_key: OPENROUTER_API_KEY, note: "frontier ceiling"}
+  # - {id: llama-3.3-70b,     api_model: "meta-llama/llama-3.3-70b-instruct", endpoint: "https://openrouter.ai/api/v1", env_key: OPENROUTER_API_KEY, note: "big open model the 18GB box can't run"}
+
+# ---- Dedicated-MT baselines (seq2seq; run via a separate adapter, NOT the chat endpoint) --
+# Answers the reader's obvious question: how do general LLMs compare to purpose-built MT?
+# Sanity-check numbers against the Tatoeba MT Challenge published baselines.
+mt_baseline:
+  - {id: opus-mt,  note: "Helsinki-NLP OPUS-MT (afr/deu/spa->en), transformers MarianMT"}
+  - {id: nllb-200, note: "Meta NLLB-200 distilled (afr/deu/spa->en)"}

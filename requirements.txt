@@ -1,0 +1,7 @@
+requests>=2.31
+sacrebleu>=2.4
+pyyaml>=6
+
+# Optional neural metric. Heavy: pulls in torch and downloads a ~2.3 GB
+# checkpoint (Unbabel/wmt22-comet-da) on first use. Install when you want COMET:
+#   pip install "unbabel-comet>=2.2"
