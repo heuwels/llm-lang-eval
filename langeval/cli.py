@@ -25,7 +25,9 @@ from .score import score
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "config" / "models.yaml"
-SCORES = ROOT / "results" / "scores.json"
+# LANGEVAL_SCORES lets a parallel run write to an isolated scores file (merged later)
+SCORES = Path(os.environ["LANGEVAL_SCORES"]) if os.environ.get("LANGEVAL_SCORES") \
+    else ROOT / "results" / "scores.json"
 
 
 def _load_env():
@@ -58,13 +60,16 @@ def _all_models(cfg: dict) -> list:
 
 
 def _resolve(cfg: dict, m: dict) -> dict:
-    """Resolve where/how to call a model: endpoint, api key, schema mode."""
+    """Resolve where/how to call a model: endpoint, api key, schema mode,
+    concurrency (cloud APIs parallelise; a single local server stays serial)."""
+    endpoint = m.get("endpoint") or cfg.get("defaults", {}).get("lmstudio_endpoint")
     return {
-        "endpoint": m.get("endpoint") or cfg.get("defaults", {}).get("lmstudio_endpoint"),
+        "endpoint": endpoint,
         "api_key": os.environ.get(m["env_key"]) if m.get("env_key") else None,
         "no_schema": bool(m.get("no_schema")),
         "extra_body": m.get("extra_body"),
         "api_model": m.get("api_model", m["id"]),
+        "concurrency": m.get("concurrency") or (8 if endpoint and "openrouter" in endpoint else 1),
     }
 
 
@@ -98,7 +103,7 @@ def cmd_run(a):
 
     run(a.model_id, r["endpoint"], r["api_model"], testset, name, prompts.build,
         limit=a.limit, extra_body=r["extra_body"], no_schema=r["no_schema"],
-        api_key=r["api_key"])
+        api_key=r["api_key"], concurrency=r["concurrency"])
 
 
 def _save_score(res: dict):
@@ -146,7 +151,7 @@ def cmd_sweep(a):
             print(f"\n=== {m['id']} / {lang} ===")
             run(m["id"], r["endpoint"], r["api_model"], ts, name, prompts.build,
                 limit=a.limit, extra_body=r["extra_body"], no_schema=r["no_schema"],
-                api_key=r["api_key"])
+                api_key=r["api_key"], concurrency=r["concurrency"])
             _save_score(score(m["id"], lang))
 
     if dropped:

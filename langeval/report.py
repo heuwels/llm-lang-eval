@@ -13,13 +13,15 @@ that can be published as-is or dropped into the Lector site's /blog.
 
 import html
 import json
+import os
 from pathlib import Path
 
 import yaml
 from sacrebleu.metrics import CHRF
 
 ROOT = Path(__file__).resolve().parent.parent
-SCORES = ROOT / "results" / "scores.json"
+SCORES = Path(os.environ["LANGEVAL_SCORES"]) if os.environ.get("LANGEVAL_SCORES") \
+    else ROOT / "results" / "scores.json"
 RAW = ROOT / "results" / "raw_outputs"
 TESTSETS = ROOT / "data" / "testsets"
 CONFIG = ROOT / "config" / "models.yaml"
@@ -331,11 +333,12 @@ precise measurement of contamination.</p>
 <title>{_esc(title)}</title><style>{CSS}</style></head><body><div class="wrap">
 <h1>{_esc(title)}</h1>
 <p class="date">{_esc(date)} · source → English · Afrikaans / German / Spanish</p>
-<p class="lead">A reproducible benchmark of local LLMs on sentence translation into English,
-built to choose a translation model for <a href="https://github.com/heuwels/lector">Lector</a> —
-with the low-resource case (Afrikaans) front and centre. Every model gets the same blinded
-Tatoeba source sentences, the same prompt, greedy decoding, and is scored multi-reference with
-chrF++ and BLEU.</p>
+<p class="lead">A reproducible benchmark of on-device, self-hosted, and cloud LLMs on sentence
+translation into English, built to choose a translation model for
+<a href="https://github.com/heuwels/lector">Lector</a> — with the low-resource case (Afrikaans)
+front and centre. Every model gets the same blinded Tatoeba source sentences, the same prompt,
+greedy decoding, and is scored multi-reference with <strong>COMET</strong> (semantic) and
+<strong>chrF++</strong> (surface), BLEU alongside.</p>
 
 <div class="callout">{rec or "Run more models to populate the leaderboard."}</div>
 

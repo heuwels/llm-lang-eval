@@ -13,5 +13,8 @@ tmp/
 data/raw/
 results/raw_outputs/
 
+# Temp parallel-run scores (merged into scores.json)
+results/scores-*.json
+
 # Test sets (data/testsets/) and results/scores.json ARE committed for
 # reproducibility — they are small and seeded.
