@@ -288,7 +288,7 @@ def _cloze_panel() -> str:
             f"<th>gap</th></tr></thead><tbody>{''.join(trs)}</tbody></table>")
 
 
-def _dot_plot(scores: list, langs: list) -> str:
+def _dot_plot(scores: list, langs: list, models: list) -> str:
     """Cleveland dot plot: one row per model (ranked), a dot per language on a
     shared ZOOMED axis so the bunched scores actually separate. Connector shows
     each model's cross-language spread; the name carries its tier dot."""
@@ -296,8 +296,9 @@ def _dot_plot(scores: list, langs: list) -> str:
     tiers = _tiers()
     metric = "comet" if any("comet" in s for s in scores) else "chrf2"
     focus = "afr" if "afr" in langs else langs[0]
-    models = sorted({m for (m, l) in by if l == focus and by[(m, l)].get(metric) is not None},
-                    key=lambda m: -by[(m, focus)][metric])
+    # use the caller's canonical order (afr primary-metric desc); keep only models that have a
+    # focus-language dot to plot — same order as the table, so the two never disagree
+    models = [m for m in models if (m, focus) in by and by[(m, focus)].get(metric) is not None]
     vals = [by[(m, l)][metric] for m in models for l in langs
             if (m, l) in by and by[(m, l)].get(metric) is not None]
     if not vals:
@@ -338,19 +339,38 @@ def _dot_plot(scores: list, langs: list) -> str:
 
 
 CSS = """
-:root{--bg:#fafafa;--card:#fff;--text:#1a1a1a;--muted:#636363;--border:#e2e2e2;
---accent:#b45309;--accent-soft:#fde9d3;--best:#15803d;--best-soft:#dcfce7;--mono:#1e1e2e}
-@media(prefers-color-scheme:dark){:root{--bg:#111;--card:#1a1a1a;--text:#e4e4e4;
---muted:#999;--border:#2a2a2a;--accent:#f59e0b;--accent-soft:#3a2a10;--best:#4ade80;--best-soft:#14301f}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.65;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+/* palette matched to lector-site "warm sand / sage" theme */
+:root{--bg:#f3eee3;--card:#fffdf7;--text:#2c2a23;--muted:#6b6356;--border:#e9e1d0;
+--accent:#2f8a76;--accent-soft:#efe9dc;--best:#226a5a;--best-soft:#e3ede8;--hero-bg:#ece4d3;
+--mono:"SF Mono","Fira Code","JetBrains Mono",Menlo}
+[data-theme="dark"]{--bg:#17140f;--card:#211d16;--text:#ece5d6;--muted:#a99e8a;--border:#352f24;
+--accent:#54ab92;--accent-soft:#2a251c;--best:#7fc9b3;--best-soft:#21342c;--hero-bg:#1f1b14}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);line-height:1.7;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;-webkit-font-smoothing:antialiased}
+code,pre{font-family:var(--mono),monospace}
 .wrap{max-width:880px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+/* site chrome — header band, footer, theme toggle (mirrors lector-site) */
+.site-header{background:var(--hero-bg);border-bottom:1px solid var(--border);padding:3rem 0 2rem}
+.site-header .wrap{padding-top:0;padding-bottom:0}
+.breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:.5rem}
+.breadcrumb a{color:var(--muted)}
+.site-footer{background:var(--hero-bg);border-top:1px solid var(--border);padding:2rem 0;text-align:center;margin-top:3rem}
+.site-footer .wrap{padding-top:0;padding-bottom:0}
+.footer-nav{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-bottom:.75rem;flex-wrap:wrap}
+.footer-nav a{color:var(--muted);font-size:.9rem}
+.footer-sep{color:var(--muted);user-select:none}
+.footer-copy{color:var(--muted);font-size:.8rem}
+.theme-toggle{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:50%;width:42px;height:42px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,.08);z-index:100;font-size:1.1rem}
+.theme-toggle .icon-sun,.theme-toggle .icon-moon{display:none}
+[data-theme="dark"] .theme-toggle .icon-sun{display:inline}
+[data-theme="light"] .theme-toggle .icon-moon{display:inline}
+:root:not([data-theme]) .theme-toggle .icon-moon{display:inline}
 h1{font-size:2rem;letter-spacing:-.02em;margin:0 0 .25rem}
-h2{font-size:1.4rem;margin:2.75rem 0 1rem;padding-top:1rem;border-top:1px solid var(--border)}
-h3{font-size:1.1rem;margin:1.75rem 0 .5rem}
+h2{font-size:1.5rem;margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid var(--border)}
+h3{font-size:1.15rem;margin:2rem 0 .75rem}
 .date{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
 .lead{font-size:1.1rem;color:var(--muted)}
-.repo{font-size:.92rem;margin:.4rem 0 1.4rem;padding:.55rem .9rem;background:var(--accent-soft);border-radius:6px}
+.repo{font-size:.92rem;margin:.4rem 0 1.4rem;padding:.55rem .9rem .55rem 1.1rem;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
 a{color:var(--accent)}.muted{color:var(--muted);font-size:.92rem}
 table.board{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
 .board th,.board td{border-bottom:1px solid var(--border);padding:.55rem .6rem;text-align:center}
@@ -397,7 +417,7 @@ code{background:var(--border);padding:.1rem .35rem;border-radius:4px;font-size:.
 .tier-ondevice{background:#8b5cf6}.tier-box{background:#0ea5e9}.tier-cloud{background:#f59e0b}
 .legend .tier{margin:0 .25rem 0 .5rem}
 .warn{background:#fef2f2;border-left:3px solid #dc2626;padding:.85rem 1.1rem;border-radius:0 6px 6px 0;margin:1rem 0;font-size:.95rem}
-@media(prefers-color-scheme:dark){.warn{background:#2a1416}}
+[data-theme="dark"] .warn{background:#2a1416}
 """
 
 
@@ -406,14 +426,24 @@ def generate(date: str = "", title: str = "") -> Path:
     if not scores:
         raise SystemExit("no results/scores.json yet — run some models first")
     langs = [l for l in ("afr", "deu", "spa") if any(s["lang"] == l for s in scores)]
-    # rank models by mean chrF++ across languages (desc)
-    by_model: dict = {}
-    for s in scores:
-        by_model.setdefault(s["model"], []).append(s["chrf2"])
-    models = sorted(by_model, key=lambda m: -sum(by_model[m]) / len(by_model[m]))
-
-    focus = "afr" if "afr" in langs else langs[0]
     by = {(s["model"], s["lang"]): s for s in scores}
+    focus = "afr" if "afr" in langs else langs[0]
+    has_comet = any("comet" in s for s in scores)
+    rank_metric = "comet" if has_comet else "chrf2"
+
+    # Canonical model order — by the focus language (Afrikaans) primary metric, descending —
+    # shared by BOTH the dot plot and the table so the two can never disagree on rank. (The
+    # recommendation callout already ranks by this key.) Models missing the focus score sort
+    # last; mean chrF++ breaks ties deterministically.
+    def _mean_chrf(m: str) -> float:
+        vs = [by[(m, l)]["chrf2"] for l in langs if (m, l) in by]
+        return sum(vs) / len(vs) if vs else 0.0
+
+    def _rank_key(m: str):
+        fv = by.get((m, focus), {}).get(rank_metric)
+        return (fv is None, -(fv if fv is not None else 0.0), -_mean_chrf(m))
+
+    models = sorted({s["model"] for s in scores}, key=_rank_key)
     n_focus = next((by[(m, focus)]["n"] for m in models if (m, focus) in by), 0)
 
     title = title or "Which local LLM translates best? A reproducible eval"
@@ -448,12 +478,11 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
 = genuine context prediction. n≈150 per cell, so gaps within ~±10 are noise.</p>
 """ if cloze_table else ""
 
-    dotplot = _dot_plot(scores, langs)
+    dotplot = _dot_plot(scores, langs, models)
 
     gens = "".join(_generations(l, models) for l in langs)
 
     # recommendation line — prefer the meaning metric (COMET) when present
-    has_comet = any("comet" in s for s in scores)
     metric, mname = ("comet", "COMET") if has_comet else ("chrf2", "chrF++")
     top = sorted((s for s in scores if s["lang"] == focus and s.get(metric) is not None),
                  key=lambda s: -s[metric])
@@ -474,9 +503,16 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
 
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{_esc(title)}</title><style>{CSS}</style></head><body><div class="wrap">
+<title>{_esc(title)}</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<script>(function(){{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.setAttribute('data-theme','dark');else document.documentElement.setAttribute('data-theme','light');}})();</script>
+<style>{CSS}</style></head><body>
+<header class="site-header"><div class="wrap">
+<p class="breadcrumb"><a href="/">lector</a> / eval</p>
 <h1>{_esc(title)}</h1>
 <p class="date">{_esc(date)} · source → English · Afrikaans / German / Spanish</p>
+</div></header>
+<main class="wrap">
 <p class="lead"><strong>How good are local LLMs at translation — and do you actually need the cloud?</strong>
 A reproducible benchmark of 24 on-device, self-hosted, and cloud models translating into English, with the
 low-resource case (Afrikaans) front and centre. The headline: on Afrikaans&rarr;English a local 18&nbsp;GB
@@ -502,7 +538,8 @@ the tight differences legible; gaps under ~{NOISE} COMET are sampling noise (see
 rewards character overlap with the reference, so it docks valid paraphrases
 (<em>"scenery is magnificent"</em> vs <em>"landscape is breathtaking"</em>); <strong>COMET</strong>
 scores meaning and credits them. <strong>Green</strong> = leading band (within ~{NOISE} COMET — a
-statistical tie, not a single winner). n={n_focus} per language.</p>
+statistical tie, not a single winner). Rows share the chart's order — ranked by Afrikaans COMET — so
+near-ties can sit a place apart despite equal rounded scores. n={n_focus} per language.</p>
 {_leaderboard(scores, langs, models)}
 
 {contam_section}
@@ -532,9 +569,27 @@ disagree most — green = highest per-sentence chrF++ for that sentence.</p>
 <li><strong>Into-English is the easy direction</strong>, and Afrikaans here is largely single-reference. Read accordingly.</li>
 </ul></div>
 
-<div class="footer">Generated by <a href="https://github.com/heuwels/llm-lang-eval">llm-lang-eval</a>.
-Harness + raw generations are open and reproducible.</div>
-</div></body></html>"""
+</main>
+<footer class="site-footer"><div class="wrap">
+<nav class="footer-nav">
+<a href="/">Home</a>
+<span class="footer-sep" aria-hidden="true">&middot;</span>
+<a href="/blog/">Blog</a>
+<span class="footer-sep" aria-hidden="true">&middot;</span>
+<a href="/docs/">Docs</a>
+<span class="footer-sep" aria-hidden="true">&middot;</span>
+<a href="/methodology/">Methodology</a>
+<span class="footer-sep" aria-hidden="true">&middot;</span>
+<a href="https://github.com/heuwels/lector" target="_blank" rel="noopener noreferrer">GitHub</a>
+</nav>
+<p class="footer-copy">Generated by <a href="https://github.com/heuwels/llm-lang-eval">llm-lang-eval</a> &middot; harness &amp; raw generations are open and reproducible &middot; built by <a href="https://lukeboyle.com">Luke Boyle</a></p>
+</div></footer>
+<button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+<span class="icon-sun">&#x2600;</span>
+<span class="icon-moon">&#x1F319;</span>
+</button>
+<script>function toggleTheme(){{var c=document.documentElement.getAttribute('data-theme');var n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);localStorage.setItem('theme',n);}}</script>
+</body></html>"""
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(doc, encoding="utf-8")
