@@ -350,6 +350,7 @@ h2{font-size:1.4rem;margin:2.75rem 0 1rem;padding-top:1rem;border-top:1px solid 
 h3{font-size:1.1rem;margin:1.75rem 0 .5rem}
 .date{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
 .lead{font-size:1.1rem;color:var(--muted)}
+.repo{font-size:.92rem;margin:.4rem 0 1.4rem;padding:.55rem .9rem;background:var(--accent-soft);border-radius:6px}
 a{color:var(--accent)}.muted{color:var(--muted);font-size:.92rem}
 table.board{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
 .board th,.board td{border-bottom:1px solid var(--border);padding:.55rem .6rem;text-align:center}
@@ -476,12 +477,14 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
 <title>{_esc(title)}</title><style>{CSS}</style></head><body><div class="wrap">
 <h1>{_esc(title)}</h1>
 <p class="date">{_esc(date)} · source → English · Afrikaans / German / Spanish</p>
-<p class="lead">A reproducible benchmark of on-device, self-hosted, and cloud LLMs on sentence
-translation into English, built to choose a translation model for
-<a href="https://github.com/heuwels/lector">Lector</a> — with the low-resource case (Afrikaans)
-front and centre. Every model gets the same blinded Tatoeba source sentences, the same prompt,
-greedy decoding, and is scored multi-reference with <strong>COMET</strong> (semantic) and
-<strong>chrF++</strong> (surface), BLEU alongside.</p>
+<p class="lead"><strong>How good are local LLMs at translation — and do you actually need the cloud?</strong>
+A reproducible benchmark of 24 on-device, self-hosted, and cloud models translating into English, with the
+low-resource case (Afrikaans) front and centre. The headline: on Afrikaans&rarr;English a local 18&nbsp;GB
+model lands in a statistical tie with frontier cloud. Same blinded Tatoeba sentences, same prompt, greedy
+decoding, scored multi-reference with <strong>COMET</strong> (meaning) and <strong>chrF++</strong> (surface).
+Built to pick a translation model for <a href="https://github.com/heuwels/lector">Lector</a>.</p>
+<p class="repo">Open &amp; reproducible — harness, every model's raw outputs, and the seeded test sets:
+<a href="https://github.com/heuwels/llm-lang-eval">github.com/heuwels/llm-lang-eval</a></p>
 
 <div class="callout">{rec or "Run more models to populate the leaderboard."}</div>
 
