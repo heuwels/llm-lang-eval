@@ -29,6 +29,9 @@ OUT = ROOT / "results" / "report.html"
 
 LANG_NAMES = {"afr": "Afrikaans", "deu": "German", "spa": "Spanish"}
 _CHRF = CHRF(word_order=2)
+# COMET differences smaller than this are within sampling noise at n=200 (afr
+# largely single-reference): treat the top as a band/tie, not a strict ranking.
+NOISE = 1.5
 
 # deployment tier per config section, for colour-coding
 _TIER_OF_SECTION = {"local": "box", "ondevice": "ondevice", "cloud": "cloud",
@@ -83,7 +86,7 @@ def _sent_chrf(hyp: str, refs: list) -> float:
 # ---- HTML building blocks --------------------------------------------------
 
 def _bar_chart(rows: list, value_key: str = "chrf2", max_val: float = 100.0) -> str:
-    """rows: [{'label','chrf2','best'}]. Horizontal SVG bars."""
+    """rows: [{'label','chrf2','tier'}]. Horizontal SVG bars, coloured by tier."""
     bar_h, gap, label_w, track_w, pad = 26, 12, 150, 360, 8
     w = label_w + track_w + 60
     h = pad * 2 + len(rows) * (bar_h + gap)
@@ -92,7 +95,7 @@ def _bar_chart(rows: list, value_key: str = "chrf2", max_val: float = 100.0) -> 
     for r in rows:
         val = r.get(value_key) or 0
         bw = max(2, (val / max_val) * track_w)
-        cls = "bar bar--best" if r.get("best") else "bar"
+        cls = f"bar tier-bar-{r['tier']}" if r.get("tier") else "bar"
         parts.append(
             f'<text x="{label_w - 8}" y="{y + bar_h * 0.7}" class="bar-label" '
             f'text-anchor="end">{_esc(r["label"])}</text>'
@@ -123,13 +126,14 @@ def _leaderboard(scores: list, langs: list, models: list) -> str:
                 cells.append("<td class='na'>—</td>")
                 continue
             pv = s.get(primary)
-            star = " ★" if pv is not None and pv == best[l] else ""
-            hi = " td--best" if pv is not None and pv == best[l] else ""
+            # highlight the whole leading BAND (within NOISE of the best), not a single winner
+            in_band = pv is not None and best[l] is not None and pv >= best[l] - NOISE
+            hi = " td--best" if in_band else ""
             if has_comet:
-                top = f"{s['comet']:.1f}{star}" if s.get("comet") is not None else "—"
+                top = f"{s['comet']:.1f}" if s.get("comet") is not None else "—"
                 sub = f"chrF {s['chrf2']:.1f}"
             else:
-                top = f"{s['chrf2']:.1f}{star}"
+                top = f"{s['chrf2']:.1f}"
                 sub = f"BLEU {s['bleu']:.1f}"
             cells.append(
                 f"<td class='num{hi}'><span class='chrf'>{top}</span>"
@@ -149,6 +153,7 @@ def _generations(lang: str, models: list, k: int = 6) -> str:
     present = [m for m in models if hyps[m]]
     if not present or not ts:
         return ""
+    tiers = _tiers()
     rows = []
     for sid, it in ts.items():
         cells = {m: hyps[m].get(sid) for m in present}
@@ -176,7 +181,8 @@ def _generations(lang: str, models: list, k: int = 6) -> str:
             cls = "gen gen--best" if m == best_m else "gen"
             score_tag = f"<span class='gen-score'>{sc:.0f}</span>" if sc is not None else ""
             out.append(
-                f"<div class='{cls}'><div class='gen-model'>{_esc(m)} {score_tag}</div>"
+                f"<div class='{cls}'><div class='gen-model'>"
+                f"<span class='tier tier-{tiers.get(m, '')}'></span>{_esc(m)} {score_tag}</div>"
                 f"<div class='gen-text'>{_esc(h) or '<em>(empty)</em>'}</div></div>"
             )
             gens.append(h)
@@ -240,6 +246,7 @@ table.board{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
 .board td.na{color:var(--muted)}
 .chart{width:100%;height:auto}.bar-track{fill:var(--border);opacity:.5;rx:3}
 .bar{fill:var(--accent);rx:3}.bar--best{fill:var(--best)}
+.tier-bar-ondevice{fill:#8b5cf6}.tier-bar-box{fill:#0ea5e9}.tier-bar-cloud{fill:#f59e0b}
 .bar-label{fill:var(--text);font-size:12px;font-family:var(--mono),monospace}
 .bar-val{fill:var(--muted);font-size:12px}
 .panel{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0}
@@ -301,15 +308,15 @@ recently-added sentences may differ subtly in style or difficulty — so read a 
 precise measurement of contamination.</p>
 """ if contam_table else ""
 
-    # charts per language
+    # charts per language — bars coloured by deployment tier
+    tier_map = _tiers()
     charts = []
     for l in langs:
         ranked = sorted((s for s in scores if s["lang"] == l), key=lambda s: -s["chrf2"])
         if not ranked:
             continue
-        best_v = ranked[0]["chrf2"]
-        chart_rows = [{"label": s["model"], "chrf2": s["chrf2"], "best": s["chrf2"] == best_v}
-                      for s in ranked]
+        chart_rows = [{"label": s["model"], "chrf2": s["chrf2"],
+                       "tier": tier_map.get(s["model"], "")} for s in ranked]
         charts.append(f"<h3>{_esc(LANG_NAMES.get(l, l))} (chrF++, n={ranked[0]['n']})</h3>"
                       f"<div class='panel'>{_bar_chart(chart_rows)}</div>")
 
@@ -322,11 +329,18 @@ precise measurement of contamination.</p>
                  key=lambda s: -s[metric])
     rec = ""
     if top:
-        rec = (f"On <strong>{_esc(LANG_NAMES.get(focus, focus))}</strong>, "
-               f"<code>{_esc(top[0]['model'])}</code> leads at {mname} "
-               f"<strong>{top[0][metric]:.1f}</strong>"
-               + (f", ahead of <code>{_esc(top[1]['model'])}</code> ({top[1][metric]:.1f})."
-                  if len(top) > 1 else "."))
+        topv = top[0][metric]
+        band = [s for s in top if s[metric] >= topv - NOISE]
+        tmap = _tiers()
+        box_in_band = next((s for s in band if tmap.get(s["model"]) == "box"), None)
+        rec = (f"On <strong>{_esc(LANG_NAMES.get(focus, focus))}</strong> the field is tightly "
+               f"bunched: <strong>{len(band)} of {len(top)}</strong> models fall within ~{NOISE} "
+               f"{mname} (sampling noise) of the top score (≈{topv:.0f}) — a statistical tie, "
+               f"not a ranking.")
+        if box_in_band:
+            rec += (f" The self-hosted 18&nbsp;GB <code>{_esc(box_in_band['model'])}</code> "
+                    f"({box_in_band[metric]:.1f}) sits in that band alongside frontier cloud — so "
+                    f"for Afrikaans&rarr;English, you don't need the cloud or a big box.")
 
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -348,8 +362,9 @@ character overlap with the reference — strict about wording, so it docks valid
 (<em>"scenery is magnificent"</em> vs <em>"landscape is breathtaking"</em>). <strong>COMET</strong>
 is a neural metric that scores <em>meaning</em> against the source and reference, crediting
 correct-but-differently-worded translations — the better proxy for "is this accurate?". The table
-ranks by COMET where available (shown ×100), with chrF++ beneath. ★ = best in column;
-n≈{n_focus} per language.</p>
+ranks by COMET (shown ×100), chrF++ beneath. <strong>Green marks the leading band</strong> —
+within ~{NOISE} COMET of the top, which at n={n_focus} is a statistical tie, not a single winner
+(see <em>Significance</em> in Caveats). </p>
 {_leaderboard(scores, langs, models)}
 <p class="muted legend">Deployment tier:<span class="tier tier-ondevice"></span>on-device (laptop)
 <span class="tier tier-box"></span>self-hosted box (18 GB)
@@ -377,6 +392,7 @@ disagree most — green = highest per-sentence chrF++ for that sentence.</p>
 
 <h2>Caveats</h2>
 <div class="panel"><ul>
+<li><strong>Significance — read bands, not ranks.</strong> n={n_focus} per language (Afrikaans largely single-reference), so per-system COMET 95% confidence intervals are roughly ±1–2 points. Differences below ~{NOISE} COMET are sampling noise: the green leading band is a statistical tie and the sort order <em>within</em> it is not meaningful. Per-segment bootstrap CIs are future work.</li>
 <li><strong>This is a proxy.</strong> It measures general sentence MT, not Lector's actual word/phrase dictionary-lookup task — a strong signal for model choice, not "Lector's output graded."</li>
 <li><strong>Contamination — the big one.</strong> Tatoeba is in these models' pretraining, so a high score can reflect <em>memorising the pair</em> rather than reasoning about the language — and the score alone can't separate the two. The contamination-check section above bounds this with a post-cutoff holdout; treat absolute scores with suspicion and weight the pre-vs-post deltas and relative gaps over the headline numbers.</li>
 <li><strong>Into-English is the easy direction</strong>, and Afrikaans here is largely single-reference. Read accordingly.</li>
