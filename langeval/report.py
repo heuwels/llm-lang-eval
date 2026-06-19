@@ -140,14 +140,14 @@ def _leaderboard(scores: list, langs: list, models: list) -> str:
         for l in langs:
             s = by.get((m, l))
             if not s:
-                cells.append("<td class='na'>—</td>")
+                cells.append("<td class='na'>n/a</td>")
                 continue
             pv = s.get(primary)
             # highlight the whole leading BAND (within NOISE of the best), not a single winner
             in_band = pv is not None and best[l] is not None and pv >= best[l] - NOISE
             hi = " td--best" if in_band else ""
             if has_comet:
-                top = f"{s['comet']:.1f}" if s.get("comet") is not None else "—"
+                top = f"{s['comet']:.1f}" if s.get("comet") is not None else "n/a"
                 sub = f"chrF {s['chrf2']:.1f}"
             else:
                 top = f"{s['chrf2']:.1f}"
@@ -190,17 +190,17 @@ def _generations(lang: str, models: list, k: int = 5) -> str:
         singles = [g for g in glist if len(g["models"]) == 1]
         cands.append({"source": it["source"], "refs": it["refs"],
                       "camps": camps, "singles": singles})
-    # rank by the strength of the SECOND camp — a genuine alternative consensus
+    # rank by the strength of the SECOND camp: a genuine alternative consensus
     cands.sort(key=lambda c: (-len(c["camps"][1]["models"]), -len(c["camps"])))
     cands = cands[:k]
 
-    out = [f"<h3>{_esc(LANG_NAMES.get(lang, lang))} — where the models split</h3>",
-           "<p class='muted'>Sentences where models split into clear <em>camps</em> — several agreeing on "
+    out = [f"<h3>{_esc(LANG_NAMES.get(lang, lang))}: where the models split</h3>",
+           "<p class='muted'>Sentences where models split into clear <em>camps</em>, several agreeing on "
            "one wording, several on another (one-off wordings collapsed to a tail). Count × tier-dots per "
            "camp; green = within ~6 chrF of the closest-to-reference camp.</p>",
-           "<div class='callout'><strong>Why they differ:</strong> almost none of this is error — it's "
+           "<div class='callout'><strong>Why they differ:</strong> almost none of this is error. It's "
            "paraphrase choice. A contraction vs the full form, 'by the end' vs 'before the end', one valid "
-           "synonym over another — each camp diverges from the single crowd-sourced reference in its own "
+           "synonym over another. Each camp diverges from the single crowd-sourced reference in its own "
            "way. The spread is widest on longer, structurally flexible sentences (more ways to order the "
            "English) and on the high-resource languages, which is exactly why the COMET (meaning) gaps are "
            "far smaller than the chrF (surface) gaps. Read the camps as equally-valid translations, not "
@@ -256,7 +256,7 @@ def _contamination(scores: list) -> str:
                     f"<td class='num {cls}'>{delta:+.1f}</td></tr>")
     return (f"<table class='board'><thead><tr><th>Model</th>"
             f"<th>pre-2023<br><span class='unit'>{mname}</span></th>"
-            f"<th>2025–26<br><span class='unit'>{mname}</span></th>"
+            f"<th>2025-26<br><span class='unit'>{mname}</span></th>"
             f"<th>Δ</th></tr></thead><tbody>{''.join(rows)}</tbody></table>")
 
 
@@ -297,7 +297,7 @@ def _dot_plot(scores: list, langs: list, models: list) -> str:
     metric = "comet" if any("comet" in s for s in scores) else "chrf2"
     focus = "afr" if "afr" in langs else langs[0]
     # use the caller's canonical order (afr primary-metric desc); keep only models that have a
-    # focus-language dot to plot — same order as the table, so the two never disagree
+    # focus-language dot to plot, same order as the table, so the two never disagree
     models = [m for m in models if (m, focus) in by and by[(m, focus)].get(metric) is not None]
     vals = [by[(m, l)][metric] for m in models for l in langs
             if (m, l) in by and by[(m, l)].get(metric) is not None]
@@ -334,7 +334,7 @@ def _dot_plot(scores: list, langs: list, models: list) -> str:
     leg = " ".join(f'<span class="dp-leg"><span class="dp-lgd" style="background:{LANG_DOT[l]}"></span>'
                    f'{_esc(LANG_NAMES.get(l, l))}</span>' for l in langs)
     return (f'<div class="panel">{"".join(p)}<div class="dp-legend">{leg}'
-            f'<span class="muted"> &nbsp;·&nbsp; {metric.upper()}, zoomed axis {xmin}–{xmax}; '
+            f'<span class="muted"> &nbsp;·&nbsp; {metric.upper()}, zoomed axis {xmin} to {xmax}; '
             f'dot before each name = tier</span></div></div>')
 
 
@@ -349,7 +349,7 @@ CSS = """
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;-webkit-font-smoothing:antialiased}
 code,pre{font-family:var(--mono),monospace}
 .wrap{max-width:880px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
-/* site chrome — header band, footer, theme toggle (mirrors lector-site) */
+/* site chrome: header band, footer, theme toggle (mirrors lector-site) */
 .site-header{background:var(--hero-bg);border-bottom:1px solid var(--border);padding:3rem 0 2rem}
 .site-header .wrap{padding-top:0;padding-bottom:0}
 .breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:.5rem}
@@ -424,14 +424,14 @@ code{background:var(--border);padding:.1rem .35rem;border-radius:4px;font-size:.
 def generate(date: str = "", title: str = "") -> Path:
     scores = _load_scores()
     if not scores:
-        raise SystemExit("no results/scores.json yet — run some models first")
+        raise SystemExit("no results/scores.json yet. Run some models first.")
     langs = [l for l in ("afr", "deu", "spa") if any(s["lang"] == l for s in scores)]
     by = {(s["model"], s["lang"]): s for s in scores}
     focus = "afr" if "afr" in langs else langs[0]
     has_comet = any("comet" in s for s in scores)
     rank_metric = "comet" if has_comet else "chrf2"
 
-    # Canonical model order — by the focus language (Afrikaans) primary metric, descending —
+    # Canonical model order, by the focus language (Afrikaans) primary metric, descending,
     # shared by BOTH the dot plot and the table so the two can never disagree on rank. (The
     # recommendation callout already ranks by this key.) Models missing the focus score sort
     # last; mean chrF++ breaks ties deterministically.
@@ -447,21 +447,21 @@ def generate(date: str = "", title: str = "") -> Path:
     n_focus = next((by[(m, focus)]["n"] for m in models if (m, focus) in by), 0)
 
     title = title or "Which local LLM translates best? A reproducible eval"
-    date = date or "—"
+    date = date or ""
 
     contam_table = _contamination(scores)
     contam_section = f"""
 <h2>Contamination check: does it survive on unseen data?</h2>
 <div class="warn"><strong>The honest limitation.</strong> Tatoeba is almost certainly in every model's
-pretraining, so a high score can mean "translated well" <em>or</em> "regurgitated a memorised pair" — the
+pretraining, so a high score can mean "translated well" <em>or</em> "regurgitated a memorised pair". The
 score alone can't tell us which. To bound it, each model is compared on two matched 150-sentence Afrikaans
-samples (same length filter): <strong>pre-2023</strong> (added 2010–2022, almost certainly seen in training)
-versus <strong>2025–26</strong> (added after the training cutoff of the older-generation models here, so they
+samples (same length filter): <strong>pre-2023</strong> (added 2010 to 2022, almost certainly seen in training)
+versus <strong>2025-26</strong> (added after the training cutoff of the older-generation models here, so they
 cannot have memorised them). A large drop on the recent set is the fingerprint of memorisation; a stable
 score is evidence of genuine translation ability.</div>
 {contam_table}
 <p class="muted">Caveat on the caveat: exact training-cutoff dates aren't published for every model, and
-recently-added sentences may differ subtly in style or difficulty — so read a small Δ as "holds up", not as a
+recently-added sentences may differ subtly in style or difficulty, so read a small Δ as "holds up", not as a
 precise measurement of contamination.</p>
 """ if contam_table else ""
 
@@ -469,10 +469,10 @@ precise measurement of contamination.</p>
     cloze_section = f"""
 <h2>Parroting probe: memorisation, measured directly</h2>
 <div class="warn"><strong>The sharpest contamination test.</strong> We blank one informative word per
-sentence and ask each model to fill it. On <strong>unseen</strong> (2025–26) sentences it can only predict
+sentence and ask each model to fill it. On <strong>unseen</strong> (2025-26) sentences it can only predict
 from context; if it recovers the exact original word much more often on <strong>seen</strong> (pre-2023)
 sentences, that gap is the model parroting memorised text rather than reasoning about the language. (It
-doubles as a cloze-ability score — Lector's own practice task.)</div>
+doubles as a cloze-ability score, Lector's own practice task.)</div>
 {cloze_table}
 <p class="muted">Recovery = exact match of the blanked word. A large positive gap = memorisation; near-zero
 = genuine context prediction. n≈150 per cell, so gaps within ~±10 are noise.</p>
@@ -482,7 +482,7 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
 
     gens = "".join(_generations(l, models) for l in langs)
 
-    # recommendation line — prefer the meaning metric (COMET) when present
+    # recommendation line: prefer the meaning metric (COMET) when present
     metric, mname = ("comet", "COMET") if has_comet else ("chrf2", "chrF++")
     top = sorted((s for s in scores if s["lang"] == focus and s.get(metric) is not None),
                  key=lambda s: -s[metric])
@@ -494,12 +494,57 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
         box_in_band = next((s for s in band if tmap.get(s["model"]) == "box"), None)
         rec = (f"On <strong>{_esc(LANG_NAMES.get(focus, focus))}</strong> the field is tightly "
                f"bunched: <strong>{len(band)} of {len(top)}</strong> models fall within ~{NOISE} "
-               f"{mname} (sampling noise) of the top score (≈{topv:.0f}) — a statistical tie, "
+               f"{mname} (sampling noise) of the top score (≈{topv:.0f}), a statistical tie, "
                f"not a ranking.")
         if box_in_band:
             rec += (f" The self-hosted 18&nbsp;GB <code>{_esc(box_in_band['model'])}</code> "
-                    f"({box_in_band[metric]:.1f}) sits in that band alongside frontier cloud — so "
+                    f"({box_in_band[metric]:.1f}) sits in that band alongside frontier cloud, so "
                     f"for Afrikaans&rarr;English, you don't need the cloud or a big box.")
+
+    # cost + "what runs on the box": local-focus, since most of the cloud field can't self-host
+    tiers = _tiers()
+    local_models = [m for m in models if tiers.get(m) != "cloud"]
+    dotplot_local = _dot_plot(scores, langs, local_models)
+    af = by.get(("apfel-foundation", focus))
+    apfel_note = ""
+    if af and af.get("errors"):
+        af_tot = af["n"] + af["errors"]
+        afr_pct = round(100 * af["errors"] / af_tot)
+        asp = by.get(("apfel-foundation", "spa"))
+        spa = (f", against {round(100 * asp['errors'] / (asp['n'] + asp['errors']))}% in Spanish"
+               if asp and (asp["n"] + asp["errors"]) else "")
+        apfel_note = (
+            f" <code>apfel-foundation</code> is Apple's built-in Foundation model, the one that ships with "
+            f"macOS, run through the Apfel harness. It scores respectably on what it answers, but it refused "
+            f"or errored on {afr_pct}% of the Afrikaans sentences ({af['errors']} of {af_tot}){spa}, and Apple "
+            f"doesn't list Afrikaans among its supported languages, which is why it sits near the bottom.")
+    cost_section = f"""
+<h2>Cost, and what you can actually run</h2>
+<p class="muted">Cloud models fill the top of that board, but this is a study of local models, and most of
+the cloud field can't run on the box at all. The frontier APIs (GPT-5, Claude, Gemini) are closed weights,
+so self-hosting them was never an option. The open models I could reach through OpenRouter are mostly too
+big for the hardware: Llama 3.3 is 70B, Mistral Large is larger again, and even the 24B and 27B open models
+(Mistral Small, Gemma 2 and 3 at 27B) sit at or past the ceiling of an 18&nbsp;GB Mac once the OS and the KV
+cache take their share. What genuinely fits is the on-device and self-hosted-box tiers, so here is that
+field on its own.</p>
+{dotplot_local}
+<p class="muted">The strongest model that actually fits, <code>gemma-4-12b-qat</code> at 7.5&nbsp;GB, is the
+same one sitting in the frontier band up top.{apfel_note}</p>
+<h3>Cost: use what you've got</h3>
+<p class="muted">Cost barely enters into it. A translation is tiny, roughly 80 tokens, so the entire cloud
+sweep (24 models across three languages, plus the holdout and the cloze probe) came to $13.62 on OpenRouter,
+well under a cent per translation even on the frontier models. Per-token pricing still spans an order or two
+of magnitude, the frontier APIs against the cheap tiers like Gemini Flash or GPT-4o-mini, but at this token
+count the absolute bill is small whichever way you go.</p>
+<p class="muted">What moves the decision is what you already own. A spare Mac is a sunk cost, so a local model
+is free per lookup beyond the electricity. An existing Claude plan is free at the margin too, within its
+limits, which is why I reach for the Anthropic OAuth route first. OpenRouter is the only one of the three
+that adds a real per-token bill, and it earns its place when you need a specific model you can't self-host or
+don't have a plan for. So the honest answer is usually to use what you've got: a spare box runs a local
+model, an existing plan already covers the lookups, and with neither, the cheap cloud tier is pennies per
+thousand. Since a 12B you can run at home already ties the frontier on Afrikaans, paying frontier rates per
+token buys very little for this particular job.</p>
+"""
 
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -513,19 +558,19 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
 <p class="date">{_esc(date)} · source → English · Afrikaans / German / Spanish</p>
 </div></header>
 <main class="wrap">
-<p class="lead"><strong>How good are local LLMs at translation — and do you actually need the cloud?</strong>
+<p class="lead"><strong>How good are local LLMs at translation, and do you actually need the cloud?</strong>
 A reproducible benchmark of 24 on-device, self-hosted, and cloud models translating into English, with the
 low-resource case (Afrikaans) front and centre. The headline: on Afrikaans&rarr;English a local 18&nbsp;GB
 model lands in a statistical tie with frontier cloud. Same blinded Tatoeba sentences, same prompt, greedy
 decoding, scored multi-reference with <strong>COMET</strong> (meaning) and <strong>chrF++</strong> (surface).
 Built to pick a translation model for <a href="https://github.com/heuwels/lector">Lector</a>.</p>
-<p class="repo">Open &amp; reproducible — harness, every model's raw outputs, and the seeded test sets:
+<p class="repo">Open and reproducible: harness, every model's raw outputs, and the seeded test sets:
 <a href="https://github.com/heuwels/llm-lang-eval">github.com/heuwels/llm-lang-eval</a></p>
 
 <div class="callout">{rec or "Run more models to populate the leaderboard."}</div>
 
 <h2>Leaderboard</h2>
-<p class="muted">All 24 models across three languages on one zoomed COMET axis — each row a model
+<p class="muted">All 24 models across three languages on one zoomed COMET axis: each row a model
 (ranked by Afrikaans), one dot per language, the connector its cross-language spread. The zoom makes
 the tight differences legible; gaps under ~{NOISE} COMET are sampling noise (see <em>Significance</em>).</p>
 {dotplot}
@@ -537,10 +582,12 @@ the tight differences legible; gaps under ~{NOISE} COMET are sampling noise (see
 <p class="muted">COMET (meaning, ×100) over chrF++ (surface), per language. <strong>chrF++</strong>
 rewards character overlap with the reference, so it docks valid paraphrases
 (<em>"scenery is magnificent"</em> vs <em>"landscape is breathtaking"</em>); <strong>COMET</strong>
-scores meaning and credits them. <strong>Green</strong> = leading band (within ~{NOISE} COMET — a
-statistical tie, not a single winner). Rows share the chart's order — ranked by Afrikaans COMET — so
+scores meaning and credits them. <strong>Green</strong> = leading band (within ~{NOISE} COMET, a
+statistical tie, not a single winner). Rows share the chart's order (ranked by Afrikaans COMET), so
 near-ties can sit a place apart despite equal rounded scores. n={n_focus} per language.</p>
 {_leaderboard(scores, langs, models)}
+
+{cost_section}
 
 {contam_section}
 
@@ -548,14 +595,14 @@ near-ties can sit a place apart despite equal rounded scores. n={n_focus} per la
 
 <h2>Side-by-side generations</h2>
 <p class="muted">The numbers only say so much. Here are the actual translations where models
-disagree most — green = highest per-sentence chrF++ for that sentence.</p>
+disagree most. Green marks the highest per-sentence chrF++ for that sentence.</p>
 {gens}
 
 <h2>Methodology</h2>
 <div class="panel"><ul>
 <li><strong>Task.</strong> Blinded source → English. The model sees only the source sentence; references are held out for scoring.</li>
 <li><strong>Data.</strong> <a href="https://tatoeba.org">Tatoeba</a> sentence pairs (CC-BY 2.0 FR), seeded random sample, multi-reference where available, length-filtered.</li>
-<li><strong>Prompt.</strong> One fixed user message, identical across models (no per-model tuning). Chain-of-thought disabled (<code>reasoning_effort: none</code>) — translation needs none.</li>
+<li><strong>Prompt.</strong> One fixed user message, identical across models (no per-model tuning). Chain-of-thought disabled (<code>reasoning_effort: none</code>); translation needs none.</li>
 <li><strong>Structured output.</strong> Every model is constrained to emit <code>{{"translation": "…"}}</code> via a json_schema <code>response_format</code>. This is the equaliser: small models otherwise "think out loud" in plain text and bury the answer in preamble. Constrained decoding makes that impossible, gives every model the identical constraint, and mirrors how Lector itself prompts.</li>
 <li><strong>Decoding.</strong> <code>temperature = 0</code> (greedy), one model resident at a time on an 18&nbsp;GB host (JIT load/evict).</li>
 <li><strong>Metrics.</strong> chrF++ and BLEU via sacreBLEU (signatures recorded). COMET planned.</li>
@@ -563,9 +610,9 @@ disagree most — green = highest per-sentence chrF++ for that sentence.</p>
 
 <h2>Caveats</h2>
 <div class="panel"><ul>
-<li><strong>Significance — read bands, not ranks.</strong> n={n_focus} per language (Afrikaans largely single-reference), so per-system COMET 95% confidence intervals are roughly ±1–2 points. Differences below ~{NOISE} COMET are sampling noise: the green leading band is a statistical tie and the sort order <em>within</em> it is not meaningful. Per-segment bootstrap CIs are future work.</li>
-<li><strong>This is a proxy.</strong> It measures general sentence MT, not Lector's actual word/phrase dictionary-lookup task — a strong signal for model choice, not "Lector's output graded."</li>
-<li><strong>Contamination — the big one.</strong> Tatoeba is in these models' pretraining, so a high score can reflect <em>memorising the pair</em> rather than reasoning about the language — and the score alone can't separate the two. The contamination-check section above bounds this with a post-cutoff holdout; treat absolute scores with suspicion and weight the pre-vs-post deltas and relative gaps over the headline numbers.</li>
+<li><strong>Significance: read bands, not ranks.</strong> n={n_focus} per language (Afrikaans largely single-reference), so per-system COMET 95% confidence intervals are roughly 1 to 2 points either way. Differences below ~{NOISE} COMET are sampling noise: the green leading band is a statistical tie and the sort order <em>within</em> it is not meaningful. Per-segment bootstrap CIs are future work.</li>
+<li><strong>This is a proxy.</strong> It measures general sentence MT, not Lector's actual word/phrase dictionary-lookup task, a strong signal for model choice, not "Lector's output graded."</li>
+<li><strong>Contamination, the big one.</strong> Tatoeba is in these models' pretraining, so a high score can reflect <em>memorising the pair</em> rather than reasoning about the language, and the score alone can't separate the two. The contamination-check section above bounds this with a post-cutoff holdout; treat absolute scores with suspicion and weight the pre-vs-post deltas and relative gaps over the headline numbers.</li>
 <li><strong>Into-English is the easy direction</strong>, and Afrikaans here is largely single-reference. Read accordingly.</li>
 </ul></div>
 
