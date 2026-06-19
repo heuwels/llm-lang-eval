@@ -64,7 +64,30 @@ def build_masked(stem: str) -> Path:
 
 def cloze_prompt(masked: str, language_name: str) -> str:
     return (f"This {language_name} sentence has exactly one word replaced by ___. "
-            f"Reply with ONLY the single missing word that fills the blank.\n\n{masked}")
+            f"Reply with ONLY the single {language_name} word that fills the blank.\n\n{masked}")
+
+
+# A dedicated schema — the field is "word", not "translation", or models translate
+# the masked sentence instead of filling the blank.
+CLOZE_SCHEMA = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "cloze", "strict": True,
+        "schema": {"type": "object", "properties": {"word": {"type": "string"}},
+                   "required": ["word"], "additionalProperties": False},
+    },
+}
+
+
+def parse_word(raw: str) -> str:
+    try:
+        obj = json.loads(raw)
+        if isinstance(obj, dict) and isinstance(obj.get("word"), str):
+            return obj["word"].strip()
+    except (json.JSONDecodeError, TypeError):
+        pass
+    toks = (raw or "").strip().split()
+    return toks[0].strip(" .,\"'“”") if toks else ""
 
 
 def _norm(s: str) -> str:

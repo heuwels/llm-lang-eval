@@ -40,6 +40,9 @@ _TIER_OF_SECTION = {"local": "box", "ondevice": "ondevice", "cloud": "cloud",
                     "cloud_reference": "cloud"}
 _TIER_LABEL = {"ondevice": "on-device (laptop)", "box": "self-hosted box (18 GB)",
                "cloud": "cloud (OpenRouter)"}
+# dot-plot: one colour per language (distinct from the tier palette)
+LANG_DOT = {"afr": "#e11d48", "deu": "#64748b", "spa": "#16a34a"}
+TIER_FILL = {"ondevice": "#8b5cf6", "box": "#0ea5e9", "cloud": "#f59e0b"}
 
 
 def _tiers() -> dict:
@@ -161,7 +164,7 @@ def _leaderboard(scores: list, langs: list, models: list) -> str:
             f"<tbody>{''.join(rows)}</tbody></table>")
 
 
-def _generations(lang: str, models: list, k: int = 6) -> str:
+def _generations(lang: str, models: list, k: int = 5) -> str:
     ts = _load_testset(lang)
     hyps = {m: _load_hyps(m, lang) for m in models}
     present = [m for m in models if hyps[m]]
@@ -179,26 +182,35 @@ def _generations(lang: str, models: list, k: int = 6) -> str:
             key = re.sub(r"[\s\W]+$", "", normalize(h).lower())  # fold quotes/punct/case
             g = groups.setdefault(key, {"text": h, "chrf": _sent_chrf(h, it["refs"]), "models": []})
             g["models"].append(m)
-        glist = sorted(groups.values(), key=lambda g: -g["chrf"])
-        if len(glist) < 2:  # need genuine divergence among real translations
+        # camps = wordings ≥2 models share; one-offs collapse to a tail line
+        glist = sorted(groups.values(), key=lambda g: -len(g["models"]))
+        camps = [g for g in glist if len(g["models"]) >= 2]
+        if len(camps) < 2:  # need a real fork, not 24 one-off wordings (= noise)
             continue
-        cands.append({"source": it["source"], "refs": it["refs"], "glist": glist})
-    # rank by genuine divergence: most distinct real translations, then chrF spread
-    cands.sort(key=lambda c: (-len(c["glist"]), -(c["glist"][0]["chrf"] - c["glist"][-1]["chrf"])))
+        singles = [g for g in glist if len(g["models"]) == 1]
+        cands.append({"source": it["source"], "refs": it["refs"],
+                      "camps": camps, "singles": singles})
+    # rank by the strength of the SECOND camp — a genuine alternative consensus
+    cands.sort(key=lambda c: (-len(c["camps"][1]["models"]), -len(c["camps"])))
     cands = cands[:k]
 
-    out = [f"<h3>{_esc(LANG_NAMES.get(lang, lang))} — where the models diverge</h3>",
-           "<p class='muted'>Sentences with the most distinct <em>translations</em> across models "
-           "(non-translation output — preambles, refusals — is filtered out). Identical wordings are "
-           "grouped (count × tier-dots). Green = within ~6 chrF of the closest-to-reference group; the "
-           "reference is one crowd-sourced translation, so a different consensus is often just as valid.</p>"]
+    out = [f"<h3>{_esc(LANG_NAMES.get(lang, lang))} — where the models split</h3>",
+           "<p class='muted'>Sentences where models split into clear <em>camps</em> — several agreeing on "
+           "one wording, several on another (one-off wordings collapsed to a tail). Count × tier-dots per "
+           "camp; green = within ~6 chrF of the closest-to-reference camp.</p>",
+           "<div class='callout'><strong>Why they differ:</strong> almost none of this is error — it's "
+           "paraphrase choice. A contraction vs the full form, 'by the end' vs 'before the end', one valid "
+           "synonym over another — each camp diverges from the single crowd-sourced reference in its own "
+           "way. The spread is widest on longer, structurally flexible sentences (more ways to order the "
+           "English) and on the high-resource languages, which is exactly why the COMET (meaning) gaps are "
+           "far smaller than the chrF (surface) gaps. Read the camps as equally-valid translations, not "
+           "right-vs-wrong.</div>"]
     for c in cands:
-        glist = c["glist"]
-        best = glist[0]["chrf"]
+        best = max(g["chrf"] for g in c["camps"])
         cards = []
-        for g in glist:
+        for g in c["camps"]:
             sc = g["chrf"]
-            cls = "gen gen--best" if sc >= best - 6 else "gen"  # band, not a lone winner
+            cls = "gen gen--best" if sc >= best - 6 else "gen"
             dots = "".join(f"<span class='tier tier-{tiers.get(m, '')}' title='{_esc(m)}'></span>"
                            for m in g["models"])
             names = ", ".join(_esc(m) for m in g["models"])
@@ -208,6 +220,10 @@ def _generations(lang: str, models: list, k: int = 6) -> str:
                 f"<div class='gen-names'>{names}</div></div>"
                 f"<div class='gen-text'>{_esc(g['text'])}</div></div>"
             )
+        if c["singles"]:
+            smods = ", ".join(_esc(g["models"][0]) for g in c["singles"])
+            cards.append(f"<div class='gen gen--tail'><span class='gen-count'>+{len(c['singles'])}</span> "
+                         f"one-off wordings <span class='gen-names'>({smods})</span></div>")
         refs = " &nbsp;·&nbsp; ".join(_esc(x) for x in c["refs"])
         out.append(
             f"<div class='ex'><div class='ex-src'><span class='tag'>{_esc(lang)}</span>"
@@ -272,6 +288,55 @@ def _cloze_panel() -> str:
             f"<th>gap</th></tr></thead><tbody>{''.join(trs)}</tbody></table>")
 
 
+def _dot_plot(scores: list, langs: list) -> str:
+    """Cleveland dot plot: one row per model (ranked), a dot per language on a
+    shared ZOOMED axis so the bunched scores actually separate. Connector shows
+    each model's cross-language spread; the name carries its tier dot."""
+    by = {(s["model"], s["lang"]): s for s in scores}
+    tiers = _tiers()
+    metric = "comet" if any("comet" in s for s in scores) else "chrf2"
+    focus = "afr" if "afr" in langs else langs[0]
+    models = sorted({m for (m, l) in by if l == focus and by[(m, l)].get(metric) is not None},
+                    key=lambda m: -by[(m, focus)][metric])
+    vals = [by[(m, l)][metric] for m in models for l in langs
+            if (m, l) in by and by[(m, l)].get(metric) is not None]
+    if not vals:
+        return ""
+    xmin, xmax = int(min(vals)) - 1, int(max(vals)) + 1
+    row_h, pad, label_w, plot_w, axis_h = 18, 10, 150, 380, 26
+    W, H = label_w + plot_w + 30, pad * 2 + len(models) * row_h + axis_h
+
+    def X(v):
+        return label_w + (v - xmin) / (xmax - xmin) * plot_w
+
+    p = [f'<svg viewBox="0 0 {W} {H}" role="img" class="chart dotplot">']
+    for t in range(xmin, xmax + 1):
+        if t % 2:
+            continue
+        x = X(t)
+        p.append(f'<line x1="{x:.1f}" y1="{pad}" x2="{x:.1f}" y2="{H - axis_h}" class="dp-grid"/>'
+                 f'<text x="{x:.1f}" y="{H - axis_h + 13}" class="dp-axis" text-anchor="middle">{t}</text>')
+    y = pad + row_h / 2
+    for m in models:
+        pts = [(l, by[(m, l)][metric]) for l in langs
+               if (m, l) in by and by[(m, l)].get(metric) is not None]
+        p.append(f'<text x="{label_w - 14}" y="{y + 3:.1f}" class="dp-name" text-anchor="end">{_esc(m)}</text>'
+                 f'<circle cx="{label_w - 7}" cy="{y:.1f}" r="3.5" fill="{TIER_FILL.get(tiers.get(m, ""), "#999")}"/>')
+        if pts:
+            xs = [X(v) for _, v in pts]
+            p.append(f'<line x1="{min(xs):.1f}" y1="{y:.1f}" x2="{max(xs):.1f}" y2="{y:.1f}" class="dp-conn"/>')
+            for l, v in pts:
+                p.append(f'<circle cx="{X(v):.1f}" cy="{y:.1f}" r="4.5" fill="{LANG_DOT.get(l, "#999")}">'
+                         f'<title>{_esc(m)} · {_esc(LANG_NAMES.get(l, l))}: {v:.1f}</title></circle>')
+        y += row_h
+    p.append("</svg>")
+    leg = " ".join(f'<span class="dp-leg"><span class="dp-lgd" style="background:{LANG_DOT[l]}"></span>'
+                   f'{_esc(LANG_NAMES.get(l, l))}</span>' for l in langs)
+    return (f'<div class="panel">{"".join(p)}<div class="dp-legend">{leg}'
+            f'<span class="muted"> &nbsp;·&nbsp; {metric.upper()}, zoomed axis {xmin}–{xmax}; '
+            f'dot before each name = tier</span></div></div>')
+
+
 CSS = """
 :root{--bg:#fafafa;--card:#fff;--text:#1a1a1a;--muted:#636363;--border:#e2e2e2;
 --accent:#b45309;--accent-soft:#fde9d3;--best:#15803d;--best-soft:#dcfce7;--mono:#1e1e2e}
@@ -297,8 +362,16 @@ table.board{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
 .chart{width:100%;height:auto}.bar-track{fill:var(--border);opacity:.5;rx:3}
 .bar{fill:var(--accent);rx:3}.bar--best{fill:var(--best)}
 .tier-bar-ondevice{fill:#8b5cf6}.tier-bar-box{fill:#0ea5e9}.tier-bar-cloud{fill:#f59e0b}
-.bar-label{fill:var(--text);font-size:12px;font-family:var(--mono),monospace}
-.bar-val{fill:var(--muted);font-size:12px}
+.bar-label{fill:var(--text);font-size:11px;font-family:var(--mono),monospace}
+.bar-val{fill:var(--muted);font-size:11px}
+.dotplot{width:100%;height:auto}
+.dp-grid{stroke:var(--border);stroke-width:1;opacity:.5}
+.dp-axis{fill:var(--muted);font-size:10px}
+.dp-name{fill:var(--text);font-size:11px;font-family:var(--mono),monospace}
+.dp-conn{stroke:var(--border);stroke-width:2}
+.dp-legend{margin-top:.6rem;font-size:.82rem;color:var(--text)}
+.dp-leg{margin-right:.9rem;white-space:nowrap}
+.dp-lgd{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.3rem;vertical-align:middle}
 .panel{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin:1rem 0}
 .ex{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:.85rem 0}
 .ex-src{font-size:1.02rem}.ex-ref{color:var(--muted);font-size:.92rem;margin-top:.2rem}
@@ -308,6 +381,7 @@ text-transform:uppercase;letter-spacing:.05em;padding:.1rem .4rem;border-radius:
 .gens{display:grid;gap:.5rem;margin-top:.75rem}
 .gen{border:1px solid var(--border);border-radius:6px;padding:.5rem .7rem}
 .gen--best{border-color:var(--best);background:var(--best-soft)}
+.gen--tail{color:var(--muted);font-size:.85rem;border-style:dashed}
 .gen-models{display:flex;align-items:center;flex-wrap:wrap;gap:.25rem;margin-bottom:.3rem}
 .gen-count{font-weight:700;font-size:.8rem;margin-right:.2rem}
 .gen-names{flex-basis:100%;font-family:var(--mono),monospace;font-size:.72rem;color:var(--muted);margin-top:.15rem}
@@ -373,17 +447,7 @@ doubles as a cloze-ability score — Lector's own practice task.)</div>
 = genuine context prediction. n≈150 per cell, so gaps within ~±10 are noise.</p>
 """ if cloze_table else ""
 
-    # charts per language — bars coloured by deployment tier
-    tier_map = _tiers()
-    charts = []
-    for l in langs:
-        ranked = sorted((s for s in scores if s["lang"] == l), key=lambda s: -s["chrf2"])
-        if not ranked:
-            continue
-        chart_rows = [{"label": s["model"], "chrf2": s["chrf2"],
-                       "tier": tier_map.get(s["model"], "")} for s in ranked]
-        charts.append(f"<h3>{_esc(LANG_NAMES.get(l, l))} (chrF++, n={ranked[0]['n']})</h3>"
-                      f"<div class='panel'>{_bar_chart(chart_rows)}</div>")
+    dotplot = _dot_plot(scores, langs)
 
     gens = "".join(_generations(l, models) for l in langs)
 
@@ -422,25 +486,25 @@ greedy decoding, and is scored multi-reference with <strong>COMET</strong> (sema
 <div class="callout">{rec or "Run more models to populate the leaderboard."}</div>
 
 <h2>Leaderboard</h2>
-<p class="muted">Two metrics, because they measure different things. <strong>chrF++</strong> rewards
-character overlap with the reference — strict about wording, so it docks valid paraphrases
-(<em>"scenery is magnificent"</em> vs <em>"landscape is breathtaking"</em>). <strong>COMET</strong>
-is a neural metric that scores <em>meaning</em> against the source and reference, crediting
-correct-but-differently-worded translations — the better proxy for "is this accurate?". The table
-ranks by COMET (shown ×100), chrF++ beneath. <strong>Green marks the leading band</strong> —
-within ~{NOISE} COMET of the top, which at n={n_focus} is a statistical tie, not a single winner
-(see <em>Significance</em> in Caveats). </p>
-{_leaderboard(scores, langs, models)}
+<p class="muted">All 24 models across three languages on one zoomed COMET axis — each row a model
+(ranked by Afrikaans), one dot per language, the connector its cross-language spread. The zoom makes
+the tight differences legible; gaps under ~{NOISE} COMET are sampling noise (see <em>Significance</em>).</p>
+{dotplot}
 <p class="muted legend">Deployment tier:<span class="tier tier-ondevice"></span>on-device (laptop)
 <span class="tier tier-box"></span>self-hosted box (18 GB)
 <span class="tier tier-cloud"></span>cloud (OpenRouter)</p>
 
+<h3>The numbers</h3>
+<p class="muted">COMET (meaning, ×100) over chrF++ (surface), per language. <strong>chrF++</strong>
+rewards character overlap with the reference, so it docks valid paraphrases
+(<em>"scenery is magnificent"</em> vs <em>"landscape is breathtaking"</em>); <strong>COMET</strong>
+scores meaning and credits them. <strong>Green</strong> = leading band (within ~{NOISE} COMET — a
+statistical tie, not a single winner). n={n_focus} per language.</p>
+{_leaderboard(scores, langs, models)}
+
 {contam_section}
 
 {cloze_section}
-
-<h2>Scores by language</h2>
-{''.join(charts)}
 
 <h2>Side-by-side generations</h2>
 <p class="muted">The numbers only say so much. Here are the actual translations where models

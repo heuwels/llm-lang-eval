@@ -89,7 +89,8 @@ def parse_translation(raw: str) -> str:
 
 def translate_one(endpoint: str, api_model: str, prompt: str,
                   timeout: int = 180, extra_body: dict | None = None,
-                  no_schema: bool = False, api_key: str | None = None) -> dict:
+                  no_schema: bool = False, api_key: str | None = None,
+                  schema: dict | None = None) -> dict:
     url = endpoint.rstrip("/") + "/v1/chat/completions"
     body = {
         "model": api_model,
@@ -99,7 +100,7 @@ def translate_one(endpoint: str, api_model: str, prompt: str,
     }
     if not no_schema:  # constrained models: reasoning off + JSON schema
         body["reasoning_effort"] = "none"
-        body["response_format"] = TRANSLATION_SCHEMA
+        body["response_format"] = schema or TRANSLATION_SCHEMA
     if extra_body:
         body.update(extra_body)
     headers = {"Authorization": f"Bearer {api_key}"} if api_key else None
@@ -145,7 +146,9 @@ def preflight(endpoint: str, api_model: str, language_name: str,
 def run(model_id: str, endpoint: str, api_model: str, testset_path: Path,
         language_name: str, prompt_fn, limit: int | None = None,
         extra_body: dict | None = None, no_schema: bool = False,
-        api_key: str | None = None, concurrency: int = 1) -> Path:
+        api_key: str | None = None, concurrency: int = 1,
+        schema: dict | None = None, parse=None) -> Path:
+    parse = parse or parse_translation
     items = json.loads(Path(testset_path).read_text(encoding="utf-8"))["items"]
     if limit:
         items = items[:limit]
@@ -158,8 +161,8 @@ def run(model_id: str, endpoint: str, api_model: str, testset_path: Path,
         try:
             t0 = time.time()
             res = translate_one(endpoint, api_model, prompt, extra_body=extra_body,
-                                no_schema=no_schema, api_key=api_key)
-            hyp = parse_translation(res["content"])
+                                no_schema=no_schema, api_key=api_key, schema=schema)
+            hyp = parse(res["content"])
             rec = {"id": it["id"], "source": it["source"], "raw": res["content"],
                    "hypothesis": hyp, "finish_reason": res["finish_reason"],
                    "reasoning_tokens": res["reasoning_tokens"],

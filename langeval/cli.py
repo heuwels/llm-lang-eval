@@ -108,8 +108,10 @@ def cmd_run(a):
 
 def _save_score(res: dict):
     data = json.loads(SCORES.read_text()) if SCORES.exists() else []
+    existing = next((d for d in data if d["model"] == res["model"] and d["lang"] == res["lang"]), None)
+    merged = {**existing, **res} if existing else res  # keep COMET when re-scoring chrF
     data = [d for d in data if not (d["model"] == res["model"] and d["lang"] == res["lang"])]
-    data.append(res)
+    data.append(merged)
     SCORES.parent.mkdir(parents=True, exist_ok=True)
     SCORES.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -253,7 +255,8 @@ def cmd_cloze(a):
             try:
                 run(m["id"], r["endpoint"], r["api_model"], ts, name, cloze.cloze_prompt,
                     limit=a.limit, extra_body=r["extra_body"], no_schema=r["no_schema"],
-                    api_key=r["api_key"], concurrency=r["concurrency"])
+                    api_key=r["api_key"], concurrency=r["concurrency"],
+                    schema=cloze.CLOZE_SCHEMA, parse=cloze.parse_word)
             except Exception as e:
                 print(f"DROP {m['id']}/{stem}: {str(e)[:120]}")
                 continue

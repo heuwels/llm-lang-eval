@@ -1,0 +1,74 @@
+[
+  {
+    "model": "gemma-4-e4b",
+    "set": "afr-pre",
+    "recovery": 5.5,
+    "n": 146
+  },
+  {
+    "model": "gemma-4-e4b",
+    "set": "afr-post",
+    "recovery": 6.8,
+    "n": 147
+  },
+  {
+    "model": "qwen3.5-9b",
+    "set": "afr-pre",
+    "recovery": 10.3,
+    "n": 146
+  },
+  {
+    "model": "qwen3.5-9b",
+    "set": "afr-post",
+    "recovery": 6.8,
+    "n": 147
+  },
+  {
+    "model": "gemma-4-12b-qat",
+    "set": "afr-pre",
+    "recovery": 17.8,
+    "n": 146
+  },
+  {
+    "model": "gemma-4-12b-qat",
+    "set": "afr-post",
+    "recovery": 17.0,
+    "n": 147
+  },
+  {
+    "model": "gemma-3-12b",
+    "set": "afr-pre",
+    "recovery": 17.1,
+    "n": 146
+  },
+  {
+    "model": "gemma-3-12b",
+    "set": "afr-post",
+    "recovery": 15.0,
+    "n": 147
+  },
+  {
+    "model": "gemma-3n-e4b",
+    "set": "afr-pre",
+    "recovery": 6.2,
+    "n": 146
+  },
+  {
+    "model": "gemma-3n-e4b",
+    "set": "afr-post",
+    "recovery": 6.8,
+    "n": 147
+  },
+  {
+    "model": "claude-opus-4.8",
+    "set": "afr-pre",
+    "recovery": 42.5,
+    "n": 146
+  },
+  {
+    "model": "claude-opus-4.8",
+    "set": "afr-post",
+    "recovery": 31.3,
+    "n": 147
+  }
+]
